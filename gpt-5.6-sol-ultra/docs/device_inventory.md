@@ -3,7 +3,7 @@
 Status: complete for first-pass device acquisition/archive inventory
 Artifact version: `03202f5`
 Target: `ios_arm64`
-Last updated: 2026-08-20 (Asia/Singapore)
+Last updated: 2026-08-20
 
 This is the device-specific, reproducible evidence log. It intentionally does
 not make codec or cryptography conclusions from names alone.
@@ -57,9 +57,7 @@ The SHA-1 and MD5 agree with Maven's `x-checksum-sha1` and
 `x-checksum-md5` response headers. The SHA-256/SHA-512 agree with the values in
 `artifacts/haversine-iosarm64-03202f5.module`.
 
-The first `shasum` attempt failed because the host's configured `C.UTF-8`
-locale is unavailable. Locale-independent `openssl dgst` produced the values
-above.
+The first `shasum` attempt failed. `openssl dgst` produced the values above.
 
 The Gradle module lists these additional files as part of the
 `iosArm64ApiElements-published` variant:

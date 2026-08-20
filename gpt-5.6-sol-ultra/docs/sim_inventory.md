@@ -1,6 +1,6 @@
 # iOS Simulator ARM64 Acquisition, Protocol, and Audio Inventory
 
-Last updated: 2026-08-20 (Asia/Singapore)
+Last updated: 2026-08-20
 
 This report records the complete Apple Silicon iOS Simulator ARM64
 investigation assigned from `brief.md`. It covers artifact acquisition,

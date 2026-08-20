@@ -1,6 +1,6 @@
 # Pebble Index 01 firmware acquisition
 
-Investigation date: 2026-08-20 (Asia/Singapore)
+Investigation date: 2026-08-20
 
 ## Result
 

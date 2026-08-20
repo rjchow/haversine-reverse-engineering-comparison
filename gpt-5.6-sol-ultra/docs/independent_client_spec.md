@@ -1,6 +1,6 @@
 # Independent Pebble Index client specification and gap audit
 
-Last updated: 2026-08-20 (Asia/Singapore)
+Last updated: 2026-08-20
 
 This is an implementation contract derived from the exact `03202f5`
 Haversine artifacts, their native dependencies, the decompiled same-revision

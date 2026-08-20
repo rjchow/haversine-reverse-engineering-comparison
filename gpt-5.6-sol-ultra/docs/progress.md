@@ -1,6 +1,6 @@
 # Haversine Reverse-Engineering Progress
 
-Last updated: 2026-08-20 (Asia/Singapore)
+Last updated: 2026-08-20
 
 This is the durable investigation log for `brief.md`. It records verified facts,
 working hypotheses, failed approaches, generated artifacts, and outstanding work.
@@ -284,9 +284,8 @@ exact firmware image without bypassing authentication or access controls.
   `test_decode_index_collection.py` passes five tests; the rebuilt C harness
   passes four round trips plus both decoder edge cases.
 - Recomputed all six exact KLIB/cinterop SHA-256 values and confirmed they
-  match the acquisition ledger and report. The first `shasum` retry failed
-  only because the inherited `C.UTF-8` locale is unavailable on this macOS
-  host; rerunning with `LC_ALL=C LANG=C` succeeded.
+  match the acquisition ledger and report. One `shasum` retry failed because
+  of an environment configuration issue; a portable invocation succeeded.
 - Closed the release gate. All ten required report sections are present, all
   literal evidence paths resolve, Markdown structure checks pass, the hostile
   proofreader reports no remaining release blocker, and the final coverage
@@ -431,8 +430,8 @@ exact firmware image without bypassing authentication or access controls.
 - Ghidra's Swift analysis raised nonfatal analyzer exceptions on some Mach-O
   objects. Apple `nm`/`objdump`/`dwarfdump`, x86_64 cross-checks, recovered
   Kotlin IR, and targeted native/ELF decompilation were used instead.
-- A final `shasum` invocation inherited unsupported `C.UTF-8` locale settings;
-  the same read-only verification succeeded with the portable `C` locale.
+- A final `shasum` invocation had an environment configuration issue; the
+  same read-only verification succeeded with a portable invocation.
 
 ## Generated artifacts
 

@@ -1,7 +1,7 @@
 # Pebble Index 01 / Haversine recording format
 
 Technical reverse-engineering report for Haversine release `03202f5`
-Date: 2026-08-20 (Asia/Singapore)
+Date: 2026-08-20
 
 This report is based on the exact physical-iPhone and Apple-Silicon-simulator
 Maven KLIBs named in `brief.md`, their separately published native cinterop
