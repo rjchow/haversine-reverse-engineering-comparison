@@ -1,0 +1,347 @@
+
+extract/android-debug/jni/arm64-v8a/libhaversinesatellitelibrary.so:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+00000000000144a8 <HaversineAudioServiceOperation_init>:
+   144a8: d100c3ff     	sub	sp, sp, #0x30
+   144ac: a9027bfd     	stp	x29, x30, [sp, #0x20]
+   144b0: 910083fd     	add	x29, sp, #0x20
+   144b4: 381ff3a0     	sturb	w0, [x29, #-0x1]
+   144b8: f9000be1     	str	x1, [sp, #0x10]
+   144bc: d2800020     	mov	x0, #0x1                // =1
+   144c0: d2800c01     	mov	x1, #0x60               // =96
+   144c4: 940013ab     	bl	0x19370 <calloc@plt>
+   144c8: f90007e0     	str	x0, [sp, #0x8]
+   144cc: f94007e9     	ldr	x9, [sp, #0x8]
+   144d0: d503201f     	nop
+   144d4: 10000328     	adr	x8, 0x14538 <HaversineAudioServiceOperation_init+0x90>
+   144d8: f9000128     	str	x8, [x9]
+   144dc: f94007e9     	ldr	x9, [sp, #0x8]
+   144e0: d503201f     	nop
+   144e4: 10000508     	adr	x8, 0x14584 <HaversineAudioServiceOperation_init+0xdc>
+   144e8: f9000528     	str	x8, [x9, #0x8]
+   144ec: f94007e9     	ldr	x9, [sp, #0x8]
+   144f0: d503201f     	nop
+   144f4: 10000a68     	adr	x8, 0x14640 <HaversineAudioServiceOperation_init+0x198>
+   144f8: f9000928     	str	x8, [x9, #0x10]
+   144fc: f94007e8     	ldr	x8, [sp, #0x8]
+   14500: f94007e9     	ldr	x9, [sp, #0x8]
+   14504: f9000d28     	str	x8, [x9, #0x18]
+   14508: f94007e8     	ldr	x8, [sp, #0x8]
+   1450c: b900491f     	str	wzr, [x8, #0x48]
+   14510: f9400be8     	ldr	x8, [sp, #0x10]
+   14514: f94007e9     	ldr	x9, [sp, #0x8]
+   14518: f9002928     	str	x8, [x9, #0x50]
+   1451c: 385ff3a8     	ldurb	w8, [x29, #-0x1]
+   14520: f94007e9     	ldr	x9, [sp, #0x8]
+   14524: 39016128     	strb	w8, [x9, #0x58]
+   14528: f94007e0     	ldr	x0, [sp, #0x8]
+   1452c: a9427bfd     	ldp	x29, x30, [sp, #0x20]
+   14530: 9100c3ff     	add	sp, sp, #0x30
+   14534: d65f03c0     	ret
+   14538: d100c3ff     	sub	sp, sp, #0x30
+   1453c: a9027bfd     	stp	x29, x30, [sp, #0x20]
+   14540: 910083fd     	add	x29, sp, #0x20
+   14544: f81f83a0     	stur	x0, [x29, #-0x8]
+   14548: aa0103e8     	mov	x8, x1
+   1454c: f9000be8     	str	x8, [sp, #0x10]
+   14550: f85f83a8     	ldur	x8, [x29, #-0x8]
+   14554: f90007e8     	str	x8, [sp, #0x8]
+   14558: f94007e9     	ldr	x9, [sp, #0x8]
+   1455c: 3dc00020     	ldr	q0, [x1]
+   14560: 3c828120     	stur	q0, [x9, #0x28]
+   14564: f9400828     	ldr	x8, [x1, #0x10]
+   14568: f9001d28     	str	x8, [x9, #0x38]
+   1456c: f85f83a0     	ldur	x0, [x29, #-0x8]
+   14570: 9400004b     	bl	0x1469c <HaversineAudioServiceOperation_init+0x1f4>
+   14574: 12000000     	and	w0, w0, #0x1
+   14578: a9427bfd     	ldp	x29, x30, [sp, #0x20]
+   1457c: 9100c3ff     	add	sp, sp, #0x30
+   14580: d65f03c0     	ret
+   14584: d10183ff     	sub	sp, sp, #0x60
+   14588: a9057bfd     	stp	x29, x30, [sp, #0x50]
+   1458c: 910143fd     	add	x29, sp, #0x50
+   14590: d53bd048     	mrs	x8, TPIDR_EL0
+   14594: f9401508     	ldr	x8, [x8, #0x28]
+   14598: f81f83a8     	stur	x8, [x29, #-0x8]
+   1459c: f90007e0     	str	x0, [sp, #0x8]
+   145a0: f94007e8     	ldr	x8, [sp, #0x8]
+   145a4: f90003e8     	str	x8, [sp]
+   145a8: f94003e8     	ldr	x8, [sp]
+   145ac: f9402108     	ldr	x8, [x8, #0x40]
+   145b0: b5000288     	cbnz	x8, 0x14600 <HaversineAudioServiceOperation_init+0x158>
+   145b4: 14000001     	b	0x145b8 <HaversineAudioServiceOperation_init+0x110>
+   145b8: d10083a8     	sub	x8, x29, #0x20
+   145bc: 52800820     	mov	w0, #0x41               // =65
+   145c0: 940012e8     	bl	0x19160 <HaversineError_fromOperationCode@plt>
+   145c4: f94003e8     	ldr	x8, [sp]
+   145c8: f9401908     	ldr	x8, [x8, #0x30]
+   145cc: b4000188     	cbz	x8, 0x145fc <HaversineAudioServiceOperation_init+0x154>
+   145d0: 14000001     	b	0x145d4 <HaversineAudioServiceOperation_init+0x12c>
+   145d4: f94003e9     	ldr	x9, [sp]
+   145d8: f9401928     	ldr	x8, [x9, #0x30]
+   145dc: f9401d20     	ldr	x0, [x9, #0x38]
+   145e0: 3cde03a0     	ldur	q0, [x29, #-0x20]
+   145e4: f85f03a9     	ldur	x9, [x29, #-0x10]
+   145e8: f90013e9     	str	x9, [sp, #0x20]
+   145ec: 3d8007e0     	str	q0, [sp, #0x10]
+   145f0: 910043e1     	add	x1, sp, #0x10
+   145f4: d63f0100     	blr	x8
+   145f8: 14000001     	b	0x145fc <HaversineAudioServiceOperation_init+0x154>
+   145fc: 14000007     	b	0x14618 <HaversineAudioServiceOperation_init+0x170>
+   14600: f94003e8     	ldr	x8, [sp]
+   14604: f9402109     	ldr	x9, [x8, #0x40]
+   14608: f9400528     	ldr	x8, [x9, #0x8]
+   1460c: f9400d20     	ldr	x0, [x9, #0x18]
+   14610: d63f0100     	blr	x8
+   14614: 14000001     	b	0x14618 <HaversineAudioServiceOperation_init+0x170>
+   14618: d53bd048     	mrs	x8, TPIDR_EL0
+   1461c: f9401508     	ldr	x8, [x8, #0x28]
+   14620: f85f83a9     	ldur	x9, [x29, #-0x8]
+   14624: eb090108     	subs	x8, x8, x9
+   14628: 540000a1     	b.ne	0x1463c <HaversineAudioServiceOperation_init+0x194>
+   1462c: 14000001     	b	0x14630 <HaversineAudioServiceOperation_init+0x188>
+   14630: a9457bfd     	ldp	x29, x30, [sp, #0x50]
+   14634: 910183ff     	add	sp, sp, #0x60
+   14638: d65f03c0     	ret
+   1463c: 940012b5     	bl	0x19110 <__stack_chk_fail@plt>
+   14640: d10083ff     	sub	sp, sp, #0x20
+   14644: a9017bfd     	stp	x29, x30, [sp, #0x10]
+   14648: 910043fd     	add	x29, sp, #0x10
+   1464c: f90007e0     	str	x0, [sp, #0x8]
+   14650: f94007e8     	ldr	x8, [sp, #0x8]
+   14654: f90003e8     	str	x8, [sp]
+   14658: f94003e8     	ldr	x8, [sp]
+   1465c: f9402108     	ldr	x8, [x8, #0x40]
+   14660: b4000148     	cbz	x8, 0x14688 <HaversineAudioServiceOperation_init+0x1e0>
+   14664: 14000001     	b	0x14668 <HaversineAudioServiceOperation_init+0x1c0>
+   14668: f94003e8     	ldr	x8, [sp]
+   1466c: f9402108     	ldr	x8, [x8, #0x40]
+   14670: f9400908     	ldr	x8, [x8, #0x10]
+   14674: f94003e9     	ldr	x9, [sp]
+   14678: f9402129     	ldr	x9, [x9, #0x40]
+   1467c: f9400d20     	ldr	x0, [x9, #0x18]
+   14680: d63f0100     	blr	x8
+   14684: 14000001     	b	0x14688 <HaversineAudioServiceOperation_init+0x1e0>
+   14688: f94003e0     	ldr	x0, [sp]
+   1468c: 940012b9     	bl	0x19170 <free@plt>
+   14690: a9417bfd     	ldp	x29, x30, [sp, #0x10]
+   14694: 910083ff     	add	sp, sp, #0x20
+   14698: d65f03c0     	ret
+   1469c: d10283ff     	sub	sp, sp, #0xa0
+   146a0: a9097bfd     	stp	x29, x30, [sp, #0x90]
+   146a4: 910243fd     	add	x29, sp, #0x90
+   146a8: d53bd048     	mrs	x8, TPIDR_EL0
+   146ac: f9401508     	ldr	x8, [x8, #0x28]
+   146b0: f81f83a8     	stur	x8, [x29, #-0x8]
+   146b4: f9000be0     	str	x0, [sp, #0x10]
+   146b8: f9400be8     	ldr	x8, [sp, #0x10]
+   146bc: f90007e8     	str	x8, [sp, #0x8]
+   146c0: f94007e8     	ldr	x8, [sp, #0x8]
+   146c4: f9402108     	ldr	x8, [x8, #0x40]
+   146c8: b5000068     	cbnz	x8, 0x146d4 <HaversineAudioServiceOperation_init+0x22c>
+   146cc: 14000001     	b	0x146d0 <HaversineAudioServiceOperation_init+0x228>
+   146d0: 1400000f     	b	0x1470c <HaversineAudioServiceOperation_init+0x264>
+   146d4: d53bd048     	mrs	x8, TPIDR_EL0
+   146d8: f9401508     	ldr	x8, [x8, #0x28]
+   146dc: f85f83a9     	ldur	x9, [x29, #-0x8]
+   146e0: eb090108     	subs	x8, x8, x9
+   146e4: 54000b41     	b.ne	0x1484c <HaversineAudioServiceOperation_init+0x3a4>
+   146e8: 14000001     	b	0x146ec <HaversineAudioServiceOperation_init+0x244>
+   146ec: d503201f     	nop
+   146f0: 30f8a3a0     	adr	x0, 0x5b65
+   146f4: f0ffff82     	adrp	x2, 0x7000
+   146f8: 91111842     	add	x2, x2, #0x446
+   146fc: b0ffff83     	adrp	x3, 0x5000
+   14700: 91253c63     	add	x3, x3, #0x94f
+   14704: 528009a1     	mov	w1, #0x4d               // =77
+   14708: 940012a6     	bl	0x191a0 <__assert2@plt>
+   1470c: f94007e8     	ldr	x8, [sp, #0x8]
+   14710: b9404908     	ldr	w8, [x8, #0x48]
+   14714: 2a0803e9     	mov	w9, w8
+   14718: b90007e9     	str	w9, [sp, #0x4]
+   1471c: 340000c8     	cbz	w8, 0x14734 <HaversineAudioServiceOperation_init+0x28c>
+   14720: 14000001     	b	0x14724 <HaversineAudioServiceOperation_init+0x27c>
+   14724: b94007e8     	ldr	w8, [sp, #0x4]
+   14728: 71000508     	subs	w8, w8, #0x1
+   1472c: 54000340     	b.eq	0x14794 <HaversineAudioServiceOperation_init+0x2ec>
+   14730: 1400001a     	b	0x14798 <HaversineAudioServiceOperation_init+0x2f0>
+   14734: f94007e8     	ldr	x8, [sp, #0x8]
+   14738: f9402908     	ldr	x8, [x8, #0x50]
+   1473c: d63f0100     	blr	x8
+   14740: b81f43a0     	stur	w0, [x29, #-0xc]
+   14744: 52800048     	mov	w8, #0x2                // =2
+   14748: 381d83a8     	sturb	w8, [x29, #-0x28]
+   1474c: 52800028     	mov	w8, #0x1                // =1
+   14750: 72a80068     	movk	w8, #0x4003, lsl #16
+   14754: b81d93a8     	stur	w8, [x29, #-0x27]
+   14758: 2a1f03e8     	mov	w8, wzr
+   1475c: b81dd3a8     	stur	w8, [x29, #-0x23]
+   14760: 52800088     	mov	w8, #0x4                // =4
+   14764: b81e13a8     	stur	w8, [x29, #-0x1f]
+   14768: d10033a8     	sub	x8, x29, #0xc
+   1476c: f81e83a8     	stur	x8, [x29, #-0x18]
+   14770: 3cdd83a0     	ldur	q0, [x29, #-0x28]
+   14774: f85e83a8     	ldur	x8, [x29, #-0x18]
+   14778: f81d03a8     	stur	x8, [x29, #-0x30]
+   1477c: 3c9c03a0     	stur	q0, [x29, #-0x40]
+   14780: d10103a0     	sub	x0, x29, #0x40
+   14784: 940012bf     	bl	0x19280 <TelestoOperation_init@plt>
+   14788: f94007e8     	ldr	x8, [sp, #0x8]
+   1478c: f9002100     	str	x0, [x8, #0x40]
+   14790: 14000002     	b	0x14798 <HaversineAudioServiceOperation_init+0x2f0>
+   14794: 14000001     	b	0x14798 <HaversineAudioServiceOperation_init+0x2f0>
+   14798: f94007e8     	ldr	x8, [sp, #0x8]
+   1479c: f9402108     	ldr	x8, [x8, #0x40]
+   147a0: b4000368     	cbz	x8, 0x1480c <HaversineAudioServiceOperation_init+0x364>
+   147a4: 14000001     	b	0x147a8 <HaversineAudioServiceOperation_init+0x300>
+   147a8: d503201f     	nop
+   147ac: 10000528     	adr	x8, 0x14850 <HaversineAudioServiceOperation_init+0x3a8>
+   147b0: f9001fe8     	str	x8, [sp, #0x38]
+   147b4: d503201f     	nop
+   147b8: 10000588     	adr	x8, 0x14868 <HaversineAudioServiceOperation_init+0x3c0>
+   147bc: f90023e8     	str	x8, [sp, #0x40]
+   147c0: f94007e8     	ldr	x8, [sp, #0x8]
+   147c4: f90027e8     	str	x8, [sp, #0x48]
+   147c8: f94007e9     	ldr	x9, [sp, #0x8]
+   147cc: f9401128     	ldr	x8, [x9, #0x20]
+   147d0: f9402129     	ldr	x9, [x9, #0x40]
+   147d4: f9001128     	str	x8, [x9, #0x20]
+   147d8: f94007e8     	ldr	x8, [sp, #0x8]
+   147dc: f9402109     	ldr	x9, [x8, #0x40]
+   147e0: f9400128     	ldr	x8, [x9]
+   147e4: f9400d20     	ldr	x0, [x9, #0x18]
+   147e8: 3cc383e0     	ldur	q0, [sp, #0x38]
+   147ec: f94027e9     	ldr	x9, [sp, #0x48]
+   147f0: f9001be9     	str	x9, [sp, #0x30]
+   147f4: 3d800be0     	str	q0, [sp, #0x20]
+   147f8: 910083e1     	add	x1, sp, #0x20
+   147fc: d63f0100     	blr	x8
+   14800: 12000008     	and	w8, w0, #0x1
+   14804: 39007fe8     	strb	w8, [sp, #0x1f]
+   14808: 14000004     	b	0x14818 <HaversineAudioServiceOperation_init+0x370>
+   1480c: 2a1f03e8     	mov	w8, wzr
+   14810: 39007fe8     	strb	w8, [sp, #0x1f]
+   14814: 14000001     	b	0x14818 <HaversineAudioServiceOperation_init+0x370>
+   14818: 39407fe8     	ldrb	w8, [sp, #0x1f]
+   1481c: b90003e8     	str	w8, [sp]
+   14820: d53bd048     	mrs	x8, TPIDR_EL0
+   14824: f9401508     	ldr	x8, [x8, #0x28]
+   14828: f85f83a9     	ldur	x9, [x29, #-0x8]
+   1482c: eb090108     	subs	x8, x8, x9
+   14830: 540000e1     	b.ne	0x1484c <HaversineAudioServiceOperation_init+0x3a4>
+   14834: 14000001     	b	0x14838 <HaversineAudioServiceOperation_init+0x390>
+   14838: b94003e8     	ldr	w8, [sp]
+   1483c: 12000100     	and	w0, w8, #0x1
+   14840: a9497bfd     	ldp	x29, x30, [sp, #0x90]
+   14844: 910283ff     	add	sp, sp, #0xa0
+   14848: d65f03c0     	ret
+   1484c: 94001231     	bl	0x19110 <__stack_chk_fail@plt>
+   14850: d10083ff     	sub	sp, sp, #0x20
+   14854: f9000fe0     	str	x0, [sp, #0x18]
+   14858: f9000be1     	str	x1, [sp, #0x10]
+   1485c: f90007e2     	str	x2, [sp, #0x8]
+   14860: 910083ff     	add	sp, sp, #0x20
+   14864: d65f03c0     	ret
+   14868: d102c3ff     	sub	sp, sp, #0xb0
+   1486c: a90a7bfd     	stp	x29, x30, [sp, #0xa0]
+   14870: 910283fd     	add	x29, sp, #0xa0
+   14874: f90017e1     	str	x1, [sp, #0x28]
+   14878: d53bd048     	mrs	x8, TPIDR_EL0
+   1487c: f9401508     	ldr	x8, [x8, #0x28]
+   14880: f81f83a8     	stur	x8, [x29, #-0x8]
+   14884: f90023e0     	str	x0, [sp, #0x40]
+   14888: f9001fe1     	str	x1, [sp, #0x38]
+   1488c: f94023e8     	ldr	x8, [sp, #0x40]
+   14890: f9001be8     	str	x8, [sp, #0x30]
+   14894: f9401be8     	ldr	x8, [sp, #0x30]
+   14898: f9402108     	ldr	x8, [x8, #0x40]
+   1489c: b4000168     	cbz	x8, 0x148c8 <HaversineAudioServiceOperation_init+0x420>
+   148a0: 14000001     	b	0x148a4 <HaversineAudioServiceOperation_init+0x3fc>
+   148a4: f9401be8     	ldr	x8, [sp, #0x30]
+   148a8: f9402109     	ldr	x9, [x8, #0x40]
+   148ac: f9400928     	ldr	x8, [x9, #0x10]
+   148b0: f9400d20     	ldr	x0, [x9, #0x18]
+   148b4: d63f0100     	blr	x8
+   148b8: f9401be9     	ldr	x9, [sp, #0x30]
+   148bc: aa1f03e8     	mov	x8, xzr
+   148c0: f9002128     	str	x8, [x9, #0x40]
+   148c4: 14000001     	b	0x148c8 <HaversineAudioServiceOperation_init+0x420>
+   148c8: f94017e8     	ldr	x8, [sp, #0x28]
+   148cc: 3dc00100     	ldr	q0, [x8]
+   148d0: f9400908     	ldr	x8, [x8, #0x10]
+   148d4: f81f03a8     	stur	x8, [x29, #-0x10]
+   148d8: 3c9e03a0     	stur	q0, [x29, #-0x20]
+   148dc: d10083a0     	sub	x0, x29, #0x20
+   148e0: 94001210     	bl	0x19120 <HaversineError_hasValue@plt>
+   148e4: 36000240     	tbz	w0, #0x0, 0x1492c <HaversineAudioServiceOperation_init+0x484>
+   148e8: 14000001     	b	0x148ec <HaversineAudioServiceOperation_init+0x444>
+   148ec: f9401be8     	ldr	x8, [sp, #0x30]
+   148f0: f9401908     	ldr	x8, [x8, #0x30]
+   148f4: b40001a8     	cbz	x8, 0x14928 <HaversineAudioServiceOperation_init+0x480>
+   148f8: 14000001     	b	0x148fc <HaversineAudioServiceOperation_init+0x454>
+   148fc: f94017e9     	ldr	x9, [sp, #0x28]
+   14900: f9401bea     	ldr	x10, [sp, #0x30]
+   14904: f9401948     	ldr	x8, [x10, #0x30]
+   14908: f9401d40     	ldr	x0, [x10, #0x38]
+   1490c: 3dc00120     	ldr	q0, [x9]
+   14910: f9400929     	ldr	x9, [x9, #0x10]
+   14914: f81d03a9     	stur	x9, [x29, #-0x30]
+   14918: 3c9c03a0     	stur	q0, [x29, #-0x40]
+   1491c: d10103a1     	sub	x1, x29, #0x40
+   14920: d63f0100     	blr	x8
+   14924: 14000001     	b	0x14928 <HaversineAudioServiceOperation_init+0x480>
+   14928: 14000027     	b	0x149c4 <HaversineAudioServiceOperation_init+0x51c>
+   1492c: f9401be8     	ldr	x8, [sp, #0x30]
+   14930: b9404908     	ldr	w8, [x8, #0x48]
+   14934: 2a0803e9     	mov	w9, w8
+   14938: b90027e9     	str	w9, [sp, #0x24]
+   1493c: 340000c8     	cbz	w8, 0x14954 <HaversineAudioServiceOperation_init+0x4ac>
+   14940: 14000001     	b	0x14944 <HaversineAudioServiceOperation_init+0x49c>
+   14944: b94027e8     	ldr	w8, [sp, #0x24]
+   14948: 71000508     	subs	w8, w8, #0x1
+   1494c: 540000c0     	b.eq	0x14964 <HaversineAudioServiceOperation_init+0x4bc>
+   14950: 14000006     	b	0x14968 <HaversineAudioServiceOperation_init+0x4c0>
+   14954: f9401be9     	ldr	x9, [sp, #0x30]
+   14958: 52800028     	mov	w8, #0x1                // =1
+   1495c: b9004928     	str	w8, [x9, #0x48]
+   14960: 14000002     	b	0x14968 <HaversineAudioServiceOperation_init+0x4c0>
+   14964: 14000001     	b	0x14968 <HaversineAudioServiceOperation_init+0x4c0>
+   14968: f9401be8     	ldr	x8, [sp, #0x30]
+   1496c: b9404908     	ldr	w8, [x8, #0x48]
+   14970: 71000508     	subs	w8, w8, #0x1
+   14974: 54000281     	b.ne	0x149c4 <HaversineAudioServiceOperation_init+0x51c>
+   14978: 14000001     	b	0x1497c <HaversineAudioServiceOperation_init+0x4d4>
+   1497c: f9401be8     	ldr	x8, [sp, #0x30]
+   14980: f9401908     	ldr	x8, [x8, #0x30]
+   14984: b40001e8     	cbz	x8, 0x149c0 <HaversineAudioServiceOperation_init+0x518>
+   14988: 14000001     	b	0x1498c <HaversineAudioServiceOperation_init+0x4e4>
+   1498c: f9401be8     	ldr	x8, [sp, #0x30]
+   14990: f9401909     	ldr	x9, [x8, #0x30]
+   14994: f9000fe9     	str	x9, [sp, #0x18]
+   14998: f9401d08     	ldr	x8, [x8, #0x38]
+   1499c: f90007e8     	str	x8, [sp, #0x8]
+   149a0: 910123e8     	add	x8, sp, #0x48
+   149a4: f9000be8     	str	x8, [sp, #0x10]
+   149a8: 94000011     	bl	0x149ec <HaversineAudioServiceOperation_init+0x544>
+   149ac: f94007e0     	ldr	x0, [sp, #0x8]
+   149b0: f9400be1     	ldr	x1, [sp, #0x10]
+   149b4: f9400fe8     	ldr	x8, [sp, #0x18]
+   149b8: d63f0100     	blr	x8
+   149bc: 14000001     	b	0x149c0 <HaversineAudioServiceOperation_init+0x518>
+   149c0: 14000001     	b	0x149c4 <HaversineAudioServiceOperation_init+0x51c>
+   149c4: d53bd048     	mrs	x8, TPIDR_EL0
+   149c8: f9401508     	ldr	x8, [x8, #0x28]
+   149cc: f85f83a9     	ldur	x9, [x29, #-0x8]
+   149d0: eb090108     	subs	x8, x8, x9
+   149d4: 540000a1     	b.ne	0x149e8 <HaversineAudioServiceOperation_init+0x540>
+   149d8: 14000001     	b	0x149dc <HaversineAudioServiceOperation_init+0x534>
+   149dc: a94a7bfd     	ldp	x29, x30, [sp, #0xa0]
+   149e0: 9102c3ff     	add	sp, sp, #0xb0
+   149e4: d65f03c0     	ret
+   149e8: 940011ca     	bl	0x19110 <__stack_chk_fail@plt>
+   149ec: f900011f     	str	xzr, [x8]
+   149f0: f900051f     	str	xzr, [x8, #0x8]
+   149f4: f900091f     	str	xzr, [x8, #0x10]
+   149f8: d65f03c0     	ret

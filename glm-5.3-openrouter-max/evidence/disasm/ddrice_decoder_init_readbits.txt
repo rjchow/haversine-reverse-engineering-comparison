@@ -1,0 +1,179 @@
+
+extract/android-debug/jni/arm64-v8a/libppcommon.so:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+0000000000030930 <DDRiceDecompressionChannel_init>:
+   30930: d101c3ff     	sub	sp, sp, #0x70
+   30934: a9067bfd     	stp	x29, x30, [sp, #0x60]
+   30938: 910183fd     	add	x29, sp, #0x60
+   3093c: d53bd048     	mrs	x8, TPIDR_EL0
+   30940: f90007e8     	str	x8, [sp, #0x8]
+   30944: f9401508     	ldr	x8, [x8, #0x28]
+   30948: f81f83a8     	stur	x8, [x29, #-0x8]
+   3094c: f81e83a3     	stur	x3, [x29, #-0x18]
+   30950: b85e83a8     	ldur	w8, [x29, #-0x18]
+   30954: b81f43a8     	stur	w8, [x29, #-0xc]
+   30958: f90013e0     	str	x0, [sp, #0x20]
+   3095c: f9000fe1     	str	x1, [sp, #0x18]
+   30960: b90017e2     	str	w2, [sp, #0x14]
+   30964: b94017e8     	ldr	w8, [sp, #0x14]
+   30968: f94013e9     	ldr	x9, [sp, #0x20]
+   3096c: b9000128     	str	w8, [x9]
+   30970: f9400fe8     	ldr	x8, [sp, #0x18]
+   30974: f94013e9     	ldr	x9, [sp, #0x20]
+   30978: f9000528     	str	x8, [x9, #0x8]
+   3097c: f94013e9     	ldr	x9, [sp, #0x20]
+   30980: b85f43a8     	ldur	w8, [x29, #-0xc]
+   30984: b9001128     	str	w8, [x9, #0x10]
+   30988: f94013e8     	ldr	x8, [sp, #0x20]
+   3098c: 91006108     	add	x8, x8, #0x18
+   30990: f81e03a8     	stur	x8, [x29, #-0x20]
+   30994: 92800008     	mov	x8, #-0x1               // =-1
+   30998: f81d83a8     	stur	x8, [x29, #-0x28]
+   3099c: 2a1f03e8     	mov	w8, wzr
+   309a0: b81d43a8     	stur	w8, [x29, #-0x2c]
+   309a4: 52800c08     	mov	w8, #0x60               // =96
+   309a8: f90017e8     	str	x8, [sp, #0x28]
+   309ac: f85e03a0     	ldur	x0, [x29, #-0x20]
+   309b0: b85d43a1     	ldur	w1, [x29, #-0x2c]
+   309b4: f94017e2     	ldr	x2, [sp, #0x28]
+   309b8: f85d83a3     	ldur	x3, [x29, #-0x28]
+   309bc: 9400076d     	bl	0x32770 <__memset_chk@plt>
+   309c0: f94007e8     	ldr	x8, [sp, #0x8]
+   309c4: f9401508     	ldr	x8, [x8, #0x28]
+   309c8: f85f83a9     	ldur	x9, [x29, #-0x8]
+   309cc: eb090108     	subs	x8, x8, x9
+   309d0: 540000a1     	b.ne	0x309e4 <DDRiceDecompressionChannel_init+0xb4>
+   309d4: 14000001     	b	0x309d8 <DDRiceDecompressionChannel_init+0xa8>
+   309d8: a9467bfd     	ldp	x29, x30, [sp, #0x60]
+   309dc: 9101c3ff     	add	sp, sp, #0x70
+   309e0: d65f03c0     	ret
+   309e4: 94000653     	bl	0x32330 <__stack_chk_fail@plt>
+
+00000000000309e8 <DDRiceDecompressionDecoder_init>:
+   309e8: d10083ff     	sub	sp, sp, #0x20
+   309ec: f9000fe0     	str	x0, [sp, #0x18]
+   309f0: f9000be1     	str	x1, [sp, #0x10]
+   309f4: f90007e2     	str	x2, [sp, #0x8]
+   309f8: f90003e3     	str	x3, [sp]
+   309fc: f9400be8     	ldr	x8, [sp, #0x10]
+   30a00: f9400fe9     	ldr	x9, [sp, #0x18]
+   30a04: f9000128     	str	x8, [x9]
+   30a08: f94007e8     	ldr	x8, [sp, #0x8]
+   30a0c: f9400fe9     	ldr	x9, [sp, #0x18]
+   30a10: f9000928     	str	x8, [x9, #0x10]
+   30a14: f94003e8     	ldr	x8, [sp]
+   30a18: d280010a     	mov	x10, #0x8               // =8
+   30a1c: 9aca0908     	udiv	x8, x8, x10
+   30a20: f9400fe9     	ldr	x9, [sp, #0x18]
+   30a24: b9000928     	str	w8, [x9, #0x8]
+   30a28: f94003e8     	ldr	x8, [sp]
+   30a2c: 9aca0909     	udiv	x9, x8, x10
+   30a30: 9b0a7d29     	mul	x9, x9, x10
+   30a34: eb090108     	subs	x8, x8, x9
+   30a38: f9400fe9     	ldr	x9, [sp, #0x18]
+   30a3c: 39003128     	strb	w8, [x9, #0xc]
+   30a40: 910083ff     	add	sp, sp, #0x20
+   30a44: d65f03c0     	ret
+
+0000000000030a48 <DDRiceDecompressionDecoder_readBit>:
+   30a48: d10083ff     	sub	sp, sp, #0x20
+   30a4c: f9000be0     	str	x0, [sp, #0x10]
+   30a50: f9400be8     	ldr	x8, [sp, #0x10]
+   30a54: b9400909     	ldr	w9, [x8, #0x8]
+   30a58: f9400be8     	ldr	x8, [sp, #0x10]
+   30a5c: 39403108     	ldrb	w8, [x8, #0xc]
+   30a60: 0b090d08     	add	w8, w8, w9, lsl #3
+   30a64: 2a0803e8     	mov	w8, w8
+   30a68: f9400be9     	ldr	x9, [sp, #0x10]
+   30a6c: f9400929     	ldr	x9, [x9, #0x10]
+   30a70: eb090108     	subs	x8, x8, x9
+   30a74: 540000a3     	b.lo	0x30a88 <DDRiceDecompressionDecoder_readBit+0x40>
+   30a78: 14000001     	b	0x30a7c <DDRiceDecompressionDecoder_readBit+0x34>
+   30a7c: 52801fe8     	mov	w8, #0xff               // =255
+   30a80: 39007fe8     	strb	w8, [sp, #0x1f]
+   30a84: 14000022     	b	0x30b0c <DDRiceDecompressionDecoder_readBit+0xc4>
+   30a88: f9400be8     	ldr	x8, [sp, #0x10]
+   30a8c: f9400108     	ldr	x8, [x8]
+   30a90: f9400be9     	ldr	x9, [sp, #0x10]
+   30a94: b9400929     	ldr	w9, [x9, #0x8]
+   30a98: 8b090108     	add	x8, x8, x9
+   30a9c: 39400108     	ldrb	w8, [x8]
+   30aa0: 39003fe8     	strb	w8, [sp, #0xf]
+   30aa4: f9400be8     	ldr	x8, [sp, #0x10]
+   30aa8: 39403109     	ldrb	w9, [x8, #0xc]
+   30aac: 528000e8     	mov	w8, #0x7                // =7
+   30ab0: 6b090108     	subs	w8, w8, w9
+   30ab4: 39003be8     	strb	w8, [sp, #0xe]
+   30ab8: f9400be9     	ldr	x9, [sp, #0x10]
+   30abc: 39403128     	ldrb	w8, [x9, #0xc]
+   30ac0: 11000508     	add	w8, w8, #0x1
+   30ac4: 39003128     	strb	w8, [x9, #0xc]
+   30ac8: 12001d08     	and	w8, w8, #0xff
+   30acc: 71002108     	subs	w8, w8, #0x8
+   30ad0: 5400012b     	b.lt	0x30af4 <DDRiceDecompressionDecoder_readBit+0xac>
+   30ad4: 14000001     	b	0x30ad8 <DDRiceDecompressionDecoder_readBit+0x90>
+   30ad8: f9400be8     	ldr	x8, [sp, #0x10]
+   30adc: 3900311f     	strb	wzr, [x8, #0xc]
+   30ae0: f9400be9     	ldr	x9, [sp, #0x10]
+   30ae4: b9400928     	ldr	w8, [x9, #0x8]
+   30ae8: 11000508     	add	w8, w8, #0x1
+   30aec: b9000928     	str	w8, [x9, #0x8]
+   30af0: 14000001     	b	0x30af4 <DDRiceDecompressionDecoder_readBit+0xac>
+   30af4: 39403fe8     	ldrb	w8, [sp, #0xf]
+   30af8: 39403be9     	ldrb	w9, [sp, #0xe]
+   30afc: 1ac92908     	asr	w8, w8, w9
+   30b00: 12000108     	and	w8, w8, #0x1
+   30b04: 39007fe8     	strb	w8, [sp, #0x1f]
+   30b08: 14000001     	b	0x30b0c <DDRiceDecompressionDecoder_readBit+0xc4>
+   30b0c: 39407fe0     	ldrb	w0, [sp, #0x1f]
+   30b10: 910083ff     	add	sp, sp, #0x20
+   30b14: d65f03c0     	ret
+
+0000000000030b18 <DDRiceDecompressionDecoder_readBits>:
+   30b18: d10103ff     	sub	sp, sp, #0x40
+   30b1c: a9037bfd     	stp	x29, x30, [sp, #0x30]
+   30b20: 9100c3fd     	add	x29, sp, #0x30
+   30b24: f81f03a0     	stur	x0, [x29, #-0x10]
+   30b28: f9000fe1     	str	x1, [sp, #0x18]
+   30b2c: b90017e2     	str	w2, [sp, #0x14]
+   30b30: b90013ff     	str	wzr, [sp, #0x10]
+   30b34: b9000fff     	str	wzr, [sp, #0xc]
+   30b38: 14000001     	b	0x30b3c <DDRiceDecompressionDecoder_readBits+0x24>
+   30b3c: b9400fe8     	ldr	w8, [sp, #0xc]
+   30b40: b94017e9     	ldr	w9, [sp, #0x14]
+   30b44: 6b090108     	subs	w8, w8, w9
+   30b48: 54000302     	b.hs	0x30ba8 <DDRiceDecompressionDecoder_readBits+0x90>
+   30b4c: 14000001     	b	0x30b50 <DDRiceDecompressionDecoder_readBits+0x38>
+   30b50: f85f03a0     	ldur	x0, [x29, #-0x10]
+   30b54: 94000743     	bl	0x32860 <DDRiceDecompressionDecoder_readBit@plt>
+   30b58: 39002fe0     	strb	w0, [sp, #0xb]
+   30b5c: 39402fe8     	ldrb	w8, [sp, #0xb]
+   30b60: 7103fd08     	subs	w8, w8, #0xff
+   30b64: 540000a1     	b.ne	0x30b78 <DDRiceDecompressionDecoder_readBits+0x60>
+   30b68: 14000001     	b	0x30b6c <DDRiceDecompressionDecoder_readBits+0x54>
+   30b6c: 52800068     	mov	w8, #0x3                // =3
+   30b70: b81fc3a8     	stur	w8, [x29, #-0x4]
+   30b74: 14000012     	b	0x30bbc <DDRiceDecompressionDecoder_readBits+0xa4>
+   30b78: b94013e8     	ldr	w8, [sp, #0x10]
+   30b7c: 531f7908     	lsl	w8, w8, #1
+   30b80: b90013e8     	str	w8, [sp, #0x10]
+   30b84: 39402fe9     	ldrb	w9, [sp, #0xb]
+   30b88: b94013e8     	ldr	w8, [sp, #0x10]
+   30b8c: 2a090108     	orr	w8, w8, w9
+   30b90: b90013e8     	str	w8, [sp, #0x10]
+   30b94: 14000001     	b	0x30b98 <DDRiceDecompressionDecoder_readBits+0x80>
+   30b98: b9400fe8     	ldr	w8, [sp, #0xc]
+   30b9c: 11000508     	add	w8, w8, #0x1
+   30ba0: b9000fe8     	str	w8, [sp, #0xc]
+   30ba4: 17ffffe6     	b	0x30b3c <DDRiceDecompressionDecoder_readBits+0x24>
+   30ba8: b94013e8     	ldr	w8, [sp, #0x10]
+   30bac: f9400fe9     	ldr	x9, [sp, #0x18]
+   30bb0: b9000128     	str	w8, [x9]
+   30bb4: b81fc3bf     	stur	wzr, [x29, #-0x4]
+   30bb8: 14000001     	b	0x30bbc <DDRiceDecompressionDecoder_readBits+0xa4>
+   30bbc: b85fc3a0     	ldur	w0, [x29, #-0x4]
+   30bc0: a9437bfd     	ldp	x29, x30, [sp, #0x30]
+   30bc4: 910103ff     	add	sp, sp, #0x40
+   30bc8: d65f03c0     	ret

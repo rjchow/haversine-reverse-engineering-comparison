@@ -1,0 +1,282 @@
+
+extract/android-debug/jni/arm64-v8a/libhaversinesatellitelibrary.so:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+000000000000e344 <TelestoController_addOperation>:
+    e344: d101c3ff     	sub	sp, sp, #0x70
+    e348: a9067bfd     	stp	x29, x30, [sp, #0x60]
+    e34c: 910183fd     	add	x29, sp, #0x60
+    e350: f90007e1     	str	x1, [sp, #0x8]
+    e354: f9001be0     	str	x0, [sp, #0x30]
+    e358: f90017e1     	str	x1, [sp, #0x28]
+    e35c: f9401be8     	ldr	x8, [sp, #0x30]
+    e360: b4000068     	cbz	x8, 0xe36c <TelestoController_addOperation+0x28>
+    e364: 14000001     	b	0xe368 <TelestoController_addOperation+0x24>
+    e368: 14000009     	b	0xe38c <TelestoController_addOperation+0x48>
+    e36c: d503201f     	nop
+    e370: 10fcd8a0     	adr	x0, 0x7e84
+    e374: 52802361     	mov	w1, #0x11b              // =283
+    e378: 90ffffc2     	adrp	x2, 0x6000
+    e37c: 910b2c42     	add	x2, x2, #0x2cb
+    e380: f0ffffa3     	adrp	x3, 0x5000
+    e384: 91365863     	add	x3, x3, #0xd96
+    e388: 94002b86     	bl	0x191a0 <__assert2@plt>
+    e38c: f9401be8     	ldr	x8, [sp, #0x30]
+    e390: 3940a108     	ldrb	w8, [x8, #0x28]
+    e394: 36000088     	tbz	w8, #0x0, 0xe3a4 <TelestoController_addOperation+0x60>
+    e398: 14000001     	b	0xe39c <TelestoController_addOperation+0x58>
+    e39c: f81d83bf     	stur	xzr, [x29, #-0x28]
+    e3a0: 1400003f     	b	0xe49c <TelestoController_addOperation+0x158>
+    e3a4: d2800020     	mov	x0, #0x1                // =1
+    e3a8: d2800801     	mov	x1, #0x40               // =64
+    e3ac: 94002bf1     	bl	0x19370 <calloc@plt>
+    e3b0: f94007e1     	ldr	x1, [sp, #0x8]
+    e3b4: f90013e0     	str	x0, [sp, #0x20]
+    e3b8: f94013e0     	ldr	x0, [sp, #0x20]
+    e3bc: d2800602     	mov	x2, #0x30               // =48
+    e3c0: 94002bf0     	bl	0x19380 <memcpy@plt>
+    e3c4: f94007e8     	ldr	x8, [sp, #0x8]
+    e3c8: 39400100     	ldrb	w0, [x8]
+    e3cc: 94000038     	bl	0xe4ac <TelestoController_addOperation+0x168>
+    e3d0: 36000380     	tbz	w0, #0x0, 0xe440 <TelestoController_addOperation+0xfc>
+    e3d4: 14000001     	b	0xe3d8 <TelestoController_addOperation+0x94>
+    e3d8: f94007e8     	ldr	x8, [sp, #0x8]
+    e3dc: f9400908     	ldr	x8, [x8, #0x10]
+    e3e0: b4000308     	cbz	x8, 0xe440 <TelestoController_addOperation+0xfc>
+    e3e4: 14000001     	b	0xe3e8 <TelestoController_addOperation+0xa4>
+    e3e8: f94007e8     	ldr	x8, [sp, #0x8]
+    e3ec: b8409108     	ldur	w8, [x8, #0x9]
+    e3f0: 2a0803e0     	mov	w0, w8
+    e3f4: 94002b4f     	bl	0x19130 <malloc@plt>
+    e3f8: f94007e8     	ldr	x8, [sp, #0x8]
+    e3fc: f9000be0     	str	x0, [sp, #0x10]
+    e400: f9400bea     	ldr	x10, [sp, #0x10]
+    e404: f9400909     	ldr	x9, [x8, #0x10]
+    e408: b8409108     	ldur	w8, [x8, #0x9]
+    e40c: f81f83aa     	stur	x10, [x29, #-0x8]
+    e410: 9280000a     	mov	x10, #-0x1              // =-1
+    e414: f81f03aa     	stur	x10, [x29, #-0x10]
+    e418: f81e83a9     	stur	x9, [x29, #-0x18]
+    e41c: f81e03a8     	stur	x8, [x29, #-0x20]
+    e420: f85f83a0     	ldur	x0, [x29, #-0x8]
+    e424: f85e83a1     	ldur	x1, [x29, #-0x18]
+    e428: f85e03a2     	ldur	x2, [x29, #-0x20]
+    e42c: f85f03a3     	ldur	x3, [x29, #-0x10]
+    e430: 94002b44     	bl	0x19140 <__memcpy_chk@plt>
+    e434: f9400be8     	ldr	x8, [sp, #0x10]
+    e438: f9000fe8     	str	x8, [sp, #0x18]
+    e43c: 14000003     	b	0xe448 <TelestoController_addOperation+0x104>
+    e440: f9000fff     	str	xzr, [sp, #0x18]
+    e444: 14000001     	b	0xe448 <TelestoController_addOperation+0x104>
+    e448: f9400fe8     	ldr	x8, [sp, #0x18]
+    e44c: f94013e9     	ldr	x9, [sp, #0x20]
+    e450: f9000928     	str	x8, [x9, #0x10]
+    e454: f9401be8     	ldr	x8, [sp, #0x30]
+    e458: f9400108     	ldr	x8, [x8]
+    e45c: b5000108     	cbnz	x8, 0xe47c <TelestoController_addOperation+0x138>
+    e460: 14000001     	b	0xe464 <TelestoController_addOperation+0x120>
+    e464: f94013e8     	ldr	x8, [sp, #0x20]
+    e468: f9401be9     	ldr	x9, [sp, #0x30]
+    e46c: f9000128     	str	x8, [x9]
+    e470: f9401be0     	ldr	x0, [sp, #0x30]
+    e474: 94000031     	bl	0xe538 <TelestoController_addOperation+0x1f4>
+    e478: 14000006     	b	0xe490 <TelestoController_addOperation+0x14c>
+    e47c: f9401be8     	ldr	x8, [sp, #0x30]
+    e480: f9400100     	ldr	x0, [x8]
+    e484: f94013e1     	ldr	x1, [sp, #0x20]
+    e488: 940000a7     	bl	0xe724 <TelestoController_addOperation+0x3e0>
+    e48c: 14000001     	b	0xe490 <TelestoController_addOperation+0x14c>
+    e490: f94013e8     	ldr	x8, [sp, #0x20]
+    e494: f81d83a8     	stur	x8, [x29, #-0x28]
+    e498: 14000001     	b	0xe49c <TelestoController_addOperation+0x158>
+    e49c: f85d83a0     	ldur	x0, [x29, #-0x28]
+    e4a0: a9467bfd     	ldp	x29, x30, [sp, #0x60]
+    e4a4: 9101c3ff     	add	sp, sp, #0x70
+    e4a8: d65f03c0     	ret
+    e4ac: d10043ff     	sub	sp, sp, #0x10
+    e4b0: b9000be0     	str	w0, [sp, #0x8]
+    e4b4: b9400be8     	ldr	w8, [sp, #0x8]
+    e4b8: b90007e8     	str	w8, [sp, #0x4]
+    e4bc: 71000108     	subs	w8, w8, #0x0
+    e4c0: 71000508     	subs	w8, w8, #0x1
+    e4c4: 54000289     	b.ls	0xe514 <TelestoController_addOperation+0x1d0>
+    e4c8: 14000001     	b	0xe4cc <TelestoController_addOperation+0x188>
+    e4cc: b94007e8     	ldr	w8, [sp, #0x4]
+    e4d0: 71000908     	subs	w8, w8, #0x2
+    e4d4: 54000160     	b.eq	0xe500 <TelestoController_addOperation+0x1bc>
+    e4d8: 14000001     	b	0xe4dc <TelestoController_addOperation+0x198>
+    e4dc: b94007e8     	ldr	w8, [sp, #0x4]
+    e4e0: 71000d08     	subs	w8, w8, #0x3
+    e4e4: 71000508     	subs	w8, w8, #0x1
+    e4e8: 54000169     	b.ls	0xe514 <TelestoController_addOperation+0x1d0>
+    e4ec: 14000001     	b	0xe4f0 <TelestoController_addOperation+0x1ac>
+    e4f0: b94007e8     	ldr	w8, [sp, #0x4]
+    e4f4: 71001508     	subs	w8, w8, #0x5
+    e4f8: 54000181     	b.ne	0xe528 <TelestoController_addOperation+0x1e4>
+    e4fc: 14000001     	b	0xe500 <TelestoController_addOperation+0x1bc>
+    e500: 52800028     	mov	w8, #0x1                // =1
+    e504: 12000108     	and	w8, w8, #0x1
+    e508: 12000108     	and	w8, w8, #0x1
+    e50c: 39003fe8     	strb	w8, [sp, #0xf]
+    e510: 14000006     	b	0xe528 <TelestoController_addOperation+0x1e4>
+    e514: 2a1f03e8     	mov	w8, wzr
+    e518: 12000108     	and	w8, w8, #0x1
+    e51c: 12000108     	and	w8, w8, #0x1
+    e520: 39003fe8     	strb	w8, [sp, #0xf]
+    e524: 14000001     	b	0xe528 <TelestoController_addOperation+0x1e4>
+    e528: 39403fe8     	ldrb	w8, [sp, #0xf]
+    e52c: 12000100     	and	w0, w8, #0x1
+    e530: 910043ff     	add	sp, sp, #0x10
+    e534: d65f03c0     	ret
+    e538: d101c3ff     	sub	sp, sp, #0x70
+    e53c: a9067bfd     	stp	x29, x30, [sp, #0x60]
+    e540: 910183fd     	add	x29, sp, #0x60
+    e544: d53bd048     	mrs	x8, TPIDR_EL0
+    e548: f9401508     	ldr	x8, [x8, #0x28]
+    e54c: f81f83a8     	stur	x8, [x29, #-0x8]
+    e550: f90007e0     	str	x0, [sp, #0x8]
+    e554: f94007e8     	ldr	x8, [sp, #0x8]
+    e558: b9402d08     	ldr	w8, [x8, #0x2c]
+    e55c: 35000068     	cbnz	w8, 0xe568 <TelestoController_addOperation+0x224>
+    e560: 14000001     	b	0xe564 <TelestoController_addOperation+0x220>
+    e564: 1400000f     	b	0xe5a0 <TelestoController_addOperation+0x25c>
+    e568: d53bd048     	mrs	x8, TPIDR_EL0
+    e56c: f9401508     	ldr	x8, [x8, #0x28]
+    e570: f85f83a9     	ldur	x9, [x29, #-0x8]
+    e574: eb090108     	subs	x8, x8, x9
+    e578: 54000d41     	b.ne	0xe720 <TelestoController_addOperation+0x3dc>
+    e57c: 14000001     	b	0xe580 <TelestoController_addOperation+0x23c>
+    e580: d503201f     	nop
+    e584: 10fcc800     	adr	x0, 0x7e84
+    e588: 90ffffc2     	adrp	x2, 0x6000
+    e58c: 91222842     	add	x2, x2, #0x88a
+    e590: f0ffffa3     	adrp	x3, 0x5000
+    e594: 910bb463     	add	x3, x3, #0x2ed
+    e598: 52801a61     	mov	w1, #0xd3               // =211
+    e59c: 94002b01     	bl	0x191a0 <__assert2@plt>
+    e5a0: f94007e8     	ldr	x8, [sp, #0x8]
+    e5a4: 39412108     	ldrb	w8, [x8, #0x48]
+    e5a8: 370000e8     	tbnz	w8, #0x0, 0xe5c4 <TelestoController_addOperation+0x280>
+    e5ac: 14000001     	b	0xe5b0 <TelestoController_addOperation+0x26c>
+    e5b0: f94007e8     	ldr	x8, [sp, #0x8]
+    e5b4: 3941a108     	ldrb	w8, [x8, #0x68]
+    e5b8: 37000068     	tbnz	w8, #0x0, 0xe5c4 <TelestoController_addOperation+0x280>
+    e5bc: 14000001     	b	0xe5c0 <TelestoController_addOperation+0x27c>
+    e5c0: 1400000f     	b	0xe5fc <TelestoController_addOperation+0x2b8>
+    e5c4: d53bd048     	mrs	x8, TPIDR_EL0
+    e5c8: f9401508     	ldr	x8, [x8, #0x28]
+    e5cc: f85f83a9     	ldur	x9, [x29, #-0x8]
+    e5d0: eb090108     	subs	x8, x8, x9
+    e5d4: 54000a61     	b.ne	0xe720 <TelestoController_addOperation+0x3dc>
+    e5d8: 14000001     	b	0xe5dc <TelestoController_addOperation+0x298>
+    e5dc: d503201f     	nop
+    e5e0: 10fcc520     	adr	x0, 0x7e84
+    e5e4: 90ffffc2     	adrp	x2, 0x6000
+    e5e8: 91222842     	add	x2, x2, #0x88a
+    e5ec: 90ffffc3     	adrp	x3, 0x6000
+    e5f0: 91104063     	add	x3, x3, #0x410
+    e5f4: 52801a81     	mov	w1, #0xd4               // =212
+    e5f8: 94002aea     	bl	0x191a0 <__assert2@plt>
+    e5fc: f94007e8     	ldr	x8, [sp, #0x8]
+    e600: f9402108     	ldr	x8, [x8, #0x40]
+    e604: b50000e8     	cbnz	x8, 0xe620 <TelestoController_addOperation+0x2dc>
+    e608: 14000001     	b	0xe60c <TelestoController_addOperation+0x2c8>
+    e60c: f94007e8     	ldr	x8, [sp, #0x8]
+    e610: f9403108     	ldr	x8, [x8, #0x60]
+    e614: b5000068     	cbnz	x8, 0xe620 <TelestoController_addOperation+0x2dc>
+    e618: 14000001     	b	0xe61c <TelestoController_addOperation+0x2d8>
+    e61c: 1400000f     	b	0xe658 <TelestoController_addOperation+0x314>
+    e620: d53bd048     	mrs	x8, TPIDR_EL0
+    e624: f9401508     	ldr	x8, [x8, #0x28]
+    e628: f85f83a9     	ldur	x9, [x29, #-0x8]
+    e62c: eb090108     	subs	x8, x8, x9
+    e630: 54000781     	b.ne	0xe720 <TelestoController_addOperation+0x3dc>
+    e634: 14000001     	b	0xe638 <TelestoController_addOperation+0x2f4>
+    e638: d503201f     	nop
+    e63c: 10fcc240     	adr	x0, 0x7e84
+    e640: 90ffffc2     	adrp	x2, 0x6000
+    e644: 91222842     	add	x2, x2, #0x88a
+    e648: 90ffffc3     	adrp	x3, 0x6000
+    e64c: 91021063     	add	x3, x3, #0x84
+    e650: 52801aa1     	mov	w1, #0xd5               // =213
+    e654: 94002ad3     	bl	0x191a0 <__assert2@plt>
+    e658: f94007e8     	ldr	x8, [sp, #0x8]
+    e65c: f9400108     	ldr	x8, [x8]
+    e660: b5000068     	cbnz	x8, 0xe66c <TelestoController_addOperation+0x328>
+    e664: 14000001     	b	0xe668 <TelestoController_addOperation+0x324>
+    e668: 14000025     	b	0xe6fc <TelestoController_addOperation+0x3b8>
+    e66c: f94007e8     	ldr	x8, [sp, #0x8]
+    e670: f9400108     	ldr	x8, [x8]
+    e674: 3dc00100     	ldr	q0, [x8]
+    e678: 3dc00501     	ldr	q1, [x8, #0x10]
+    e67c: 3dc00902     	ldr	q2, [x8, #0x20]
+    e680: 3d800fe2     	str	q2, [sp, #0x30]
+    e684: 3d800be1     	str	q1, [sp, #0x20]
+    e688: 3d8007e0     	str	q0, [sp, #0x10]
+    e68c: f94007e9     	ldr	x9, [sp, #0x8]
+    e690: aa1f03e8     	mov	x8, xzr
+    e694: f9004528     	str	x8, [x9, #0x88]
+    e698: f94007e9     	ldr	x9, [sp, #0x8]
+    e69c: f9004928     	str	x8, [x9, #0x90]
+    e6a0: f94007e8     	ldr	x8, [sp, #0x8]
+    e6a4: 9100e100     	add	x0, x8, #0x38
+    e6a8: f9400be8     	ldr	x8, [sp, #0x10]
+    e6ac: f84153e9     	ldur	x9, [sp, #0x15]
+    e6b0: f81ed3a9     	stur	x9, [x29, #-0x13]
+    e6b4: f81e83a8     	stur	x8, [x29, #-0x18]
+    e6b8: f85f03a2     	ldur	x2, [x29, #-0x10]
+    e6bc: f85e83a1     	ldur	x1, [x29, #-0x18]
+    e6c0: 94000445     	bl	0xf7d4 <TelestoController_free+0x8c>
+    e6c4: 394043e0     	ldrb	w0, [sp, #0x10]
+    e6c8: 97ffff79     	bl	0xe4ac <TelestoController_addOperation+0x168>
+    e6cc: 36000120     	tbz	w0, #0x0, 0xe6f0 <TelestoController_addOperation+0x3ac>
+    e6d0: 14000001     	b	0xe6d4 <TelestoController_addOperation+0x390>
+    e6d4: f94007e8     	ldr	x8, [sp, #0x8]
+    e6d8: 91016100     	add	x0, x8, #0x58
+    e6dc: f94013e1     	ldr	x1, [sp, #0x20]
+    e6e0: b84193e8     	ldur	w8, [sp, #0x19]
+    e6e4: 2a0803e2     	mov	w2, w8
+    e6e8: 9400047d     	bl	0xf8dc <TelestoController_free+0x194>
+    e6ec: 14000001     	b	0xe6f0 <TelestoController_addOperation+0x3ac>
+    e6f0: f94007e0     	ldr	x0, [sp, #0x8]
+    e6f4: 940000e5     	bl	0xea88 <TelestoController_cancelOperation+0x2f4>
+    e6f8: 14000001     	b	0xe6fc <TelestoController_addOperation+0x3b8>
+    e6fc: d53bd048     	mrs	x8, TPIDR_EL0
+    e700: f9401508     	ldr	x8, [x8, #0x28]
+    e704: f85f83a9     	ldur	x9, [x29, #-0x8]
+    e708: eb090108     	subs	x8, x8, x9
+    e70c: 540000a1     	b.ne	0xe720 <TelestoController_addOperation+0x3dc>
+    e710: 14000001     	b	0xe714 <TelestoController_addOperation+0x3d0>
+    e714: a9467bfd     	ldp	x29, x30, [sp, #0x60]
+    e718: 9101c3ff     	add	sp, sp, #0x70
+    e71c: d65f03c0     	ret
+    e720: 94002a7c     	bl	0x19110 <__stack_chk_fail@plt>
+    e724: d100c3ff     	sub	sp, sp, #0x30
+    e728: a9027bfd     	stp	x29, x30, [sp, #0x20]
+    e72c: 910083fd     	add	x29, sp, #0x20
+    e730: f81f83a0     	stur	x0, [x29, #-0x8]
+    e734: f9000be1     	str	x1, [sp, #0x10]
+    e738: f85f83a8     	ldur	x8, [x29, #-0x8]
+    e73c: b4000068     	cbz	x8, 0xe748 <TelestoController_addOperation+0x404>
+    e740: 14000001     	b	0xe744 <TelestoController_addOperation+0x400>
+    e744: 14000009     	b	0xe768 <TelestoController_addOperation+0x424>
+    e748: d503201f     	nop
+    e74c: 10fcb9c0     	adr	x0, 0x7e84
+    e750: 52800c01     	mov	w1, #0x60               // =96
+    e754: d0ffffc2     	adrp	x2, 0x8000
+    e758: 91013c42     	add	x2, x2, #0x4f
+    e75c: f0ffffa3     	adrp	x3, 0x5000
+    e760: 9132f863     	add	x3, x3, #0xcbe
+    e764: 94002a8f     	bl	0x191a0 <__assert2@plt>
+    e768: f9400be8     	ldr	x8, [sp, #0x10]
+    e76c: f90007e8     	str	x8, [sp, #0x8]
+    e770: f85f83a0     	ldur	x0, [x29, #-0x8]
+    e774: 94000478     	bl	0xf954 <TelestoController_free+0x20c>
+    e778: f94007e8     	ldr	x8, [sp, #0x8]
+    e77c: f9001c08     	str	x8, [x0, #0x38]
+    e780: f9400be8     	ldr	x8, [sp, #0x10]
+    e784: f9001d1f     	str	xzr, [x8, #0x38]
+    e788: a9427bfd     	ldp	x29, x30, [sp, #0x20]
+    e78c: 9100c3ff     	add	sp, sp, #0x30
+    e790: d65f03c0     	ret

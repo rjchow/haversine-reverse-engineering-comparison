@@ -1,0 +1,68 @@
+
+extract/android-debug/jni/arm64-v8a/libppcommon.so:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+000000000002f1b0 <PPCollection_createFromBinaryData>:
+   2f1b0: d10183ff     	sub	sp, sp, #0x60
+   2f1b4: a9057bfd     	stp	x29, x30, [sp, #0x50]
+   2f1b8: 910143fd     	add	x29, sp, #0x50
+   2f1bc: f90013e0     	str	x0, [sp, #0x20]
+   2f1c0: f9000fe1     	str	x1, [sp, #0x18]
+   2f1c4: f9000be2     	str	x2, [sp, #0x10]
+   2f1c8: 94000d86     	bl	0x327e0 <PPCollection_alloc@plt>
+   2f1cc: f90007e0     	str	x0, [sp, #0x8]
+   2f1d0: f94007e8     	ldr	x8, [sp, #0x8]
+   2f1d4: b50000e8     	cbnz	x8, 0x2f1f0 <PPCollection_createFromBinaryData+0x40>
+   2f1d8: 14000001     	b	0x2f1dc <PPCollection_createFromBinaryData+0x2c>
+   2f1dc: f9400be9     	ldr	x9, [sp, #0x10]
+   2f1e0: 52800268     	mov	w8, #0x13               // =19
+   2f1e4: b9000128     	str	w8, [x9]
+   2f1e8: f90017ff     	str	xzr, [sp, #0x28]
+   2f1ec: 1400002b     	b	0x2f298 <PPCollection_createFromBinaryData+0xe8>
+   2f1f0: f9400fe0     	ldr	x0, [sp, #0x18]
+   2f1f4: 94000d6f     	bl	0x327b0 <malloc@plt>
+   2f1f8: f94007e8     	ldr	x8, [sp, #0x8]
+   2f1fc: f9009900     	str	x0, [x8, #0x130]
+   2f200: f9400fe8     	ldr	x8, [sp, #0x18]
+   2f204: f94007e9     	ldr	x9, [sp, #0x8]
+   2f208: f9009d28     	str	x8, [x9, #0x138]
+   2f20c: f94007e8     	ldr	x8, [sp, #0x8]
+   2f210: f940990a     	ldr	x10, [x8, #0x130]
+   2f214: f94013e9     	ldr	x9, [sp, #0x20]
+   2f218: f9400fe8     	ldr	x8, [sp, #0x18]
+   2f21c: f81f83aa     	stur	x10, [x29, #-0x8]
+   2f220: 9280000a     	mov	x10, #-0x1              // =-1
+   2f224: f81f03aa     	stur	x10, [x29, #-0x10]
+   2f228: f81e83a9     	stur	x9, [x29, #-0x18]
+   2f22c: f81e03a8     	stur	x8, [x29, #-0x20]
+   2f230: f85f83a0     	ldur	x0, [x29, #-0x8]
+   2f234: f85e83a1     	ldur	x1, [x29, #-0x18]
+   2f238: f85e03a2     	ldur	x2, [x29, #-0x20]
+   2f23c: f85f03a3     	ldur	x3, [x29, #-0x10]
+   2f240: 94000d54     	bl	0x32790 <__memcpy_chk@plt>
+   2f244: f94007e8     	ldr	x8, [sp, #0x8]
+   2f248: 91000500     	add	x0, x8, #0x1
+   2f24c: f94007e8     	ldr	x8, [sp, #0x8]
+   2f250: f9409901     	ldr	x1, [x8, #0x130]
+   2f254: f94007e8     	ldr	x8, [sp, #0x8]
+   2f258: f9409d02     	ldr	x2, [x8, #0x138]
+   2f25c: 94000c95     	bl	0x324b0 <GSParseRecordsInRawData@plt>
+   2f260: b90007e0     	str	w0, [sp, #0x4]
+   2f264: f9400be8     	ldr	x8, [sp, #0x10]
+   2f268: b40000c8     	cbz	x8, 0x2f280 <PPCollection_createFromBinaryData+0xd0>
+   2f26c: 14000001     	b	0x2f270 <PPCollection_createFromBinaryData+0xc0>
+   2f270: b94007e8     	ldr	w8, [sp, #0x4]
+   2f274: f9400be9     	ldr	x9, [sp, #0x10]
+   2f278: b9000128     	str	w8, [x9]
+   2f27c: 14000001     	b	0x2f280 <PPCollection_createFromBinaryData+0xd0>
+   2f280: f94007e9     	ldr	x9, [sp, #0x8]
+   2f284: 52800028     	mov	w8, #0x1                // =1
+   2f288: 39000128     	strb	w8, [x9]
+   2f28c: f94007e8     	ldr	x8, [sp, #0x8]
+   2f290: f90017e8     	str	x8, [sp, #0x28]
+   2f294: 14000001     	b	0x2f298 <PPCollection_createFromBinaryData+0xe8>
+   2f298: f94017e0     	ldr	x0, [sp, #0x28]
+   2f29c: a9457bfd     	ldp	x29, x30, [sp, #0x50]
+   2f2a0: 910183ff     	add	sp, sp, #0x60
+   2f2a4: d65f03c0     	ret

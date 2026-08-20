@@ -1,0 +1,478 @@
+
+extract/android-debug/jni/arm64-v8a/libppcommon.so:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+000000000002d644 <GSParseRecordsInRawData>:
+   2d644: d10243ff     	sub	sp, sp, #0x90
+   2d648: a9087bfd     	stp	x29, x30, [sp, #0x80]
+   2d64c: 910203fd     	add	x29, sp, #0x80
+   2d650: f81d03a0     	stur	x0, [x29, #-0x30]
+   2d654: f81c83a1     	stur	x1, [x29, #-0x38]
+   2d658: f90023e2     	str	x2, [sp, #0x40]
+   2d65c: f85c83a8     	ldur	x8, [x29, #-0x38]
+   2d660: f9001fe8     	str	x8, [sp, #0x38]
+   2d664: f85c83a8     	ldur	x8, [x29, #-0x38]
+   2d668: f94023e9     	ldr	x9, [sp, #0x40]
+   2d66c: 8b090108     	add	x8, x8, x9
+   2d670: f9001be8     	str	x8, [sp, #0x30]
+   2d674: f85d03a8     	ldur	x8, [x29, #-0x30]
+   2d678: f81f83a8     	stur	x8, [x29, #-0x8]
+   2d67c: 92800008     	mov	x8, #-0x1               // =-1
+   2d680: f81f03a8     	stur	x8, [x29, #-0x10]
+   2d684: b81ec3bf     	stur	wzr, [x29, #-0x14]
+   2d688: d2802508     	mov	x8, #0x128              // =296
+   2d68c: f81e03a8     	stur	x8, [x29, #-0x20]
+   2d690: f85f83a0     	ldur	x0, [x29, #-0x8]
+   2d694: b85ec3a1     	ldur	w1, [x29, #-0x14]
+   2d698: f85e03a2     	ldur	x2, [x29, #-0x20]
+   2d69c: f85f03a3     	ldur	x3, [x29, #-0x10]
+   2d6a0: 94001434     	bl	0x32770 <__memset_chk@plt>
+   2d6a4: f85c83a8     	ldur	x8, [x29, #-0x38]
+   2d6a8: b50000a8     	cbnz	x8, 0x2d6bc <GSParseRecordsInRawData+0x78>
+   2d6ac: 14000001     	b	0x2d6b0 <GSParseRecordsInRawData+0x6c>
+   2d6b0: 52800088     	mov	w8, #0x4                // =4
+   2d6b4: b81dc3a8     	stur	w8, [x29, #-0x24]
+   2d6b8: 140001b7     	b	0x2dd94 <GSParseRecordsInRawData+0x750>
+   2d6bc: f94023e8     	ldr	x8, [sp, #0x40]
+   2d6c0: f1000d08     	subs	x8, x8, #0x3
+   2d6c4: 540000aa     	b.ge	0x2d6d8 <GSParseRecordsInRawData+0x94>
+   2d6c8: 14000001     	b	0x2d6cc <GSParseRecordsInRawData+0x88>
+   2d6cc: 528000e8     	mov	w8, #0x7                // =7
+   2d6d0: b81dc3a8     	stur	w8, [x29, #-0x24]
+   2d6d4: 140001b0     	b	0x2dd94 <GSParseRecordsInRawData+0x750>
+   2d6d8: f94023e8     	ldr	x8, [sp, #0x40]
+   2d6dc: f1001108     	subs	x8, x8, #0x4
+   2d6e0: 540004ab     	b.lt	0x2d774 <GSParseRecordsInRawData+0x130>
+   2d6e4: 14000001     	b	0x2d6e8 <GSParseRecordsInRawData+0xa4>
+   2d6e8: f9401fe8     	ldr	x8, [sp, #0x38]
+   2d6ec: 39400d08     	ldrb	w8, [x8, #0x3]
+   2d6f0: 35000428     	cbnz	w8, 0x2d774 <GSParseRecordsInRawData+0x130>
+   2d6f4: 14000001     	b	0x2d6f8 <GSParseRecordsInRawData+0xb4>
+   2d6f8: f9401fe8     	ldr	x8, [sp, #0x38]
+   2d6fc: 39400908     	ldrb	w8, [x8, #0x2]
+   2d700: b9002fe8     	str	w8, [sp, #0x2c]
+   2d704: b9402fe8     	ldr	w8, [sp, #0x2c]
+   2d708: 53185d08     	lsl	w8, w8, #8
+   2d70c: b9002fe8     	str	w8, [sp, #0x2c]
+   2d710: f9401fe8     	ldr	x8, [sp, #0x38]
+   2d714: 39400509     	ldrb	w9, [x8, #0x1]
+   2d718: b9402fe8     	ldr	w8, [sp, #0x2c]
+   2d71c: 2a090108     	orr	w8, w8, w9
+   2d720: b9002fe8     	str	w8, [sp, #0x2c]
+   2d724: b9402fe8     	ldr	w8, [sp, #0x2c]
+   2d728: 53185d08     	lsl	w8, w8, #8
+   2d72c: b9002fe8     	str	w8, [sp, #0x2c]
+   2d730: f9401fe8     	ldr	x8, [sp, #0x38]
+   2d734: 39400109     	ldrb	w9, [x8]
+   2d738: b9402fe8     	ldr	w8, [sp, #0x2c]
+   2d73c: 2a090108     	orr	w8, w8, w9
+   2d740: b9002fe8     	str	w8, [sp, #0x2c]
+   2d744: b9402fe8     	ldr	w8, [sp, #0x2c]
+   2d748: f94023e9     	ldr	x9, [sp, #0x40]
+   2d74c: eb090108     	subs	x8, x8, x9
+   2d750: 540000a0     	b.eq	0x2d764 <GSParseRecordsInRawData+0x120>
+   2d754: 14000001     	b	0x2d758 <GSParseRecordsInRawData+0x114>
+   2d758: 528000c8     	mov	w8, #0x6                // =6
+   2d75c: b81dc3a8     	stur	w8, [x29, #-0x24]
+   2d760: 1400018d     	b	0x2dd94 <GSParseRecordsInRawData+0x750>
+   2d764: f9401fe8     	ldr	x8, [sp, #0x38]
+   2d768: 91000508     	add	x8, x8, #0x1
+   2d76c: f9001fe8     	str	x8, [sp, #0x38]
+   2d770: 14000034     	b	0x2d840 <GSParseRecordsInRawData+0x1fc>
+   2d774: f9401fe8     	ldr	x8, [sp, #0x38]
+   2d778: 39400108     	ldrb	w8, [x8]
+   2d77c: 7103fd08     	subs	w8, w8, #0xff
+   2d780: 54000221     	b.ne	0x2d7c4 <GSParseRecordsInRawData+0x180>
+   2d784: 14000001     	b	0x2d788 <GSParseRecordsInRawData+0x144>
+   2d788: f85c83a8     	ldur	x8, [x29, #-0x38]
+   2d78c: 91000508     	add	x8, x8, #0x1
+   2d790: f90013e8     	str	x8, [sp, #0x20]
+   2d794: f94013e8     	ldr	x8, [sp, #0x20]
+   2d798: 79400108     	ldrh	w8, [x8]
+   2d79c: f94023e9     	ldr	x9, [sp, #0x40]
+   2d7a0: f1000529     	subs	x9, x9, #0x1
+   2d7a4: f1000929     	subs	x9, x9, #0x2
+   2d7a8: eb090108     	subs	x8, x8, x9
+   2d7ac: 540000a0     	b.eq	0x2d7c0 <GSParseRecordsInRawData+0x17c>
+   2d7b0: 14000001     	b	0x2d7b4 <GSParseRecordsInRawData+0x170>
+   2d7b4: 528000c8     	mov	w8, #0x6                // =6
+   2d7b8: b81dc3a8     	stur	w8, [x29, #-0x24]
+   2d7bc: 14000176     	b	0x2dd94 <GSParseRecordsInRawData+0x750>
+   2d7c0: 1400001f     	b	0x2d83c <GSParseRecordsInRawData+0x1f8>
+   2d7c4: f9401fe8     	ldr	x8, [sp, #0x38]
+   2d7c8: 39400108     	ldrb	w8, [x8]
+   2d7cc: b9001fe8     	str	w8, [sp, #0x1c]
+   2d7d0: b9401fe8     	ldr	w8, [sp, #0x1c]
+   2d7d4: 53185d08     	lsl	w8, w8, #8
+   2d7d8: b9001fe8     	str	w8, [sp, #0x1c]
+   2d7dc: b9401fe8     	ldr	w8, [sp, #0x1c]
+   2d7e0: f9401fe9     	ldr	x9, [sp, #0x38]
+   2d7e4: 39400529     	ldrb	w9, [x9, #0x1]
+   2d7e8: 2a090108     	orr	w8, w8, w9
+   2d7ec: b9001fe8     	str	w8, [sp, #0x1c]
+   2d7f0: b9401fe8     	ldr	w8, [sp, #0x1c]
+   2d7f4: 53185d08     	lsl	w8, w8, #8
+   2d7f8: b9001fe8     	str	w8, [sp, #0x1c]
+   2d7fc: b9401fe8     	ldr	w8, [sp, #0x1c]
+   2d800: f9401fe9     	ldr	x9, [sp, #0x38]
+   2d804: 39400929     	ldrb	w9, [x9, #0x2]
+   2d808: 2a090108     	orr	w8, w8, w9
+   2d80c: b9001fe8     	str	w8, [sp, #0x1c]
+   2d810: b9401fe8     	ldr	w8, [sp, #0x1c]
+   2d814: f94023e9     	ldr	x9, [sp, #0x40]
+   2d818: f1000529     	subs	x9, x9, #0x1
+   2d81c: f1000929     	subs	x9, x9, #0x2
+   2d820: eb090108     	subs	x8, x8, x9
+   2d824: 540000a0     	b.eq	0x2d838 <GSParseRecordsInRawData+0x1f4>
+   2d828: 14000001     	b	0x2d82c <GSParseRecordsInRawData+0x1e8>
+   2d82c: 528000c8     	mov	w8, #0x6                // =6
+   2d830: b81dc3a8     	stur	w8, [x29, #-0x24]
+   2d834: 14000158     	b	0x2dd94 <GSParseRecordsInRawData+0x750>
+   2d838: 14000001     	b	0x2d83c <GSParseRecordsInRawData+0x1f8>
+   2d83c: 14000001     	b	0x2d840 <GSParseRecordsInRawData+0x1fc>
+   2d840: f9401fe8     	ldr	x8, [sp, #0x38]
+   2d844: 91000d08     	add	x8, x8, #0x3
+   2d848: f9001fe8     	str	x8, [sp, #0x38]
+   2d84c: 14000001     	b	0x2d850 <GSParseRecordsInRawData+0x20c>
+   2d850: f9401fe8     	ldr	x8, [sp, #0x38]
+   2d854: f9401be9     	ldr	x9, [sp, #0x30]
+   2d858: eb090108     	subs	x8, x8, x9
+   2d85c: 54002982     	b.hs	0x2dd8c <GSParseRecordsInRawData+0x748>
+   2d860: 14000001     	b	0x2d864 <GSParseRecordsInRawData+0x220>
+   2d864: f9401fe8     	ldr	x8, [sp, #0x38]
+   2d868: 91000508     	add	x8, x8, #0x1
+   2d86c: f9000be8     	str	x8, [sp, #0x10]
+   2d870: f9401fe8     	ldr	x8, [sp, #0x38]
+   2d874: 39400108     	ldrb	w8, [x8]
+   2d878: 71000508     	subs	w8, w8, #0x1
+   2d87c: 2a0803e8     	mov	w8, w8
+   2d880: f90003e8     	str	x8, [sp]
+   2d884: f1014d08     	subs	x8, x8, #0x53
+   2d888: 540026e8     	b.hi	0x2dd64 <GSParseRecordsInRawData+0x720>
+   2d88c: f94003eb     	ldr	x11, [sp]
+   2d890: d503201f     	nop
+   2d894: 10f3f4ea     	adr	x10, 0x15730
+   2d898: 10000008     	adr	x8, 0x2d898 <GSParseRecordsInRawData+0x254>
+   2d89c: b8ab7949     	ldrsw	x9, [x10, x11, lsl #2]
+   2d8a0: 8b090108     	add	x8, x8, x9
+   2d8a4: d61f0100     	br	x8
+   2d8a8: f9400be8     	ldr	x8, [sp, #0x10]
+   2d8ac: 79400108     	ldrh	w8, [x8]
+   2d8b0: 91000908     	add	x8, x8, #0x2
+   2d8b4: b9000fe8     	str	w8, [sp, #0xc]
+   2d8b8: f9400be8     	ldr	x8, [sp, #0x10]
+   2d8bc: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2d8c0: f9001128     	str	x8, [x9, #0x20]
+   2d8c4: 1400012b     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2d8c8: f9400be8     	ldr	x8, [sp, #0x10]
+   2d8cc: 79400108     	ldrh	w8, [x8]
+   2d8d0: 91000908     	add	x8, x8, #0x2
+   2d8d4: b9000fe8     	str	w8, [sp, #0xc]
+   2d8d8: f9400be8     	ldr	x8, [sp, #0x10]
+   2d8dc: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2d8e0: f9001528     	str	x8, [x9, #0x28]
+   2d8e4: 14000123     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2d8e8: f9400be8     	ldr	x8, [sp, #0x10]
+   2d8ec: 79400108     	ldrh	w8, [x8]
+   2d8f0: 91000908     	add	x8, x8, #0x2
+   2d8f4: b9000fe8     	str	w8, [sp, #0xc]
+   2d8f8: f9400be8     	ldr	x8, [sp, #0x10]
+   2d8fc: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2d900: f9001928     	str	x8, [x9, #0x30]
+   2d904: 1400011b     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2d908: f9400be8     	ldr	x8, [sp, #0x10]
+   2d90c: 79400108     	ldrh	w8, [x8]
+   2d910: 91000908     	add	x8, x8, #0x2
+   2d914: b9000fe8     	str	w8, [sp, #0xc]
+   2d918: f9400be8     	ldr	x8, [sp, #0x10]
+   2d91c: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2d920: f9001d28     	str	x8, [x9, #0x38]
+   2d924: 14000113     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2d928: f9400be8     	ldr	x8, [sp, #0x10]
+   2d92c: 79400108     	ldrh	w8, [x8]
+   2d930: 91000908     	add	x8, x8, #0x2
+   2d934: b9000fe8     	str	w8, [sp, #0xc]
+   2d938: f9400be8     	ldr	x8, [sp, #0x10]
+   2d93c: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2d940: f9002128     	str	x8, [x9, #0x40]
+   2d944: 1400010b     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2d948: f9400be8     	ldr	x8, [sp, #0x10]
+   2d94c: 79400108     	ldrh	w8, [x8]
+   2d950: 91000908     	add	x8, x8, #0x2
+   2d954: b9000fe8     	str	w8, [sp, #0xc]
+   2d958: f9400be8     	ldr	x8, [sp, #0x10]
+   2d95c: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2d960: f9002928     	str	x8, [x9, #0x50]
+   2d964: 14000103     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2d968: f9400be8     	ldr	x8, [sp, #0x10]
+   2d96c: 79400108     	ldrh	w8, [x8]
+   2d970: 91000908     	add	x8, x8, #0x2
+   2d974: b9000fe8     	str	w8, [sp, #0xc]
+   2d978: f9400be8     	ldr	x8, [sp, #0x10]
+   2d97c: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2d980: f9002d28     	str	x8, [x9, #0x58]
+   2d984: 140000fb     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2d988: f9400be8     	ldr	x8, [sp, #0x10]
+   2d98c: 79400108     	ldrh	w8, [x8]
+   2d990: 91000908     	add	x8, x8, #0x2
+   2d994: b9000fe8     	str	w8, [sp, #0xc]
+   2d998: f9400be8     	ldr	x8, [sp, #0x10]
+   2d99c: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2d9a0: f9003128     	str	x8, [x9, #0x60]
+   2d9a4: 140000f3     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2d9a8: f9400be8     	ldr	x8, [sp, #0x10]
+   2d9ac: 79400108     	ldrh	w8, [x8]
+   2d9b0: 91000908     	add	x8, x8, #0x2
+   2d9b4: b9000fe8     	str	w8, [sp, #0xc]
+   2d9b8: f9400be8     	ldr	x8, [sp, #0x10]
+   2d9bc: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2d9c0: f9003528     	str	x8, [x9, #0x68]
+   2d9c4: 140000eb     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2d9c8: f9400be8     	ldr	x8, [sp, #0x10]
+   2d9cc: 79400108     	ldrh	w8, [x8]
+   2d9d0: 91000908     	add	x8, x8, #0x2
+   2d9d4: b9000fe8     	str	w8, [sp, #0xc]
+   2d9d8: f9400be8     	ldr	x8, [sp, #0x10]
+   2d9dc: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2d9e0: f9000128     	str	x8, [x9]
+   2d9e4: 140000e3     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2d9e8: f9400be8     	ldr	x8, [sp, #0x10]
+   2d9ec: 79400108     	ldrh	w8, [x8]
+   2d9f0: 91000908     	add	x8, x8, #0x2
+   2d9f4: b9000fe8     	str	w8, [sp, #0xc]
+   2d9f8: f9400be8     	ldr	x8, [sp, #0x10]
+   2d9fc: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2da00: f9000528     	str	x8, [x9, #0x8]
+   2da04: 140000db     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2da08: f9400be8     	ldr	x8, [sp, #0x10]
+   2da0c: 79400108     	ldrh	w8, [x8]
+   2da10: 91000908     	add	x8, x8, #0x2
+   2da14: b9000fe8     	str	w8, [sp, #0xc]
+   2da18: f9400be8     	ldr	x8, [sp, #0x10]
+   2da1c: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2da20: f9002528     	str	x8, [x9, #0x48]
+   2da24: 140000d3     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2da28: f9400be8     	ldr	x8, [sp, #0x10]
+   2da2c: 79400108     	ldrh	w8, [x8]
+   2da30: 91000908     	add	x8, x8, #0x2
+   2da34: b9000fe8     	str	w8, [sp, #0xc]
+   2da38: f9400be8     	ldr	x8, [sp, #0x10]
+   2da3c: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2da40: f9000d28     	str	x8, [x9, #0x18]
+   2da44: 140000cb     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2da48: f9400be8     	ldr	x8, [sp, #0x10]
+   2da4c: 79400108     	ldrh	w8, [x8]
+   2da50: 91000908     	add	x8, x8, #0x2
+   2da54: b9000fe8     	str	w8, [sp, #0xc]
+   2da58: f9400be8     	ldr	x8, [sp, #0x10]
+   2da5c: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2da60: f9003928     	str	x8, [x9, #0x70]
+   2da64: 140000c3     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2da68: f9400be8     	ldr	x8, [sp, #0x10]
+   2da6c: 79400108     	ldrh	w8, [x8]
+   2da70: 91000908     	add	x8, x8, #0x2
+   2da74: b9000fe8     	str	w8, [sp, #0xc]
+   2da78: f9400be8     	ldr	x8, [sp, #0x10]
+   2da7c: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2da80: f9003d28     	str	x8, [x9, #0x78]
+   2da84: 140000bb     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2da88: f9400be8     	ldr	x8, [sp, #0x10]
+   2da8c: 79400108     	ldrh	w8, [x8]
+   2da90: 91000908     	add	x8, x8, #0x2
+   2da94: b9000fe8     	str	w8, [sp, #0xc]
+   2da98: f9400be8     	ldr	x8, [sp, #0x10]
+   2da9c: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2daa0: f9004128     	str	x8, [x9, #0x80]
+   2daa4: 140000b3     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2daa8: f9400be8     	ldr	x8, [sp, #0x10]
+   2daac: 79400108     	ldrh	w8, [x8]
+   2dab0: 91000908     	add	x8, x8, #0x2
+   2dab4: b9000fe8     	str	w8, [sp, #0xc]
+   2dab8: f9400be8     	ldr	x8, [sp, #0x10]
+   2dabc: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2dac0: f9004528     	str	x8, [x9, #0x88]
+   2dac4: 140000ab     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2dac8: f9400be8     	ldr	x8, [sp, #0x10]
+   2dacc: 79400108     	ldrh	w8, [x8]
+   2dad0: 91000908     	add	x8, x8, #0x2
+   2dad4: b9000fe8     	str	w8, [sp, #0xc]
+   2dad8: f9400be8     	ldr	x8, [sp, #0x10]
+   2dadc: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2dae0: f9000928     	str	x8, [x9, #0x10]
+   2dae4: 140000a3     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2dae8: f9400be8     	ldr	x8, [sp, #0x10]
+   2daec: 79400108     	ldrh	w8, [x8]
+   2daf0: 91000908     	add	x8, x8, #0x2
+   2daf4: b9000fe8     	str	w8, [sp, #0xc]
+   2daf8: f9400be8     	ldr	x8, [sp, #0x10]
+   2dafc: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2db00: f9004d28     	str	x8, [x9, #0x98]
+   2db04: 1400009b     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2db08: f9400be8     	ldr	x8, [sp, #0x10]
+   2db0c: 79400108     	ldrh	w8, [x8]
+   2db10: 91000908     	add	x8, x8, #0x2
+   2db14: b9000fe8     	str	w8, [sp, #0xc]
+   2db18: f9400be8     	ldr	x8, [sp, #0x10]
+   2db1c: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2db20: f9005128     	str	x8, [x9, #0xa0]
+   2db24: 14000093     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2db28: f9400be8     	ldr	x8, [sp, #0x10]
+   2db2c: 79400108     	ldrh	w8, [x8]
+   2db30: 91000908     	add	x8, x8, #0x2
+   2db34: b9000fe8     	str	w8, [sp, #0xc]
+   2db38: f9400be8     	ldr	x8, [sp, #0x10]
+   2db3c: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2db40: f9005528     	str	x8, [x9, #0xa8]
+   2db44: 1400008b     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2db48: f9400be8     	ldr	x8, [sp, #0x10]
+   2db4c: 79400108     	ldrh	w8, [x8]
+   2db50: 91000908     	add	x8, x8, #0x2
+   2db54: b9000fe8     	str	w8, [sp, #0xc]
+   2db58: 52800028     	mov	w8, #0x1                // =1
+   2db5c: b81dc3a8     	stur	w8, [x29, #-0x24]
+   2db60: 1400008d     	b	0x2dd94 <GSParseRecordsInRawData+0x750>
+   2db64: f9400be8     	ldr	x8, [sp, #0x10]
+   2db68: 79400108     	ldrh	w8, [x8]
+   2db6c: 91000908     	add	x8, x8, #0x2
+   2db70: b9000fe8     	str	w8, [sp, #0xc]
+   2db74: f9400be8     	ldr	x8, [sp, #0x10]
+   2db78: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2db7c: f9006128     	str	x8, [x9, #0xc0]
+   2db80: 1400007c     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2db84: f9400be8     	ldr	x8, [sp, #0x10]
+   2db88: 79400108     	ldrh	w8, [x8]
+   2db8c: 91000908     	add	x8, x8, #0x2
+   2db90: b9000fe8     	str	w8, [sp, #0xc]
+   2db94: f9400be8     	ldr	x8, [sp, #0x10]
+   2db98: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2db9c: f9005928     	str	x8, [x9, #0xb0]
+   2dba0: 14000074     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2dba4: f9400be8     	ldr	x8, [sp, #0x10]
+   2dba8: 79400108     	ldrh	w8, [x8]
+   2dbac: 91000908     	add	x8, x8, #0x2
+   2dbb0: b9000fe8     	str	w8, [sp, #0xc]
+   2dbb4: f9400be8     	ldr	x8, [sp, #0x10]
+   2dbb8: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2dbbc: f9004928     	str	x8, [x9, #0x90]
+   2dbc0: 1400006c     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2dbc4: f9400be8     	ldr	x8, [sp, #0x10]
+   2dbc8: 79400108     	ldrh	w8, [x8]
+   2dbcc: 91000908     	add	x8, x8, #0x2
+   2dbd0: b9000fe8     	str	w8, [sp, #0xc]
+   2dbd4: f9400be8     	ldr	x8, [sp, #0x10]
+   2dbd8: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2dbdc: f9005d28     	str	x8, [x9, #0xb8]
+   2dbe0: 14000064     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2dbe4: f9400be8     	ldr	x8, [sp, #0x10]
+   2dbe8: 79400108     	ldrh	w8, [x8]
+   2dbec: 91000908     	add	x8, x8, #0x2
+   2dbf0: b9000fe8     	str	w8, [sp, #0xc]
+   2dbf4: f9400be8     	ldr	x8, [sp, #0x10]
+   2dbf8: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2dbfc: f9006528     	str	x8, [x9, #0xc8]
+   2dc00: 1400005c     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2dc04: f9400be8     	ldr	x8, [sp, #0x10]
+   2dc08: 79400108     	ldrh	w8, [x8]
+   2dc0c: 91000908     	add	x8, x8, #0x2
+   2dc10: b9000fe8     	str	w8, [sp, #0xc]
+   2dc14: f9400be8     	ldr	x8, [sp, #0x10]
+   2dc18: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2dc1c: f9006928     	str	x8, [x9, #0xd0]
+   2dc20: 14000054     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2dc24: f9400be8     	ldr	x8, [sp, #0x10]
+   2dc28: 79400108     	ldrh	w8, [x8]
+   2dc2c: 91000908     	add	x8, x8, #0x2
+   2dc30: b9000fe8     	str	w8, [sp, #0xc]
+   2dc34: f9400be8     	ldr	x8, [sp, #0x10]
+   2dc38: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2dc3c: f9006d28     	str	x8, [x9, #0xd8]
+   2dc40: 1400004c     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2dc44: f9400be8     	ldr	x8, [sp, #0x10]
+   2dc48: 79400108     	ldrh	w8, [x8]
+   2dc4c: 91000908     	add	x8, x8, #0x2
+   2dc50: b9000fe8     	str	w8, [sp, #0xc]
+   2dc54: f9400be8     	ldr	x8, [sp, #0x10]
+   2dc58: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2dc5c: f9007128     	str	x8, [x9, #0xe0]
+   2dc60: 14000044     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2dc64: f9400be8     	ldr	x8, [sp, #0x10]
+   2dc68: 79400108     	ldrh	w8, [x8]
+   2dc6c: 91000908     	add	x8, x8, #0x2
+   2dc70: b9000fe8     	str	w8, [sp, #0xc]
+   2dc74: f9400be8     	ldr	x8, [sp, #0x10]
+   2dc78: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2dc7c: f9007528     	str	x8, [x9, #0xe8]
+   2dc80: 1400003c     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2dc84: f9400be8     	ldr	x8, [sp, #0x10]
+   2dc88: 79400108     	ldrh	w8, [x8]
+   2dc8c: 91000908     	add	x8, x8, #0x2
+   2dc90: b9000fe8     	str	w8, [sp, #0xc]
+   2dc94: f9400be8     	ldr	x8, [sp, #0x10]
+   2dc98: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2dc9c: f9007928     	str	x8, [x9, #0xf0]
+   2dca0: 14000034     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2dca4: f9400be8     	ldr	x8, [sp, #0x10]
+   2dca8: 79400108     	ldrh	w8, [x8]
+   2dcac: 91000908     	add	x8, x8, #0x2
+   2dcb0: b9000fe8     	str	w8, [sp, #0xc]
+   2dcb4: f9400be8     	ldr	x8, [sp, #0x10]
+   2dcb8: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2dcbc: f9007d28     	str	x8, [x9, #0xf8]
+   2dcc0: 1400002c     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2dcc4: f9400be8     	ldr	x8, [sp, #0x10]
+   2dcc8: b9400108     	ldr	w8, [x8]
+   2dccc: 91001108     	add	x8, x8, #0x4
+   2dcd0: b9000fe8     	str	w8, [sp, #0xc]
+   2dcd4: f9400be8     	ldr	x8, [sp, #0x10]
+   2dcd8: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2dcdc: f9008528     	str	x8, [x9, #0x108]
+   2dce0: 14000024     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2dce4: f9400be8     	ldr	x8, [sp, #0x10]
+   2dce8: b9400108     	ldr	w8, [x8]
+   2dcec: 91001108     	add	x8, x8, #0x4
+   2dcf0: b9000fe8     	str	w8, [sp, #0xc]
+   2dcf4: f9400be8     	ldr	x8, [sp, #0x10]
+   2dcf8: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2dcfc: f9008928     	str	x8, [x9, #0x110]
+   2dd00: 1400001c     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2dd04: f9400be8     	ldr	x8, [sp, #0x10]
+   2dd08: 79400108     	ldrh	w8, [x8]
+   2dd0c: 91000908     	add	x8, x8, #0x2
+   2dd10: b9000fe8     	str	w8, [sp, #0xc]
+   2dd14: f9400be8     	ldr	x8, [sp, #0x10]
+   2dd18: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2dd1c: f9008d28     	str	x8, [x9, #0x118]
+   2dd20: 14000014     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2dd24: f9400be8     	ldr	x8, [sp, #0x10]
+   2dd28: 79400108     	ldrh	w8, [x8]
+   2dd2c: 91000908     	add	x8, x8, #0x2
+   2dd30: b9000fe8     	str	w8, [sp, #0xc]
+   2dd34: f9400be8     	ldr	x8, [sp, #0x10]
+   2dd38: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2dd3c: f9008128     	str	x8, [x9, #0x100]
+   2dd40: 1400000c     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2dd44: f9400be8     	ldr	x8, [sp, #0x10]
+   2dd48: 79400108     	ldrh	w8, [x8]
+   2dd4c: 91000908     	add	x8, x8, #0x2
+   2dd50: b9000fe8     	str	w8, [sp, #0xc]
+   2dd54: f9400be8     	ldr	x8, [sp, #0x10]
+   2dd58: f85d03a9     	ldur	x9, [x29, #-0x30]
+   2dd5c: f9009128     	str	x8, [x9, #0x120]
+   2dd60: 14000004     	b	0x2dd70 <GSParseRecordsInRawData+0x72c>
+   2dd64: 528000c8     	mov	w8, #0x6                // =6
+   2dd68: b81dc3a8     	stur	w8, [x29, #-0x24]
+   2dd6c: 1400000a     	b	0x2dd94 <GSParseRecordsInRawData+0x750>
+   2dd70: b9400fe8     	ldr	w8, [sp, #0xc]
+   2dd74: 11000509     	add	w9, w8, #0x1
+   2dd78: f9401fe8     	ldr	x8, [sp, #0x38]
+   2dd7c: 2a0903e9     	mov	w9, w9
+   2dd80: 8b090108     	add	x8, x8, x9
+   2dd84: f9001fe8     	str	x8, [sp, #0x38]
+   2dd88: 17fffeb2     	b	0x2d850 <GSParseRecordsInRawData+0x20c>
+   2dd8c: b81dc3bf     	stur	wzr, [x29, #-0x24]
+   2dd90: 14000001     	b	0x2dd94 <GSParseRecordsInRawData+0x750>
+   2dd94: b85dc3a0     	ldur	w0, [x29, #-0x24]
+   2dd98: a9487bfd     	ldp	x29, x30, [sp, #0x80]
+   2dd9c: 910243ff     	add	sp, sp, #0x90
+   2dda0: d65f03c0     	ret

@@ -1,0 +1,121 @@
+
+extract/android-debug/jni/arm64-v8a/libhaversinesatellitelibrary.so:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+000000000000f130 <TelestoController_receiveCtrlBytes>:
+    f130: d10183ff     	sub	sp, sp, #0x60
+    f134: a9057bfd     	stp	x29, x30, [sp, #0x50]
+    f138: 910143fd     	add	x29, sp, #0x50
+    f13c: f90017e0     	str	x0, [sp, #0x28]
+    f140: f90013e1     	str	x1, [sp, #0x20]
+    f144: f9000fe2     	str	x2, [sp, #0x18]
+    f148: f94017e8     	ldr	x8, [sp, #0x28]
+    f14c: b4000068     	cbz	x8, 0xf158 <TelestoController_receiveCtrlBytes+0x28>
+    f150: 14000001     	b	0xf154 <TelestoController_receiveCtrlBytes+0x24>
+    f154: 14000009     	b	0xf178 <TelestoController_receiveCtrlBytes+0x48>
+    f158: d503201f     	nop
+    f15c: 10fc6940     	adr	x0, 0x7e84
+    f160: 528031e1     	mov	w1, #0x18f              // =399
+    f164: d0ffffa2     	adrp	x2, 0x5000
+    f168: 91144842     	add	x2, x2, #0x512
+    f16c: d0ffffa3     	adrp	x3, 0x5000
+    f170: 91365863     	add	x3, x3, #0xd96
+    f174: 9400280b     	bl	0x191a0 <__assert2@plt>
+    f178: f94017e8     	ldr	x8, [sp, #0x28]
+    f17c: 3940a108     	ldrb	w8, [x8, #0x28]
+    f180: 360000c8     	tbz	w8, #0x0, 0xf198 <TelestoController_receiveCtrlBytes+0x68>
+    f184: 14000001     	b	0xf188 <TelestoController_receiveCtrlBytes+0x58>
+    f188: b0ffffa0     	adrp	x0, 0x4000
+    f18c: 9136b800     	add	x0, x0, #0xdae
+    f190: 94002890     	bl	0x193d0 <printf@plt>
+    f194: 14000057     	b	0xf2f0 <TelestoController_receiveCtrlBytes+0x1c0>
+    f198: f94017e8     	ldr	x8, [sp, #0x28]
+    f19c: b9402d08     	ldr	w8, [x8, #0x2c]
+    f1a0: b9000fe8     	str	w8, [sp, #0xc]
+    f1a4: 34000108     	cbz	w8, 0xf1c4 <TelestoController_receiveCtrlBytes+0x94>
+    f1a8: 14000001     	b	0xf1ac <TelestoController_receiveCtrlBytes+0x7c>
+    f1ac: b9400fe8     	ldr	w8, [sp, #0xc]
+    f1b0: 71000508     	subs	w8, w8, #0x1
+    f1b4: 71001108     	subs	w8, w8, #0x4
+    f1b8: 540000e8     	b.hi	0xf1d4 <TelestoController_receiveCtrlBytes+0xa4>
+    f1bc: 14000001     	b	0xf1c0 <TelestoController_receiveCtrlBytes+0x90>
+    f1c0: 14000005     	b	0xf1d4 <TelestoController_receiveCtrlBytes+0xa4>
+    f1c4: f94017e0     	ldr	x0, [sp, #0x28]
+    f1c8: 52800021     	mov	w1, #0x1                // =1
+    f1cc: 97ffff1b     	bl	0xee38 <TelestoController_ctrlBytesSent+0xd0>
+    f1d0: 14000048     	b	0xf2f0 <TelestoController_receiveCtrlBytes+0x1c0>
+    f1d4: f94017e8     	ldr	x8, [sp, #0x28]
+    f1d8: f9400108     	ldr	x8, [x8]
+    f1dc: b4000068     	cbz	x8, 0xf1e8 <TelestoController_receiveCtrlBytes+0xb8>
+    f1e0: 14000001     	b	0xf1e4 <TelestoController_receiveCtrlBytes+0xb4>
+    f1e4: 14000009     	b	0xf208 <TelestoController_receiveCtrlBytes+0xd8>
+    f1e8: d503201f     	nop
+    f1ec: 10fc64c0     	adr	x0, 0x7e84
+    f1f0: 528034a1     	mov	w1, #0x1a5              // =421
+    f1f4: d0ffffa2     	adrp	x2, 0x5000
+    f1f8: 91144842     	add	x2, x2, #0x512
+    f1fc: b0ffffa3     	adrp	x3, 0x4000
+    f200: 91378c63     	add	x3, x3, #0xde3
+    f204: 940027e7     	bl	0x191a0 <__assert2@plt>
+    f208: f94017e8     	ldr	x8, [sp, #0x28]
+    f20c: f9404509     	ldr	x9, [x8, #0x88]
+    f210: d2800188     	mov	x8, #0xc                // =12
+    f214: eb090108     	subs	x8, x8, x9
+    f218: f9000be8     	str	x8, [sp, #0x10]
+    f21c: f9400fe8     	ldr	x8, [sp, #0x18]
+    f220: f9400be9     	ldr	x9, [sp, #0x10]
+    f224: eb090108     	subs	x8, x8, x9
+    f228: 540000c9     	b.ls	0xf240 <TelestoController_receiveCtrlBytes+0x110>
+    f22c: 14000001     	b	0xf230 <TelestoController_receiveCtrlBytes+0x100>
+    f230: f94017e0     	ldr	x0, [sp, #0x28]
+    f234: 52800021     	mov	w1, #0x1                // =1
+    f238: 97ffff00     	bl	0xee38 <TelestoController_ctrlBytesSent+0xd0>
+    f23c: 1400002d     	b	0xf2f0 <TelestoController_receiveCtrlBytes+0x1c0>
+    f240: f94017e8     	ldr	x8, [sp, #0x28]
+    f244: 9101e108     	add	x8, x8, #0x78
+    f248: f94017e9     	ldr	x9, [sp, #0x28]
+    f24c: f9404529     	ldr	x9, [x9, #0x88]
+    f250: 8b09010a     	add	x10, x8, x9
+    f254: f94013e9     	ldr	x9, [sp, #0x20]
+    f258: f9400fe8     	ldr	x8, [sp, #0x18]
+    f25c: f81f83aa     	stur	x10, [x29, #-0x8]
+    f260: 9280000a     	mov	x10, #-0x1              // =-1
+    f264: f81f03aa     	stur	x10, [x29, #-0x10]
+    f268: f81e83a9     	stur	x9, [x29, #-0x18]
+    f26c: f81e03a8     	stur	x8, [x29, #-0x20]
+    f270: f85f83a0     	ldur	x0, [x29, #-0x8]
+    f274: f85e83a1     	ldur	x1, [x29, #-0x18]
+    f278: f85e03a2     	ldur	x2, [x29, #-0x20]
+    f27c: f85f03a3     	ldur	x3, [x29, #-0x10]
+    f280: 940027b0     	bl	0x19140 <__memcpy_chk@plt>
+    f284: f9400fea     	ldr	x10, [sp, #0x18]
+    f288: f94017e9     	ldr	x9, [sp, #0x28]
+    f28c: f9404528     	ldr	x8, [x9, #0x88]
+    f290: 8b0a0108     	add	x8, x8, x10
+    f294: f9004528     	str	x8, [x9, #0x88]
+    f298: f94017e8     	ldr	x8, [sp, #0x28]
+    f29c: f9404508     	ldr	x8, [x8, #0x88]
+    f2a0: f1003108     	subs	x8, x8, #0xc
+    f2a4: 54000263     	b.lo	0xf2f0 <TelestoController_receiveCtrlBytes+0x1c0>
+    f2a8: 14000001     	b	0xf2ac <TelestoController_receiveCtrlBytes+0x17c>
+    f2ac: f94017e8     	ldr	x8, [sp, #0x28]
+    f2b0: f9404508     	ldr	x8, [x8, #0x88]
+    f2b4: f1003108     	subs	x8, x8, #0xc
+    f2b8: 54000061     	b.ne	0xf2c4 <TelestoController_receiveCtrlBytes+0x194>
+    f2bc: 14000001     	b	0xf2c0 <TelestoController_receiveCtrlBytes+0x190>
+    f2c0: 14000009     	b	0xf2e4 <TelestoController_receiveCtrlBytes+0x1b4>
+    f2c4: d503201f     	nop
+    f2c8: 10fc5de0     	adr	x0, 0x7e84
+    f2cc: 52803641     	mov	w1, #0x1b2              // =434
+    f2d0: d0ffffa2     	adrp	x2, 0x5000
+    f2d4: 91144842     	add	x2, x2, #0x512
+    f2d8: d0ffffa3     	adrp	x3, 0x5000
+    f2dc: 911c8863     	add	x3, x3, #0x722
+    f2e0: 940027b0     	bl	0x191a0 <__assert2@plt>
+    f2e4: f94017e0     	ldr	x0, [sp, #0x28]
+    f2e8: 97fffeef     	bl	0xeea4 <TelestoController_ctrlBytesSent+0x13c>
+    f2ec: 14000001     	b	0xf2f0 <TelestoController_receiveCtrlBytes+0x1c0>
+    f2f0: a9457bfd     	ldp	x29, x30, [sp, #0x50]
+    f2f4: 910183ff     	add	sp, sp, #0x60
+    f2f8: d65f03c0     	ret

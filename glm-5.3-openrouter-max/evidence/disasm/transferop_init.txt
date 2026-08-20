@@ -1,0 +1,972 @@
+
+extract/android-debug/jni/arm64-v8a/libhaversinesatellitelibrary.so:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+000000000001623c <HaversineTransferCollectionsOperation_init>:
+   1623c: d100c3ff     	sub	sp, sp, #0x30
+   16240: a9027bfd     	stp	x29, x30, [sp, #0x20]
+   16244: 910083fd     	add	x29, sp, #0x20
+   16248: f90003e0     	str	x0, [sp]
+   1624c: f81f83a0     	stur	x0, [x29, #-0x8]
+   16250: b81f43a1     	stur	w1, [x29, #-0xc]
+   16254: d2800020     	mov	x0, #0x1                // =1
+   16258: d2801301     	mov	x1, #0x98               // =152
+   1625c: f2a00141     	movk	x1, #0xa, lsl #16
+   16260: 94000c44     	bl	0x19370 <calloc@plt>
+   16264: f94003e1     	ldr	x1, [sp]
+   16268: f90007e0     	str	x0, [sp, #0x8]
+   1626c: f94007e9     	ldr	x9, [sp, #0x8]
+   16270: d503201f     	nop
+   16274: 10000488     	adr	x8, 0x16304 <HaversineTransferCollectionsOperation_init+0xc8>
+   16278: f9000128     	str	x8, [x9]
+   1627c: f94007e9     	ldr	x9, [sp, #0x8]
+   16280: d503201f     	nop
+   16284: 10000668     	adr	x8, 0x16350 <HaversineTransferCollectionsOperation_init+0x114>
+   16288: f9000528     	str	x8, [x9, #0x8]
+   1628c: f94007e9     	ldr	x9, [sp, #0x8]
+   16290: d503201f     	nop
+   16294: 10000bc8     	adr	x8, 0x1640c <HaversineTransferCollectionsOperation_init+0x1d0>
+   16298: f9000928     	str	x8, [x9, #0x10]
+   1629c: f94007e8     	ldr	x8, [sp, #0x8]
+   162a0: f94007e9     	ldr	x9, [sp, #0x8]
+   162a4: f9000d28     	str	x8, [x9, #0x18]
+   162a8: f94007e8     	ldr	x8, [sp, #0x8]
+   162ac: 91014100     	add	x0, x8, #0x50
+   162b0: d2800502     	mov	x2, #0x28               // =40
+   162b4: 94000c33     	bl	0x19380 <memcpy@plt>
+   162b8: b85f43a8     	ldur	w8, [x29, #-0xc]
+   162bc: 37f80168     	tbnz	w8, #0x1f, 0x162e8 <HaversineTransferCollectionsOperation_init+0xac>
+   162c0: 14000001     	b	0x162c4 <HaversineTransferCollectionsOperation_init+0x88>
+   162c4: b85f43a8     	ldur	w8, [x29, #-0xc]
+   162c8: 12003d08     	and	w8, w8, #0xffff
+   162cc: 12003d08     	and	w8, w8, #0xffff
+   162d0: f94007e9     	ldr	x9, [sp, #0x8]
+   162d4: 7900f128     	strh	w8, [x9, #0x78]
+   162d8: f94007e9     	ldr	x9, [sp, #0x8]
+   162dc: 52800028     	mov	w8, #0x1                // =1
+   162e0: 3901e928     	strb	w8, [x9, #0x7a]
+   162e4: 14000004     	b	0x162f4 <HaversineTransferCollectionsOperation_init+0xb8>
+   162e8: f94007e8     	ldr	x8, [sp, #0x8]
+   162ec: 3901e91f     	strb	wzr, [x8, #0x7a]
+   162f0: 14000001     	b	0x162f4 <HaversineTransferCollectionsOperation_init+0xb8>
+   162f4: f94007e0     	ldr	x0, [sp, #0x8]
+   162f8: a9427bfd     	ldp	x29, x30, [sp, #0x20]
+   162fc: 9100c3ff     	add	sp, sp, #0x30
+   16300: d65f03c0     	ret
+   16304: d100c3ff     	sub	sp, sp, #0x30
+   16308: a9027bfd     	stp	x29, x30, [sp, #0x20]
+   1630c: 910083fd     	add	x29, sp, #0x20
+   16310: f81f83a0     	stur	x0, [x29, #-0x8]
+   16314: aa0103e8     	mov	x8, x1
+   16318: f9000be8     	str	x8, [sp, #0x10]
+   1631c: f85f83a8     	ldur	x8, [x29, #-0x8]
+   16320: f90007e8     	str	x8, [sp, #0x8]
+   16324: f94007e9     	ldr	x9, [sp, #0x8]
+   16328: 3dc00020     	ldr	q0, [x1]
+   1632c: 3c828120     	stur	q0, [x9, #0x28]
+   16330: f9400828     	ldr	x8, [x1, #0x10]
+   16334: f9001d28     	str	x8, [x9, #0x38]
+   16338: f85f83a0     	ldur	x0, [x29, #-0x8]
+   1633c: 9400004b     	bl	0x16468 <HaversineTransferCollectionsOperation_init+0x22c>
+   16340: 12000000     	and	w0, w0, #0x1
+   16344: a9427bfd     	ldp	x29, x30, [sp, #0x20]
+   16348: 9100c3ff     	add	sp, sp, #0x30
+   1634c: d65f03c0     	ret
+   16350: d10183ff     	sub	sp, sp, #0x60
+   16354: a9057bfd     	stp	x29, x30, [sp, #0x50]
+   16358: 910143fd     	add	x29, sp, #0x50
+   1635c: d53bd048     	mrs	x8, TPIDR_EL0
+   16360: f9401508     	ldr	x8, [x8, #0x28]
+   16364: f81f83a8     	stur	x8, [x29, #-0x8]
+   16368: f90007e0     	str	x0, [sp, #0x8]
+   1636c: f94007e8     	ldr	x8, [sp, #0x8]
+   16370: f90003e8     	str	x8, [sp]
+   16374: f94003e8     	ldr	x8, [sp]
+   16378: f9402108     	ldr	x8, [x8, #0x40]
+   1637c: b5000288     	cbnz	x8, 0x163cc <HaversineTransferCollectionsOperation_init+0x190>
+   16380: 14000001     	b	0x16384 <HaversineTransferCollectionsOperation_init+0x148>
+   16384: d10083a8     	sub	x8, x29, #0x20
+   16388: 52800820     	mov	w0, #0x41               // =65
+   1638c: 94000b75     	bl	0x19160 <HaversineError_fromOperationCode@plt>
+   16390: f94003e8     	ldr	x8, [sp]
+   16394: f9401908     	ldr	x8, [x8, #0x30]
+   16398: b4000188     	cbz	x8, 0x163c8 <HaversineTransferCollectionsOperation_init+0x18c>
+   1639c: 14000001     	b	0x163a0 <HaversineTransferCollectionsOperation_init+0x164>
+   163a0: f94003e9     	ldr	x9, [sp]
+   163a4: f9401928     	ldr	x8, [x9, #0x30]
+   163a8: f9401d20     	ldr	x0, [x9, #0x38]
+   163ac: 3cde03a0     	ldur	q0, [x29, #-0x20]
+   163b0: f85f03a9     	ldur	x9, [x29, #-0x10]
+   163b4: f90013e9     	str	x9, [sp, #0x20]
+   163b8: 3d8007e0     	str	q0, [sp, #0x10]
+   163bc: 910043e1     	add	x1, sp, #0x10
+   163c0: d63f0100     	blr	x8
+   163c4: 14000001     	b	0x163c8 <HaversineTransferCollectionsOperation_init+0x18c>
+   163c8: 14000007     	b	0x163e4 <HaversineTransferCollectionsOperation_init+0x1a8>
+   163cc: f94003e8     	ldr	x8, [sp]
+   163d0: f9402109     	ldr	x9, [x8, #0x40]
+   163d4: f9400528     	ldr	x8, [x9, #0x8]
+   163d8: f9400d20     	ldr	x0, [x9, #0x18]
+   163dc: d63f0100     	blr	x8
+   163e0: 14000001     	b	0x163e4 <HaversineTransferCollectionsOperation_init+0x1a8>
+   163e4: d53bd048     	mrs	x8, TPIDR_EL0
+   163e8: f9401508     	ldr	x8, [x8, #0x28]
+   163ec: f85f83a9     	ldur	x9, [x29, #-0x8]
+   163f0: eb090108     	subs	x8, x8, x9
+   163f4: 540000a1     	b.ne	0x16408 <HaversineTransferCollectionsOperation_init+0x1cc>
+   163f8: 14000001     	b	0x163fc <HaversineTransferCollectionsOperation_init+0x1c0>
+   163fc: a9457bfd     	ldp	x29, x30, [sp, #0x50]
+   16400: 910183ff     	add	sp, sp, #0x60
+   16404: d65f03c0     	ret
+   16408: 94000b42     	bl	0x19110 <__stack_chk_fail@plt>
+   1640c: d10083ff     	sub	sp, sp, #0x20
+   16410: a9017bfd     	stp	x29, x30, [sp, #0x10]
+   16414: 910043fd     	add	x29, sp, #0x10
+   16418: f90007e0     	str	x0, [sp, #0x8]
+   1641c: f94007e8     	ldr	x8, [sp, #0x8]
+   16420: f90003e8     	str	x8, [sp]
+   16424: f94003e8     	ldr	x8, [sp]
+   16428: f9402108     	ldr	x8, [x8, #0x40]
+   1642c: b4000148     	cbz	x8, 0x16454 <HaversineTransferCollectionsOperation_init+0x218>
+   16430: 14000001     	b	0x16434 <HaversineTransferCollectionsOperation_init+0x1f8>
+   16434: f94003e8     	ldr	x8, [sp]
+   16438: f9402108     	ldr	x8, [x8, #0x40]
+   1643c: f9400908     	ldr	x8, [x8, #0x10]
+   16440: f94003e9     	ldr	x9, [sp]
+   16444: f9402129     	ldr	x9, [x9, #0x40]
+   16448: f9400d20     	ldr	x0, [x9, #0x18]
+   1644c: d63f0100     	blr	x8
+   16450: 14000001     	b	0x16454 <HaversineTransferCollectionsOperation_init+0x218>
+   16454: f94003e0     	ldr	x0, [sp]
+   16458: 94000b46     	bl	0x19170 <free@plt>
+   1645c: a9417bfd     	ldp	x29, x30, [sp, #0x10]
+   16460: 910083ff     	add	sp, sp, #0x20
+   16464: d65f03c0     	ret
+   16468: d104c3ff     	sub	sp, sp, #0x130
+   1646c: a9117bfd     	stp	x29, x30, [sp, #0x110]
+   16470: f90093fc     	str	x28, [sp, #0x120]
+   16474: 910443fd     	add	x29, sp, #0x110
+   16478: d101c3a8     	sub	x8, x29, #0x70
+   1647c: f9000be8     	str	x8, [sp, #0x10]
+   16480: d53bd048     	mrs	x8, TPIDR_EL0
+   16484: f9401508     	ldr	x8, [x8, #0x28]
+   16488: f81f83a8     	stur	x8, [x29, #-0x8]
+   1648c: f90013e0     	str	x0, [sp, #0x20]
+   16490: f94013e8     	ldr	x8, [sp, #0x20]
+   16494: f9000fe8     	str	x8, [sp, #0x18]
+   16498: f9400fe8     	ldr	x8, [sp, #0x18]
+   1649c: f9402108     	ldr	x8, [x8, #0x40]
+   164a0: b5000068     	cbnz	x8, 0x164ac <HaversineTransferCollectionsOperation_init+0x270>
+   164a4: 14000001     	b	0x164a8 <HaversineTransferCollectionsOperation_init+0x26c>
+   164a8: 1400000f     	b	0x164e4 <HaversineTransferCollectionsOperation_init+0x2a8>
+   164ac: d53bd048     	mrs	x8, TPIDR_EL0
+   164b0: f9401508     	ldr	x8, [x8, #0x28]
+   164b4: f85f83a9     	ldur	x9, [x29, #-0x8]
+   164b8: eb090108     	subs	x8, x8, x9
+   164bc: 540012a1     	b.ne	0x16710 <HaversineTransferCollectionsOperation_init+0x4d4>
+   164c0: 14000001     	b	0x164c4 <HaversineTransferCollectionsOperation_init+0x288>
+   164c4: d503201f     	nop
+   164c8: 50f768c0     	adr	x0, 0x51e2
+   164cc: b0ffff82     	adrp	x2, 0x7000
+   164d0: 911a4042     	add	x2, x2, #0x690
+   164d4: f0ffff63     	adrp	x3, 0x5000
+   164d8: 91253c63     	add	x3, x3, #0x94f
+   164dc: 528021a1     	mov	w1, #0x10d              // =269
+   164e0: 94000b30     	bl	0x191a0 <__assert2@plt>
+   164e4: f9400fe8     	ldr	x8, [sp, #0x18]
+   164e8: b9404908     	ldr	w8, [x8, #0x48]
+   164ec: 2a0803e9     	mov	w9, w8
+   164f0: b9000fe9     	str	w9, [sp, #0xc]
+   164f4: 340001c8     	cbz	w8, 0x1652c <HaversineTransferCollectionsOperation_init+0x2f0>
+   164f8: 14000001     	b	0x164fc <HaversineTransferCollectionsOperation_init+0x2c0>
+   164fc: b9400fe8     	ldr	w8, [sp, #0xc]
+   16500: 71000508     	subs	w8, w8, #0x1
+   16504: 540003e0     	b.eq	0x16580 <HaversineTransferCollectionsOperation_init+0x344>
+   16508: 14000001     	b	0x1650c <HaversineTransferCollectionsOperation_init+0x2d0>
+   1650c: b9400fe8     	ldr	w8, [sp, #0xc]
+   16510: 71000908     	subs	w8, w8, #0x2
+   16514: 540006c0     	b.eq	0x165ec <HaversineTransferCollectionsOperation_init+0x3b0>
+   16518: 14000001     	b	0x1651c <HaversineTransferCollectionsOperation_init+0x2e0>
+   1651c: b9400fe8     	ldr	w8, [sp, #0xc]
+   16520: 71000d08     	subs	w8, w8, #0x3
+   16524: 540008c0     	b.eq	0x1663c <HaversineTransferCollectionsOperation_init+0x400>
+   16528: 14000046     	b	0x16640 <HaversineTransferCollectionsOperation_init+0x404>
+   1652c: 14000001     	b	0x16530 <HaversineTransferCollectionsOperation_init+0x2f4>
+   16530: f0ffff60     	adrp	x0, 0x5000
+   16534: 9112ac00     	add	x0, x0, #0x4ab
+   16538: 94000ba6     	bl	0x193d0 <printf@plt>
+   1653c: 14000001     	b	0x16540 <HaversineTransferCollectionsOperation_init+0x304>
+   16540: f9400be8     	ldr	x8, [sp, #0x10]
+   16544: d503201f     	nop
+   16548: 10f90ec9     	adr	x9, 0x8720
+   1654c: 3dc00120     	ldr	q0, [x9]
+   16550: f9400929     	ldr	x9, [x9, #0x10]
+   16554: f81f03a9     	stur	x9, [x29, #-0x10]
+   16558: 3d801500     	str	q0, [x8, #0x50]
+   1655c: 3dc01500     	ldr	q0, [x8, #0x50]
+   16560: f85f03a9     	ldur	x9, [x29, #-0x10]
+   16564: f81d03a9     	stur	x9, [x29, #-0x30]
+   16568: 3d800d00     	str	q0, [x8, #0x30]
+   1656c: d10103a0     	sub	x0, x29, #0x40
+   16570: 94000b44     	bl	0x19280 <TelestoOperation_init@plt>
+   16574: f9400fe8     	ldr	x8, [sp, #0x18]
+   16578: f9002100     	str	x0, [x8, #0x40]
+   1657c: 14000031     	b	0x16640 <HaversineTransferCollectionsOperation_init+0x404>
+   16580: 14000001     	b	0x16584 <HaversineTransferCollectionsOperation_init+0x348>
+   16584: f0ffff60     	adrp	x0, 0x5000
+   16588: 911f7800     	add	x0, x0, #0x7de
+   1658c: 94000b91     	bl	0x193d0 <printf@plt>
+   16590: 14000001     	b	0x16594 <HaversineTransferCollectionsOperation_init+0x358>
+   16594: f9400be8     	ldr	x8, [sp, #0x10]
+   16598: 52800069     	mov	w9, #0x3                // =3
+   1659c: 381a83a9     	sturb	w9, [x29, #-0x58]
+   165a0: f9400fe9     	ldr	x9, [sp, #0x18]
+   165a4: 7847b129     	ldurh	w9, [x9, #0x7b]
+   165a8: 52a8004a     	mov	w10, #0x40020000        // =1073872896
+   165ac: 2a0a0129     	orr	w9, w9, w10
+   165b0: b8019109     	stur	w9, [x8, #0x19]
+   165b4: 2a1f03e9     	mov	w9, wzr
+   165b8: b801d109     	stur	w9, [x8, #0x1d]
+   165bc: b8021109     	stur	w9, [x8, #0x21]
+   165c0: aa1f03e9     	mov	x9, xzr
+   165c4: f81b83a9     	stur	x9, [x29, #-0x48]
+   165c8: 3cda83a0     	ldur	q0, [x29, #-0x58]
+   165cc: f85b83a9     	ldur	x9, [x29, #-0x48]
+   165d0: f81a03a9     	stur	x9, [x29, #-0x60]
+   165d4: 3d800100     	str	q0, [x8]
+   165d8: d101c3a0     	sub	x0, x29, #0x70
+   165dc: 94000b29     	bl	0x19280 <TelestoOperation_init@plt>
+   165e0: f9400fe8     	ldr	x8, [sp, #0x18]
+   165e4: f9002100     	str	x0, [x8, #0x40]
+   165e8: 14000016     	b	0x16640 <HaversineTransferCollectionsOperation_init+0x404>
+   165ec: 14000001     	b	0x165f0 <HaversineTransferCollectionsOperation_init+0x3b4>
+   165f0: f0ffff60     	adrp	x0, 0x5000
+   165f4: 9137dc00     	add	x0, x0, #0xdf7
+   165f8: 94000b76     	bl	0x193d0 <printf@plt>
+   165fc: 14000001     	b	0x16600 <HaversineTransferCollectionsOperation_init+0x3c4>
+   16600: d503201f     	nop
+   16604: 10f909a8     	adr	x8, 0x8738
+   16608: 3dc00100     	ldr	q0, [x8]
+   1660c: f9400908     	ldr	x8, [x8, #0x10]
+   16610: f9004be8     	str	x8, [sp, #0x90]
+   16614: 3d8023e0     	str	q0, [sp, #0x80]
+   16618: 3dc023e0     	ldr	q0, [sp, #0x80]
+   1661c: f9404be8     	ldr	x8, [sp, #0x90]
+   16620: f9003be8     	str	x8, [sp, #0x70]
+   16624: 3d801be0     	str	q0, [sp, #0x60]
+   16628: 910183e0     	add	x0, sp, #0x60
+   1662c: 94000b15     	bl	0x19280 <TelestoOperation_init@plt>
+   16630: f9400fe8     	ldr	x8, [sp, #0x18]
+   16634: f9002100     	str	x0, [x8, #0x40]
+   16638: 14000002     	b	0x16640 <HaversineTransferCollectionsOperation_init+0x404>
+   1663c: 14000001     	b	0x16640 <HaversineTransferCollectionsOperation_init+0x404>
+   16640: f9400fe9     	ldr	x9, [sp, #0x18]
+   16644: 52801208     	mov	w8, #0x90               // =144
+   16648: 72a00148     	movk	w8, #0xa, lsl #16
+   1664c: 2a0803ea     	mov	w10, w8
+   16650: aa1f03e8     	mov	x8, xzr
+   16654: f82a6928     	str	x8, [x9, x10]
+   16658: f9400fe8     	ldr	x8, [sp, #0x18]
+   1665c: f9402108     	ldr	x8, [x8, #0x40]
+   16660: b4000368     	cbz	x8, 0x166cc <HaversineTransferCollectionsOperation_init+0x490>
+   16664: 14000001     	b	0x16668 <HaversineTransferCollectionsOperation_init+0x42c>
+   16668: d503201f     	nop
+   1666c: 10000548     	adr	x8, 0x16714 <HaversineTransferCollectionsOperation_init+0x4d8>
+   16670: f90027e8     	str	x8, [sp, #0x48]
+   16674: d503201f     	nop
+   16678: 10001b28     	adr	x8, 0x169dc <HaversineTransferCollectionsOperation_init+0x7a0>
+   1667c: f9002be8     	str	x8, [sp, #0x50]
+   16680: f9400fe8     	ldr	x8, [sp, #0x18]
+   16684: f9002fe8     	str	x8, [sp, #0x58]
+   16688: f9400fe9     	ldr	x9, [sp, #0x18]
+   1668c: f9401128     	ldr	x8, [x9, #0x20]
+   16690: f9402129     	ldr	x9, [x9, #0x40]
+   16694: f9001128     	str	x8, [x9, #0x20]
+   16698: f9400fe8     	ldr	x8, [sp, #0x18]
+   1669c: f9402109     	ldr	x9, [x8, #0x40]
+   166a0: f9400128     	ldr	x8, [x9]
+   166a4: f9400d20     	ldr	x0, [x9, #0x18]
+   166a8: 3cc483e0     	ldur	q0, [sp, #0x48]
+   166ac: f9402fe9     	ldr	x9, [sp, #0x58]
+   166b0: f90023e9     	str	x9, [sp, #0x40]
+   166b4: 3d800fe0     	str	q0, [sp, #0x30]
+   166b8: 9100c3e1     	add	x1, sp, #0x30
+   166bc: d63f0100     	blr	x8
+   166c0: 12000008     	and	w8, w0, #0x1
+   166c4: 3900bfe8     	strb	w8, [sp, #0x2f]
+   166c8: 14000004     	b	0x166d8 <HaversineTransferCollectionsOperation_init+0x49c>
+   166cc: 2a1f03e8     	mov	w8, wzr
+   166d0: 3900bfe8     	strb	w8, [sp, #0x2f]
+   166d4: 14000001     	b	0x166d8 <HaversineTransferCollectionsOperation_init+0x49c>
+   166d8: 3940bfe8     	ldrb	w8, [sp, #0x2f]
+   166dc: b9000be8     	str	w8, [sp, #0x8]
+   166e0: d53bd048     	mrs	x8, TPIDR_EL0
+   166e4: f9401508     	ldr	x8, [x8, #0x28]
+   166e8: f85f83a9     	ldur	x9, [x29, #-0x8]
+   166ec: eb090108     	subs	x8, x8, x9
+   166f0: 54000101     	b.ne	0x16710 <HaversineTransferCollectionsOperation_init+0x4d4>
+   166f4: 14000001     	b	0x166f8 <HaversineTransferCollectionsOperation_init+0x4bc>
+   166f8: b9400be8     	ldr	w8, [sp, #0x8]
+   166fc: 12000100     	and	w0, w8, #0x1
+   16700: f94093fc     	ldr	x28, [sp, #0x120]
+   16704: a9517bfd     	ldp	x29, x30, [sp, #0x110]
+   16708: 9104c3ff     	add	sp, sp, #0x130
+   1670c: d65f03c0     	ret
+   16710: 94000a80     	bl	0x19110 <__stack_chk_fail@plt>
+   16714: d10303ff     	sub	sp, sp, #0xc0
+   16718: a90b7bfd     	stp	x29, x30, [sp, #0xb0]
+   1671c: 9102c3fd     	add	x29, sp, #0xb0
+   16720: f90027e0     	str	x0, [sp, #0x48]
+   16724: f90023e1     	str	x1, [sp, #0x40]
+   16728: f9001fe2     	str	x2, [sp, #0x38]
+   1672c: f94027e8     	ldr	x8, [sp, #0x48]
+   16730: f9001be8     	str	x8, [sp, #0x30]
+   16734: f9401be8     	ldr	x8, [sp, #0x30]
+   16738: b9404908     	ldr	w8, [x8, #0x48]
+   1673c: b90027e8     	str	w8, [sp, #0x24]
+   16740: 340001c8     	cbz	w8, 0x16778 <HaversineTransferCollectionsOperation_init+0x53c>
+   16744: 14000001     	b	0x16748 <HaversineTransferCollectionsOperation_init+0x50c>
+   16748: b94027e8     	ldr	w8, [sp, #0x24]
+   1674c: 71000508     	subs	w8, w8, #0x1
+   16750: 54000740     	b.eq	0x16838 <HaversineTransferCollectionsOperation_init+0x5fc>
+   16754: 14000001     	b	0x16758 <HaversineTransferCollectionsOperation_init+0x51c>
+   16758: b94027e8     	ldr	w8, [sp, #0x24]
+   1675c: 71000908     	subs	w8, w8, #0x2
+   16760: 54000c80     	b.eq	0x168f0 <HaversineTransferCollectionsOperation_init+0x6b4>
+   16764: 14000001     	b	0x16768 <HaversineTransferCollectionsOperation_init+0x52c>
+   16768: b94027e8     	ldr	w8, [sp, #0x24]
+   1676c: 71000d08     	subs	w8, w8, #0x3
+   16770: 54001200     	b.eq	0x169b0 <HaversineTransferCollectionsOperation_init+0x774>
+   16774: 14000097     	b	0x169d0 <HaversineTransferCollectionsOperation_init+0x794>
+   16778: f9401be8     	ldr	x8, [sp, #0x30]
+   1677c: d2801209     	mov	x9, #0x90               // =144
+   16780: f2a00149     	movk	x9, #0xa, lsl #16
+   16784: f8696908     	ldr	x8, [x8, x9]
+   16788: f9401fe9     	ldr	x9, [sp, #0x38]
+   1678c: 8b090108     	add	x8, x8, x9
+   16790: f1001108     	subs	x8, x8, #0x4
+   16794: 54000408     	b.hi	0x16814 <HaversineTransferCollectionsOperation_init+0x5d8>
+   16798: 14000001     	b	0x1679c <HaversineTransferCollectionsOperation_init+0x560>
+   1679c: f9401be8     	ldr	x8, [sp, #0x30]
+   167a0: 9101ed08     	add	x8, x8, #0x7b
+   167a4: f90017e8     	str	x8, [sp, #0x28]
+   167a8: f94017e8     	ldr	x8, [sp, #0x28]
+   167ac: f9401be9     	ldr	x9, [sp, #0x30]
+   167b0: d280120a     	mov	x10, #0x90              // =144
+   167b4: f2a0014a     	movk	x10, #0xa, lsl #16
+   167b8: f9000fea     	str	x10, [sp, #0x18]
+   167bc: f86a6929     	ldr	x9, [x9, x10]
+   167c0: 8b09010a     	add	x10, x8, x9
+   167c4: f94023e9     	ldr	x9, [sp, #0x40]
+   167c8: f9401fe8     	ldr	x8, [sp, #0x38]
+   167cc: f81f83aa     	stur	x10, [x29, #-0x8]
+   167d0: 9280000a     	mov	x10, #-0x1              // =-1
+   167d4: f81f03aa     	stur	x10, [x29, #-0x10]
+   167d8: f81e83a9     	stur	x9, [x29, #-0x18]
+   167dc: f81e03a8     	stur	x8, [x29, #-0x20]
+   167e0: f85f83a0     	ldur	x0, [x29, #-0x8]
+   167e4: f85e83a1     	ldur	x1, [x29, #-0x18]
+   167e8: f85e03a2     	ldur	x2, [x29, #-0x20]
+   167ec: f85f03a3     	ldur	x3, [x29, #-0x10]
+   167f0: 94000a54     	bl	0x19140 <__memcpy_chk@plt>
+   167f4: f9400fe9     	ldr	x9, [sp, #0x18]
+   167f8: f9401fea     	ldr	x10, [sp, #0x38]
+   167fc: f9401be8     	ldr	x8, [sp, #0x30]
+   16800: 8b090109     	add	x9, x8, x9
+   16804: f9400128     	ldr	x8, [x9]
+   16808: 8b0a0108     	add	x8, x8, x10
+   1680c: f9000128     	str	x8, [x9]
+   16810: 14000009     	b	0x16834 <HaversineTransferCollectionsOperation_init+0x5f8>
+   16814: d503201f     	nop
+   16818: 50f74e40     	adr	x0, 0x51e2
+   1681c: 52800ae1     	mov	w1, #0x57               // =87
+   16820: f0ffff62     	adrp	x2, 0x5000
+   16824: 9125b842     	add	x2, x2, #0x96e
+   16828: b0ffff83     	adrp	x3, 0x7000
+   1682c: 910c4863     	add	x3, x3, #0x312
+   16830: 94000a5c     	bl	0x191a0 <__assert2@plt>
+   16834: 14000067     	b	0x169d0 <HaversineTransferCollectionsOperation_init+0x794>
+   16838: f9401be8     	ldr	x8, [sp, #0x30]
+   1683c: d2801209     	mov	x9, #0x90               // =144
+   16840: f2a00149     	movk	x9, #0xa, lsl #16
+   16844: f8696908     	ldr	x8, [x8, x9]
+   16848: f9401fe9     	ldr	x9, [sp, #0x38]
+   1684c: 8b090108     	add	x8, x8, x9
+   16850: f1428108     	subs	x8, x8, #0xa0, lsl #12  // =0xa0000
+   16854: 540003c8     	b.hi	0x168cc <HaversineTransferCollectionsOperation_init+0x690>
+   16858: 14000001     	b	0x1685c <HaversineTransferCollectionsOperation_init+0x620>
+   1685c: f9401be8     	ldr	x8, [sp, #0x30]
+   16860: 9101fd08     	add	x8, x8, #0x7f
+   16864: f9401be9     	ldr	x9, [sp, #0x30]
+   16868: d280120a     	mov	x10, #0x90              // =144
+   1686c: f2a0014a     	movk	x10, #0xa, lsl #16
+   16870: f9000bea     	str	x10, [sp, #0x10]
+   16874: f86a6929     	ldr	x9, [x9, x10]
+   16878: 8b09010a     	add	x10, x8, x9
+   1687c: f94023e9     	ldr	x9, [sp, #0x40]
+   16880: f9401fe8     	ldr	x8, [sp, #0x38]
+   16884: f81d83aa     	stur	x10, [x29, #-0x28]
+   16888: 9280000a     	mov	x10, #-0x1              // =-1
+   1688c: f81d03aa     	stur	x10, [x29, #-0x30]
+   16890: f81c83a9     	stur	x9, [x29, #-0x38]
+   16894: f81c03a8     	stur	x8, [x29, #-0x40]
+   16898: f85d83a0     	ldur	x0, [x29, #-0x28]
+   1689c: f85c83a1     	ldur	x1, [x29, #-0x38]
+   168a0: f85c03a2     	ldur	x2, [x29, #-0x40]
+   168a4: f85d03a3     	ldur	x3, [x29, #-0x30]
+   168a8: 94000a26     	bl	0x19140 <__memcpy_chk@plt>
+   168ac: f9400be9     	ldr	x9, [sp, #0x10]
+   168b0: f9401fea     	ldr	x10, [sp, #0x38]
+   168b4: f9401be8     	ldr	x8, [sp, #0x30]
+   168b8: 8b090109     	add	x9, x8, x9
+   168bc: f9400128     	ldr	x8, [x9]
+   168c0: 8b0a0108     	add	x8, x8, x10
+   168c4: f9000128     	str	x8, [x9]
+   168c8: 14000009     	b	0x168ec <HaversineTransferCollectionsOperation_init+0x6b0>
+   168cc: d503201f     	nop
+   168d0: 50f74880     	adr	x0, 0x51e2
+   168d4: 52800c01     	mov	w1, #0x60               // =96
+   168d8: f0ffff62     	adrp	x2, 0x5000
+   168dc: 9125b842     	add	x2, x2, #0x96e
+   168e0: b0ffff83     	adrp	x3, 0x7000
+   168e4: 910c4863     	add	x3, x3, #0x312
+   168e8: 94000a2e     	bl	0x191a0 <__assert2@plt>
+   168ec: 14000039     	b	0x169d0 <HaversineTransferCollectionsOperation_init+0x794>
+   168f0: f9401be8     	ldr	x8, [sp, #0x30]
+   168f4: d2801209     	mov	x9, #0x90               // =144
+   168f8: f2a00149     	movk	x9, #0xa, lsl #16
+   168fc: f8696908     	ldr	x8, [x8, x9]
+   16900: f9401fe9     	ldr	x9, [sp, #0x38]
+   16904: 8b090108     	add	x8, x8, x9
+   16908: f1002908     	subs	x8, x8, #0xa
+   1690c: 54000408     	b.hi	0x1698c <HaversineTransferCollectionsOperation_init+0x750>
+   16910: 14000001     	b	0x16914 <HaversineTransferCollectionsOperation_init+0x6d8>
+   16914: f9401be8     	ldr	x8, [sp, #0x30]
+   16918: d2800fe9     	mov	x9, #0x7f               // =127
+   1691c: f2a00149     	movk	x9, #0xa, lsl #16
+   16920: 8b090108     	add	x8, x8, x9
+   16924: f9401be9     	ldr	x9, [sp, #0x30]
+   16928: d280120a     	mov	x10, #0x90              // =144
+   1692c: f2a0014a     	movk	x10, #0xa, lsl #16
+   16930: f90007ea     	str	x10, [sp, #0x8]
+   16934: f86a6929     	ldr	x9, [x9, x10]
+   16938: 8b09010a     	add	x10, x8, x9
+   1693c: f94023e9     	ldr	x9, [sp, #0x40]
+   16940: f9401fe8     	ldr	x8, [sp, #0x38]
+   16944: f81b83aa     	stur	x10, [x29, #-0x48]
+   16948: 9280000a     	mov	x10, #-0x1              // =-1
+   1694c: f81b03aa     	stur	x10, [x29, #-0x50]
+   16950: f9002fe9     	str	x9, [sp, #0x58]
+   16954: f9002be8     	str	x8, [sp, #0x50]
+   16958: f85b83a0     	ldur	x0, [x29, #-0x48]
+   1695c: f9402fe1     	ldr	x1, [sp, #0x58]
+   16960: f9402be2     	ldr	x2, [sp, #0x50]
+   16964: f85b03a3     	ldur	x3, [x29, #-0x50]
+   16968: 940009f6     	bl	0x19140 <__memcpy_chk@plt>
+   1696c: f94007e9     	ldr	x9, [sp, #0x8]
+   16970: f9401fea     	ldr	x10, [sp, #0x38]
+   16974: f9401be8     	ldr	x8, [sp, #0x30]
+   16978: 8b090109     	add	x9, x8, x9
+   1697c: f9400128     	ldr	x8, [x9]
+   16980: 8b0a0108     	add	x8, x8, x10
+   16984: f9000128     	str	x8, [x9]
+   16988: 14000009     	b	0x169ac <HaversineTransferCollectionsOperation_init+0x770>
+   1698c: d503201f     	nop
+   16990: 50f74280     	adr	x0, 0x51e2
+   16994: 52800d21     	mov	w1, #0x69               // =105
+   16998: f0ffff62     	adrp	x2, 0x5000
+   1699c: 9125b842     	add	x2, x2, #0x96e
+   169a0: b0ffff83     	adrp	x3, 0x7000
+   169a4: 910c4863     	add	x3, x3, #0x312
+   169a8: 940009fe     	bl	0x191a0 <__assert2@plt>
+   169ac: 14000009     	b	0x169d0 <HaversineTransferCollectionsOperation_init+0x794>
+   169b0: d503201f     	nop
+   169b4: 50f74160     	adr	x0, 0x51e2
+   169b8: 52800dc1     	mov	w1, #0x6e               // =110
+   169bc: f0ffff62     	adrp	x2, 0x5000
+   169c0: 9125b842     	add	x2, x2, #0x96e
+   169c4: b0ffff83     	adrp	x3, 0x7000
+   169c8: 910c4863     	add	x3, x3, #0x312
+   169cc: 940009f5     	bl	0x191a0 <__assert2@plt>
+   169d0: a94b7bfd     	ldp	x29, x30, [sp, #0xb0]
+   169d4: 910303ff     	add	sp, sp, #0xc0
+   169d8: d65f03c0     	ret
+   169dc: d10583ff     	sub	sp, sp, #0x160
+   169e0: a9147bfd     	stp	x29, x30, [sp, #0x140]
+   169e4: f900abfc     	str	x28, [sp, #0x150]
+   169e8: 910503fd     	add	x29, sp, #0x140
+   169ec: d101c3a8     	sub	x8, x29, #0x70
+   169f0: f90017e8     	str	x8, [sp, #0x28]
+   169f4: f9001be1     	str	x1, [sp, #0x30]
+   169f8: d53bd048     	mrs	x8, TPIDR_EL0
+   169fc: f9401508     	ldr	x8, [x8, #0x28]
+   16a00: f81f83a8     	stur	x8, [x29, #-0x8]
+   16a04: f90033e0     	str	x0, [sp, #0x60]
+   16a08: f9002fe1     	str	x1, [sp, #0x58]
+   16a0c: f94033e8     	ldr	x8, [sp, #0x60]
+   16a10: f9002be8     	str	x8, [sp, #0x50]
+   16a14: f9402be8     	ldr	x8, [sp, #0x50]
+   16a18: f9402108     	ldr	x8, [x8, #0x40]
+   16a1c: b4000108     	cbz	x8, 0x16a3c <HaversineTransferCollectionsOperation_init+0x800>
+   16a20: 14000001     	b	0x16a24 <HaversineTransferCollectionsOperation_init+0x7e8>
+   16a24: f9402be8     	ldr	x8, [sp, #0x50]
+   16a28: f9402109     	ldr	x9, [x8, #0x40]
+   16a2c: f9400928     	ldr	x8, [x9, #0x10]
+   16a30: f9400d20     	ldr	x0, [x9, #0x18]
+   16a34: d63f0100     	blr	x8
+   16a38: 14000001     	b	0x16a3c <HaversineTransferCollectionsOperation_init+0x800>
+   16a3c: f94017e8     	ldr	x8, [sp, #0x28]
+   16a40: f9401be9     	ldr	x9, [sp, #0x30]
+   16a44: f9402beb     	ldr	x11, [sp, #0x50]
+   16a48: aa1f03ea     	mov	x10, xzr
+   16a4c: f900216a     	str	x10, [x11, #0x40]
+   16a50: 3dc00120     	ldr	q0, [x9]
+   16a54: f9400929     	ldr	x9, [x9, #0x10]
+   16a58: f81e03a9     	stur	x9, [x29, #-0x20]
+   16a5c: 3d801100     	str	q0, [x8, #0x40]
+   16a60: d100c3a0     	sub	x0, x29, #0x30
+   16a64: 940009af     	bl	0x19120 <HaversineError_hasValue@plt>
+   16a68: 360009a0     	tbz	w0, #0x0, 0x16b9c <HaversineTransferCollectionsOperation_init+0x960>
+   16a6c: 14000001     	b	0x16a70 <HaversineTransferCollectionsOperation_init+0x834>
+   16a70: f9402be8     	ldr	x8, [sp, #0x50]
+   16a74: b9404908     	ldr	w8, [x8, #0x48]
+   16a78: 71000508     	subs	w8, w8, #0x1
+   16a7c: 54000461     	b.ne	0x16b08 <HaversineTransferCollectionsOperation_init+0x8cc>
+   16a80: 14000001     	b	0x16a84 <HaversineTransferCollectionsOperation_init+0x848>
+   16a84: f9402be8     	ldr	x8, [sp, #0x50]
+   16a88: 7847b108     	ldurh	w8, [x8, #0x7b]
+   16a8c: b9004fe8     	str	w8, [sp, #0x4c]
+   16a90: 14000001     	b	0x16a94 <HaversineTransferCollectionsOperation_init+0x858>
+   16a94: b9404fe8     	ldr	w8, [sp, #0x4c]
+   16a98: f9402be9     	ldr	x9, [sp, #0x50]
+   16a9c: 7847d129     	ldurh	w9, [x9, #0x7d]
+   16aa0: 6b090108     	subs	w8, w8, w9
+   16aa4: 54000300     	b.eq	0x16b04 <HaversineTransferCollectionsOperation_init+0x8c8>
+   16aa8: 14000001     	b	0x16aac <HaversineTransferCollectionsOperation_init+0x870>
+   16aac: f9402be8     	ldr	x8, [sp, #0x50]
+   16ab0: f9403508     	ldr	x8, [x8, #0x68]
+   16ab4: b40001e8     	cbz	x8, 0x16af0 <HaversineTransferCollectionsOperation_init+0x8b4>
+   16ab8: 14000001     	b	0x16abc <HaversineTransferCollectionsOperation_init+0x880>
+   16abc: f94017e9     	ldr	x9, [sp, #0x28]
+   16ac0: f9401bea     	ldr	x10, [sp, #0x30]
+   16ac4: f9402beb     	ldr	x11, [sp, #0x50]
+   16ac8: f9403568     	ldr	x8, [x11, #0x68]
+   16acc: f9403960     	ldr	x0, [x11, #0x70]
+   16ad0: b9404fe2     	ldr	w2, [sp, #0x4c]
+   16ad4: 3dc00140     	ldr	q0, [x10]
+   16ad8: f940094a     	ldr	x10, [x10, #0x10]
+   16adc: f81c03aa     	stur	x10, [x29, #-0x40]
+   16ae0: 3d800920     	str	q0, [x9, #0x20]
+   16ae4: d10143a1     	sub	x1, x29, #0x50
+   16ae8: d63f0100     	blr	x8
+   16aec: 14000001     	b	0x16af0 <HaversineTransferCollectionsOperation_init+0x8b4>
+   16af0: 14000001     	b	0x16af4 <HaversineTransferCollectionsOperation_init+0x8b8>
+   16af4: b9404fe8     	ldr	w8, [sp, #0x4c]
+   16af8: 11000508     	add	w8, w8, #0x1
+   16afc: b9004fe8     	str	w8, [sp, #0x4c]
+   16b00: 17ffffe5     	b	0x16a94 <HaversineTransferCollectionsOperation_init+0x858>
+   16b04: 14000001     	b	0x16b08 <HaversineTransferCollectionsOperation_init+0x8cc>
+   16b08: f9402be8     	ldr	x8, [sp, #0x50]
+   16b0c: 3941e908     	ldrb	w8, [x8, #0x7a]
+   16b10: 36000248     	tbz	w8, #0x0, 0x16b58 <HaversineTransferCollectionsOperation_init+0x91c>
+   16b14: 14000001     	b	0x16b18 <HaversineTransferCollectionsOperation_init+0x8dc>
+   16b18: f9402be8     	ldr	x8, [sp, #0x50]
+   16b1c: 7940f108     	ldrh	w8, [x8, #0x78]
+   16b20: 781ae3a8     	sturh	w8, [x29, #-0x52]
+   16b24: f9402be8     	ldr	x8, [sp, #0x50]
+   16b28: f9401508     	ldr	x8, [x8, #0x28]
+   16b2c: b4000148     	cbz	x8, 0x16b54 <HaversineTransferCollectionsOperation_init+0x918>
+   16b30: 14000001     	b	0x16b34 <HaversineTransferCollectionsOperation_init+0x8f8>
+   16b34: f9402be9     	ldr	x9, [sp, #0x50]
+   16b38: f9401528     	ldr	x8, [x9, #0x28]
+   16b3c: f9401d20     	ldr	x0, [x9, #0x38]
+   16b40: 52800049     	mov	w9, #0x2                // =2
+   16b44: 2a0903e2     	mov	w2, w9
+   16b48: d1014ba1     	sub	x1, x29, #0x52
+   16b4c: d63f0100     	blr	x8
+   16b50: 14000001     	b	0x16b54 <HaversineTransferCollectionsOperation_init+0x918>
+   16b54: 14000001     	b	0x16b58 <HaversineTransferCollectionsOperation_init+0x91c>
+   16b58: f9402be8     	ldr	x8, [sp, #0x50]
+   16b5c: f9401908     	ldr	x8, [x8, #0x30]
+   16b60: b40001c8     	cbz	x8, 0x16b98 <HaversineTransferCollectionsOperation_init+0x95c>
+   16b64: 14000001     	b	0x16b68 <HaversineTransferCollectionsOperation_init+0x92c>
+   16b68: f94017e9     	ldr	x9, [sp, #0x28]
+   16b6c: f9401bea     	ldr	x10, [sp, #0x30]
+   16b70: f9402beb     	ldr	x11, [sp, #0x50]
+   16b74: f9401968     	ldr	x8, [x11, #0x30]
+   16b78: f9401d60     	ldr	x0, [x11, #0x38]
+   16b7c: 3dc00140     	ldr	q0, [x10]
+   16b80: f940094a     	ldr	x10, [x10, #0x10]
+   16b84: f81a03aa     	stur	x10, [x29, #-0x60]
+   16b88: 3d800120     	str	q0, [x9]
+   16b8c: d101c3a1     	sub	x1, x29, #0x70
+   16b90: d63f0100     	blr	x8
+   16b94: 14000001     	b	0x16b98 <HaversineTransferCollectionsOperation_init+0x95c>
+   16b98: 140000ff     	b	0x16f94 <HaversineTransferCollectionsOperation_init+0xd58>
+   16b9c: f9402be8     	ldr	x8, [sp, #0x50]
+   16ba0: b9404908     	ldr	w8, [x8, #0x48]
+   16ba4: 2a0803e9     	mov	w9, w8
+   16ba8: b90027e9     	str	w9, [sp, #0x24]
+   16bac: 340001c8     	cbz	w8, 0x16be4 <HaversineTransferCollectionsOperation_init+0x9a8>
+   16bb0: 14000001     	b	0x16bb4 <HaversineTransferCollectionsOperation_init+0x978>
+   16bb4: b94027e8     	ldr	w8, [sp, #0x24]
+   16bb8: 71000508     	subs	w8, w8, #0x1
+   16bbc: 54000d80     	b.eq	0x16d6c <HaversineTransferCollectionsOperation_init+0xb30>
+   16bc0: 14000001     	b	0x16bc4 <HaversineTransferCollectionsOperation_init+0x988>
+   16bc4: b94027e8     	ldr	w8, [sp, #0x24]
+   16bc8: 71000908     	subs	w8, w8, #0x2
+   16bcc: 54001180     	b.eq	0x16dfc <HaversineTransferCollectionsOperation_init+0xbc0>
+   16bd0: 14000001     	b	0x16bd4 <HaversineTransferCollectionsOperation_init+0x998>
+   16bd4: b94027e8     	ldr	w8, [sp, #0x24]
+   16bd8: 71000d08     	subs	w8, w8, #0x3
+   16bdc: 540016a0     	b.eq	0x16eb0 <HaversineTransferCollectionsOperation_init+0xc74>
+   16be0: 140000b5     	b	0x16eb4 <HaversineTransferCollectionsOperation_init+0xc78>
+   16be4: f9402be8     	ldr	x8, [sp, #0x50]
+   16be8: b847b108     	ldur	w8, [x8, #0x7b]
+   16bec: b818c3a8     	stur	w8, [x29, #-0x74]
+   16bf0: f9402be8     	ldr	x8, [sp, #0x50]
+   16bf4: 3941e908     	ldrb	w8, [x8, #0x7a]
+   16bf8: 360003a8     	tbz	w8, #0x0, 0x16c6c <HaversineTransferCollectionsOperation_init+0xa30>
+   16bfc: 14000001     	b	0x16c00 <HaversineTransferCollectionsOperation_init+0x9c4>
+   16c00: f9402be9     	ldr	x9, [sp, #0x50]
+   16c04: 7940f128     	ldrh	w8, [x9, #0x78]
+   16c08: 7847b129     	ldurh	w9, [x9, #0x7b]
+   16c0c: 6b090108     	subs	w8, w8, w9
+   16c10: 790097e8     	strh	w8, [sp, #0x4a]
+   16c14: f9402be9     	ldr	x9, [sp, #0x50]
+   16c18: 7847d128     	ldurh	w8, [x9, #0x7d]
+   16c1c: 7847b129     	ldurh	w9, [x9, #0x7b]
+   16c20: 6b090108     	subs	w8, w8, w9
+   16c24: 790093e8     	strh	w8, [sp, #0x48]
+   16c28: 794097e8     	ldrh	w8, [sp, #0x4a]
+   16c2c: 794093e9     	ldrh	w9, [sp, #0x48]
+   16c30: 6b090108     	subs	w8, w8, w9
+   16c34: 1a9fd7e8     	cset	w8, gt
+   16c38: 39011fe8     	strb	w8, [sp, #0x47]
+   16c3c: 794097e8     	ldrh	w8, [sp, #0x4a]
+   16c40: 71000508     	subs	w8, w8, #0x1
+   16c44: 5400012b     	b.lt	0x16c68 <HaversineTransferCollectionsOperation_init+0xa2c>
+   16c48: 14000001     	b	0x16c4c <HaversineTransferCollectionsOperation_init+0xa10>
+   16c4c: 39411fe8     	ldrb	w8, [sp, #0x47]
+   16c50: 370000c8     	tbnz	w8, #0x0, 0x16c68 <HaversineTransferCollectionsOperation_init+0xa2c>
+   16c54: 14000001     	b	0x16c58 <HaversineTransferCollectionsOperation_init+0xa1c>
+   16c58: f9402be8     	ldr	x8, [sp, #0x50]
+   16c5c: 7940f108     	ldrh	w8, [x8, #0x78]
+   16c60: 7818c3a8     	sturh	w8, [x29, #-0x74]
+   16c64: 14000001     	b	0x16c68 <HaversineTransferCollectionsOperation_init+0xa2c>
+   16c68: 14000001     	b	0x16c6c <HaversineTransferCollectionsOperation_init+0xa30>
+   16c6c: b858c3a8     	ldur	w8, [x29, #-0x74]
+   16c70: b81803a8     	stur	w8, [x29, #-0x80]
+   16c74: f85803a0     	ldur	x0, [x29, #-0x80]
+   16c78: 940000d2     	bl	0x16fc0 <HaversineTransferCollectionsOperation_init+0xd84>
+   16c7c: 36000180     	tbz	w0, #0x0, 0x16cac <HaversineTransferCollectionsOperation_init+0xa70>
+   16c80: 14000001     	b	0x16c84 <HaversineTransferCollectionsOperation_init+0xa48>
+   16c84: 7858e3a8     	ldurh	w8, [x29, #-0x72]
+   16c88: f9402be9     	ldr	x9, [sp, #0x50]
+   16c8c: 7900f128     	strh	w8, [x9, #0x78]
+   16c90: f9402be9     	ldr	x9, [sp, #0x50]
+   16c94: 52800028     	mov	w8, #0x1                // =1
+   16c98: 3901e928     	strb	w8, [x9, #0x7a]
+   16c9c: f9402be9     	ldr	x9, [sp, #0x50]
+   16ca0: 52800048     	mov	w8, #0x2                // =2
+   16ca4: b9004928     	str	w8, [x9, #0x48]
+   16ca8: 14000083     	b	0x16eb4 <HaversineTransferCollectionsOperation_init+0xc78>
+   16cac: f9402be9     	ldr	x9, [sp, #0x50]
+   16cb0: f9402928     	ldr	x8, [x9, #0x50]
+   16cb4: f9403920     	ldr	x0, [x9, #0x70]
+   16cb8: b858c3a9     	ldur	w9, [x29, #-0x74]
+   16cbc: b81783a9     	stur	w9, [x29, #-0x88]
+   16cc0: f85783a1     	ldur	x1, [x29, #-0x88]
+   16cc4: d63f0100     	blr	x8
+   16cc8: 79008be0     	strh	w0, [sp, #0x44]
+   16ccc: 79408be1     	ldrh	w1, [sp, #0x44]
+   16cd0: b858c3a8     	ldur	w8, [x29, #-0x74]
+   16cd4: b81703a8     	stur	w8, [x29, #-0x90]
+   16cd8: f85703a0     	ldur	x0, [x29, #-0x90]
+   16cdc: 940000d2     	bl	0x17024 <HaversineTransferCollectionsOperation_init+0xde8>
+   16ce0: 37000180     	tbnz	w0, #0x0, 0x16d10 <HaversineTransferCollectionsOperation_init+0xad4>
+   16ce4: 14000001     	b	0x16ce8 <HaversineTransferCollectionsOperation_init+0xaac>
+   16ce8: 7858e3a8     	ldurh	w8, [x29, #-0x72]
+   16cec: f9402be9     	ldr	x9, [sp, #0x50]
+   16cf0: 7900f128     	strh	w8, [x9, #0x78]
+   16cf4: f9402be9     	ldr	x9, [sp, #0x50]
+   16cf8: 52800028     	mov	w8, #0x1                // =1
+   16cfc: 3901e928     	strb	w8, [x9, #0x7a]
+   16d00: f9402be9     	ldr	x9, [sp, #0x50]
+   16d04: 52800048     	mov	w8, #0x2                // =2
+   16d08: b9004928     	str	w8, [x9, #0x48]
+   16d0c: 1400006a     	b	0x16eb4 <HaversineTransferCollectionsOperation_init+0xc78>
+   16d10: 79408be8     	ldrh	w8, [sp, #0x44]
+   16d14: 7816c3a8     	sturh	w8, [x29, #-0x94]
+   16d18: 7858e3a8     	ldurh	w8, [x29, #-0x72]
+   16d1c: 7816e3a8     	sturh	w8, [x29, #-0x92]
+   16d20: f9402be8     	ldr	x8, [sp, #0x50]
+   16d24: f9402d08     	ldr	x8, [x8, #0x58]
+   16d28: b4000148     	cbz	x8, 0x16d50 <HaversineTransferCollectionsOperation_init+0xb14>
+   16d2c: 14000001     	b	0x16d30 <HaversineTransferCollectionsOperation_init+0xaf4>
+   16d30: f9402be9     	ldr	x9, [sp, #0x50]
+   16d34: f9402d28     	ldr	x8, [x9, #0x58]
+   16d38: f9403920     	ldr	x0, [x9, #0x70]
+   16d3c: b856c3a9     	ldur	w9, [x29, #-0x94]
+   16d40: b900a3e9     	str	w9, [sp, #0xa0]
+   16d44: f94053e1     	ldr	x1, [sp, #0xa0]
+   16d48: d63f0100     	blr	x8
+   16d4c: 14000001     	b	0x16d50 <HaversineTransferCollectionsOperation_init+0xb14>
+   16d50: f9402be9     	ldr	x9, [sp, #0x50]
+   16d54: b856c3a8     	ldur	w8, [x29, #-0x94]
+   16d58: b807b128     	stur	w8, [x9, #0x7b]
+   16d5c: f9402be9     	ldr	x9, [sp, #0x50]
+   16d60: 52800028     	mov	w8, #0x1                // =1
+   16d64: b9004928     	str	w8, [x9, #0x48]
+   16d68: 14000053     	b	0x16eb4 <HaversineTransferCollectionsOperation_init+0xc78>
+   16d6c: f9402be8     	ldr	x8, [sp, #0x50]
+   16d70: f9403108     	ldr	x8, [x8, #0x60]
+   16d74: b4000188     	cbz	x8, 0x16da4 <HaversineTransferCollectionsOperation_init+0xb68>
+   16d78: 14000001     	b	0x16d7c <HaversineTransferCollectionsOperation_init+0xb40>
+   16d7c: f9402be9     	ldr	x9, [sp, #0x50]
+   16d80: f9403128     	ldr	x8, [x9, #0x60]
+   16d84: f9403920     	ldr	x0, [x9, #0x70]
+   16d88: 9101fd21     	add	x1, x9, #0x7f
+   16d8c: 5280120a     	mov	w10, #0x90              // =144
+   16d90: 72a0014a     	movk	w10, #0xa, lsl #16
+   16d94: f86a6922     	ldr	x2, [x9, x10]
+   16d98: 7847b123     	ldurh	w3, [x9, #0x7b]
+   16d9c: d63f0100     	blr	x8
+   16da0: 14000001     	b	0x16da4 <HaversineTransferCollectionsOperation_init+0xb68>
+   16da4: f9402be9     	ldr	x9, [sp, #0x50]
+   16da8: 7847b128     	ldurh	w8, [x9, #0x7b]
+   16dac: 11000508     	add	w8, w8, #0x1
+   16db0: 7807b128     	sturh	w8, [x9, #0x7b]
+   16db4: f9402be9     	ldr	x9, [sp, #0x50]
+   16db8: 7847b128     	ldurh	w8, [x9, #0x7b]
+   16dbc: 7900f128     	strh	w8, [x9, #0x78]
+   16dc0: f9402be9     	ldr	x9, [sp, #0x50]
+   16dc4: 52800028     	mov	w8, #0x1                // =1
+   16dc8: 3901e928     	strb	w8, [x9, #0x7a]
+   16dcc: f9402be8     	ldr	x8, [sp, #0x50]
+   16dd0: b847b108     	ldur	w8, [x8, #0x7b]
+   16dd4: b9009be8     	str	w8, [sp, #0x98]
+   16dd8: f9404fe0     	ldr	x0, [sp, #0x98]
+   16ddc: 94000079     	bl	0x16fc0 <HaversineTransferCollectionsOperation_init+0xd84>
+   16de0: 360000c0     	tbz	w0, #0x0, 0x16df8 <HaversineTransferCollectionsOperation_init+0xbbc>
+   16de4: 14000001     	b	0x16de8 <HaversineTransferCollectionsOperation_init+0xbac>
+   16de8: f9402be9     	ldr	x9, [sp, #0x50]
+   16dec: 2a1f03e8     	mov	w8, wzr
+   16df0: b9004928     	str	w8, [x9, #0x48]
+   16df4: 14000001     	b	0x16df8 <HaversineTransferCollectionsOperation_init+0xbbc>
+   16df8: 1400002f     	b	0x16eb4 <HaversineTransferCollectionsOperation_init+0xc78>
+   16dfc: 52800048     	mov	w8, #0x2                // =2
+   16e00: f9001fe8     	str	x8, [sp, #0x38]
+   16e04: f9402be8     	ldr	x8, [sp, #0x50]
+   16e08: 52801029     	mov	w9, #0x81               // =129
+   16e0c: 72a00149     	movk	w9, #0xa, lsl #16
+   16e10: 8b090100     	add	x0, x8, x9
+   16e14: 52801209     	mov	w9, #0x90               // =144
+   16e18: 72a00149     	movk	w9, #0xa, lsl #16
+   16e1c: f8696908     	ldr	x8, [x8, x9]
+   16e20: f1000901     	subs	x1, x8, #0x2
+   16e24: 94000947     	bl	0x19340 <HaversineAdvertisementData_parseManufacturedData@plt>
+   16e28: f81f03a1     	stur	x1, [x29, #-0x10]
+   16e2c: f81e83a0     	stur	x0, [x29, #-0x18]
+   16e30: f85e83a8     	ldur	x8, [x29, #-0x18]
+   16e34: b85f03a9     	ldur	w9, [x29, #-0x10]
+   16e38: b90093e9     	str	w9, [sp, #0x90]
+   16e3c: f90047e8     	str	x8, [sp, #0x88]
+   16e40: 394227e8     	ldrb	w8, [sp, #0x89]
+   16e44: 36000168     	tbz	w8, #0x0, 0x16e70 <HaversineTransferCollectionsOperation_init+0xc34>
+   16e48: 14000001     	b	0x16e4c <HaversineTransferCollectionsOperation_init+0xc10>
+   16e4c: 14000001     	b	0x16e50 <HaversineTransferCollectionsOperation_init+0xc14>
+   16e50: b0ffff80     	adrp	x0, 0x7000
+   16e54: 91273c00     	add	x0, x0, #0x9cf
+   16e58: 9400095e     	bl	0x193d0 <printf@plt>
+   16e5c: 14000001     	b	0x16e60 <HaversineTransferCollectionsOperation_init+0xc24>
+   16e60: f9402be9     	ldr	x9, [sp, #0x50]
+   16e64: 2a1f03e8     	mov	w8, wzr
+   16e68: b9004928     	str	w8, [x9, #0x48]
+   16e6c: 14000010     	b	0x16eac <HaversineTransferCollectionsOperation_init+0xc70>
+   16e70: 14000001     	b	0x16e74 <HaversineTransferCollectionsOperation_init+0xc38>
+   16e74: d0ffff60     	adrp	x0, 0x4000
+   16e78: 912d3c00     	add	x0, x0, #0xb4f
+   16e7c: 94000955     	bl	0x193d0 <printf@plt>
+   16e80: 14000001     	b	0x16e84 <HaversineTransferCollectionsOperation_init+0xc48>
+   16e84: f9402be9     	ldr	x9, [sp, #0x50]
+   16e88: 7847d128     	ldurh	w8, [x9, #0x7d]
+   16e8c: 7900f128     	strh	w8, [x9, #0x78]
+   16e90: f9402be9     	ldr	x9, [sp, #0x50]
+   16e94: 52800028     	mov	w8, #0x1                // =1
+   16e98: 3901e928     	strb	w8, [x9, #0x7a]
+   16e9c: f9402be9     	ldr	x9, [sp, #0x50]
+   16ea0: 52800068     	mov	w8, #0x3                // =3
+   16ea4: b9004928     	str	w8, [x9, #0x48]
+   16ea8: 14000001     	b	0x16eac <HaversineTransferCollectionsOperation_init+0xc70>
+   16eac: 14000002     	b	0x16eb4 <HaversineTransferCollectionsOperation_init+0xc78>
+   16eb0: 14000001     	b	0x16eb4 <HaversineTransferCollectionsOperation_init+0xc78>
+   16eb4: f94033e0     	ldr	x0, [sp, #0x60]
+   16eb8: 97fffd6c     	bl	0x16468 <HaversineTransferCollectionsOperation_init+0x22c>
+   16ebc: 370006c0     	tbnz	w0, #0x0, 0x16f94 <HaversineTransferCollectionsOperation_init+0xd58>
+   16ec0: 14000001     	b	0x16ec4 <HaversineTransferCollectionsOperation_init+0xc88>
+   16ec4: f9402be8     	ldr	x8, [sp, #0x50]
+   16ec8: 3941e908     	ldrb	w8, [x8, #0x7a]
+   16ecc: 36000248     	tbz	w8, #0x0, 0x16f14 <HaversineTransferCollectionsOperation_init+0xcd8>
+   16ed0: 14000001     	b	0x16ed4 <HaversineTransferCollectionsOperation_init+0xc98>
+   16ed4: f9402be8     	ldr	x8, [sp, #0x50]
+   16ed8: 7940f108     	ldrh	w8, [x8, #0x78]
+   16edc: 79010fe8     	strh	w8, [sp, #0x86]
+   16ee0: f9402be8     	ldr	x8, [sp, #0x50]
+   16ee4: f9401508     	ldr	x8, [x8, #0x28]
+   16ee8: b4000148     	cbz	x8, 0x16f10 <HaversineTransferCollectionsOperation_init+0xcd4>
+   16eec: 14000001     	b	0x16ef0 <HaversineTransferCollectionsOperation_init+0xcb4>
+   16ef0: f9402be9     	ldr	x9, [sp, #0x50]
+   16ef4: f9401528     	ldr	x8, [x9, #0x28]
+   16ef8: f9401d20     	ldr	x0, [x9, #0x38]
+   16efc: 52800049     	mov	w9, #0x2                // =2
+   16f00: 2a0903e2     	mov	w2, w9
+   16f04: 91021be1     	add	x1, sp, #0x86
+   16f08: d63f0100     	blr	x8
+   16f0c: 14000001     	b	0x16f10 <HaversineTransferCollectionsOperation_init+0xcd4>
+   16f10: 1400000f     	b	0x16f4c <HaversineTransferCollectionsOperation_init+0xd10>
+   16f14: d53bd048     	mrs	x8, TPIDR_EL0
+   16f18: f9401508     	ldr	x8, [x8, #0x28]
+   16f1c: f85f83a9     	ldur	x9, [x29, #-0x8]
+   16f20: eb090108     	subs	x8, x8, x9
+   16f24: 540004c1     	b.ne	0x16fbc <HaversineTransferCollectionsOperation_init+0xd80>
+   16f28: 14000001     	b	0x16f2c <HaversineTransferCollectionsOperation_init+0xcf0>
+   16f2c: d503201f     	nop
+   16f30: 50f71580     	adr	x0, 0x51e2
+   16f34: 90ffff82     	adrp	x2, 0x6000
+   16f38: 913c6842     	add	x2, x2, #0xf1a
+   16f3c: d0ffff63     	adrp	x3, 0x4000
+   16f40: 9127e063     	add	x3, x3, #0x9f8
+   16f44: 52801fe1     	mov	w1, #0xff               // =255
+   16f48: 94000896     	bl	0x191a0 <__assert2@plt>
+   16f4c: f9402be8     	ldr	x8, [sp, #0x50]
+   16f50: f9401908     	ldr	x8, [x8, #0x30]
+   16f54: b40001e8     	cbz	x8, 0x16f90 <HaversineTransferCollectionsOperation_init+0xd54>
+   16f58: 14000001     	b	0x16f5c <HaversineTransferCollectionsOperation_init+0xd20>
+   16f5c: f9402be8     	ldr	x8, [sp, #0x50]
+   16f60: f9401909     	ldr	x9, [x8, #0x30]
+   16f64: f9000fe9     	str	x9, [sp, #0x18]
+   16f68: f9401d08     	ldr	x8, [x8, #0x38]
+   16f6c: f90007e8     	str	x8, [sp, #0x8]
+   16f70: 9101a3e8     	add	x8, sp, #0x68
+   16f74: f9000be8     	str	x8, [sp, #0x10]
+   16f78: 94000073     	bl	0x17144 <HaversineTransferCollectionsOperation_init+0xf08>
+   16f7c: f94007e0     	ldr	x0, [sp, #0x8]
+   16f80: f9400be1     	ldr	x1, [sp, #0x10]
+   16f84: f9400fe8     	ldr	x8, [sp, #0x18]
+   16f88: d63f0100     	blr	x8
+   16f8c: 14000001     	b	0x16f90 <HaversineTransferCollectionsOperation_init+0xd54>
+   16f90: 14000001     	b	0x16f94 <HaversineTransferCollectionsOperation_init+0xd58>
+   16f94: d53bd048     	mrs	x8, TPIDR_EL0
+   16f98: f9401508     	ldr	x8, [x8, #0x28]
+   16f9c: f85f83a9     	ldur	x9, [x29, #-0x8]
+   16fa0: eb090108     	subs	x8, x8, x9
+   16fa4: 540000c1     	b.ne	0x16fbc <HaversineTransferCollectionsOperation_init+0xd80>
+   16fa8: 14000001     	b	0x16fac <HaversineTransferCollectionsOperation_init+0xd70>
+   16fac: f940abfc     	ldr	x28, [sp, #0x150]
+   16fb0: a9547bfd     	ldp	x29, x30, [sp, #0x140]
+   16fb4: 910583ff     	add	sp, sp, #0x160
+   16fb8: d65f03c0     	ret
+   16fbc: 94000855     	bl	0x19110 <__stack_chk_fail@plt>
+   16fc0: d100c3ff     	sub	sp, sp, #0x30
+   16fc4: a9027bfd     	stp	x29, x30, [sp, #0x20]
+   16fc8: 910083fd     	add	x29, sp, #0x20
+   16fcc: d53bd048     	mrs	x8, TPIDR_EL0
+   16fd0: f9401509     	ldr	x9, [x8, #0x28]
+   16fd4: f81f83a9     	stur	x9, [x29, #-0x8]
+   16fd8: f90007e0     	str	x0, [sp, #0x8]
+   16fdc: b9400be9     	ldr	w9, [sp, #0x8]
+   16fe0: b81f43a9     	stur	w9, [x29, #-0xc]
+   16fe4: 785f43a9     	ldurh	w9, [x29, #-0xc]
+   16fe8: 785f63aa     	ldurh	w10, [x29, #-0xa]
+   16fec: 6b0a0129     	subs	w9, w9, w10
+   16ff0: 1a9f17e9     	cset	w9, eq
+   16ff4: b90007e9     	str	w9, [sp, #0x4]
+   16ff8: f9401508     	ldr	x8, [x8, #0x28]
+   16ffc: f85f83a9     	ldur	x9, [x29, #-0x8]
+   17000: eb090108     	subs	x8, x8, x9
+   17004: 540000e1     	b.ne	0x17020 <HaversineTransferCollectionsOperation_init+0xde4>
+   17008: 14000001     	b	0x1700c <HaversineTransferCollectionsOperation_init+0xdd0>
+   1700c: b94007e8     	ldr	w8, [sp, #0x4]
+   17010: 12000100     	and	w0, w8, #0x1
+   17014: a9427bfd     	ldp	x29, x30, [sp, #0x20]
+   17018: 9100c3ff     	add	sp, sp, #0x30
+   1701c: d65f03c0     	ret
+   17020: 9400083c     	bl	0x19110 <__stack_chk_fail@plt>
+   17024: d10103ff     	sub	sp, sp, #0x40
+   17028: a9037bfd     	stp	x29, x30, [sp, #0x30]
+   1702c: 9100c3fd     	add	x29, sp, #0x30
+   17030: d53bd048     	mrs	x8, TPIDR_EL0
+   17034: f9401508     	ldr	x8, [x8, #0x28]
+   17038: f81f83a8     	stur	x8, [x29, #-0x8]
+   1703c: f9000fe0     	str	x0, [sp, #0x18]
+   17040: b9401be8     	ldr	w8, [sp, #0x18]
+   17044: b81f43a8     	stur	w8, [x29, #-0xc]
+   17048: 79002be1     	strh	w1, [sp, #0x14]
+   1704c: 2a1f03e8     	mov	w8, wzr
+   17050: b90013e8     	str	w8, [sp, #0x10]
+   17054: 52804008     	mov	w8, #0x200              // =512
+   17058: b9000fe8     	str	w8, [sp, #0xc]
+   1705c: 785f43a8     	ldurh	w8, [x29, #-0xc]
+   17060: 790017e8     	strh	w8, [sp, #0xa]
+   17064: 14000001     	b	0x17068 <HaversineTransferCollectionsOperation_init+0xe2c>
+   17068: 794017e8     	ldrh	w8, [sp, #0xa]
+   1706c: 785f63a9     	ldurh	w9, [x29, #-0xa]
+   17070: 6b090108     	subs	w8, w8, w9
+   17074: 54000460     	b.eq	0x17100 <HaversineTransferCollectionsOperation_init+0xec4>
+   17078: 14000001     	b	0x1707c <HaversineTransferCollectionsOperation_init+0xe40>
+   1707c: 794017e8     	ldrh	w8, [sp, #0xa]
+   17080: 79402be9     	ldrh	w9, [sp, #0x14]
+   17084: 6b090108     	subs	w8, w8, w9
+   17088: 540000a1     	b.ne	0x1709c <HaversineTransferCollectionsOperation_init+0xe60>
+   1708c: 14000001     	b	0x17090 <HaversineTransferCollectionsOperation_init+0xe54>
+   17090: 52800028     	mov	w8, #0x1                // =1
+   17094: 39005fe8     	strb	w8, [sp, #0x17]
+   17098: 1400001d     	b	0x1710c <HaversineTransferCollectionsOperation_init+0xed0>
+   1709c: b94013e8     	ldr	w8, [sp, #0x10]
+   170a0: 11000509     	add	w9, w8, #0x1
+   170a4: b90013e9     	str	w9, [sp, #0x10]
+   170a8: 71080508     	subs	w8, w8, #0x201
+   170ac: 5400020b     	b.lt	0x170ec <HaversineTransferCollectionsOperation_init+0xeb0>
+   170b0: 14000001     	b	0x170b4 <HaversineTransferCollectionsOperation_init+0xe78>
+   170b4: d53bd048     	mrs	x8, TPIDR_EL0
+   170b8: f9401508     	ldr	x8, [x8, #0x28]
+   170bc: f85f83a9     	ldur	x9, [x29, #-0x8]
+   170c0: eb090108     	subs	x8, x8, x9
+   170c4: 540003e1     	b.ne	0x17140 <HaversineTransferCollectionsOperation_init+0xf04>
+   170c8: 14000001     	b	0x170cc <HaversineTransferCollectionsOperation_init+0xe90>
+   170cc: d503201f     	nop
+   170d0: 50f70880     	adr	x0, 0x51e2
+   170d4: d0ffff62     	adrp	x2, 0x5000
+   170d8: 9120b842     	add	x2, x2, #0x82e
+   170dc: 90ffff83     	adrp	x3, 0x7000
+   170e0: 910c4863     	add	x3, x3, #0x312
+   170e4: 528008a1     	mov	w1, #0x45               // =69
+   170e8: 9400082e     	bl	0x191a0 <__assert2@plt>
+   170ec: 14000001     	b	0x170f0 <HaversineTransferCollectionsOperation_init+0xeb4>
+   170f0: 794017e8     	ldrh	w8, [sp, #0xa]
+   170f4: 11000508     	add	w8, w8, #0x1
+   170f8: 790017e8     	strh	w8, [sp, #0xa]
+   170fc: 17ffffdb     	b	0x17068 <HaversineTransferCollectionsOperation_init+0xe2c>
+   17100: 2a1f03e8     	mov	w8, wzr
+   17104: 39005fe8     	strb	w8, [sp, #0x17]
+   17108: 14000001     	b	0x1710c <HaversineTransferCollectionsOperation_init+0xed0>
+   1710c: 39405fe8     	ldrb	w8, [sp, #0x17]
+   17110: b90007e8     	str	w8, [sp, #0x4]
+   17114: d53bd048     	mrs	x8, TPIDR_EL0
+   17118: f9401508     	ldr	x8, [x8, #0x28]
+   1711c: f85f83a9     	ldur	x9, [x29, #-0x8]
+   17120: eb090108     	subs	x8, x8, x9
+   17124: 540000e1     	b.ne	0x17140 <HaversineTransferCollectionsOperation_init+0xf04>
+   17128: 14000001     	b	0x1712c <HaversineTransferCollectionsOperation_init+0xef0>
+   1712c: b94007e8     	ldr	w8, [sp, #0x4]
+   17130: 12000100     	and	w0, w8, #0x1
+   17134: a9437bfd     	ldp	x29, x30, [sp, #0x30]
+   17138: 910103ff     	add	sp, sp, #0x40
+   1713c: d65f03c0     	ret
+   17140: 940007f4     	bl	0x19110 <__stack_chk_fail@plt>
+   17144: f900011f     	str	xzr, [x8]
+   17148: f900051f     	str	xzr, [x8, #0x8]
+   1714c: f900091f     	str	xzr, [x8, #0x10]
+   17150: d65f03c0     	ret

@@ -1,0 +1,177 @@
+
+extract/android-debug/jni/arm64-v8a/libhaversinesatellitelibrary.so:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+0000000000011530 <TelestoOperation_init>:
+   11530: d10183ff     	sub	sp, sp, #0x60
+   11534: a9057bfd     	stp	x29, x30, [sp, #0x50]
+   11538: 910143fd     	add	x29, sp, #0x50
+   1153c: f90007e0     	str	x0, [sp, #0x8]
+   11540: f90017e0     	str	x0, [sp, #0x28]
+   11544: d2800020     	mov	x0, #0x1                // =1
+   11548: d2800901     	mov	x1, #0x48               // =72
+   1154c: 94001f89     	bl	0x19370 <calloc@plt>
+   11550: aa0003e8     	mov	x8, x0
+   11554: f94007e0     	ldr	x0, [sp, #0x8]
+   11558: f90013e8     	str	x8, [sp, #0x20]
+   1155c: f94013e9     	ldr	x9, [sp, #0x20]
+   11560: 3dc00000     	ldr	q0, [x0]
+   11564: 3c828120     	stur	q0, [x9, #0x28]
+   11568: f9400808     	ldr	x8, [x0, #0x10]
+   1156c: f9001d28     	str	x8, [x9, #0x38]
+   11570: f94013e9     	ldr	x9, [sp, #0x20]
+   11574: d503201f     	nop
+   11578: 10000588     	adr	x8, 0x11628 <TelestoOperation_init+0xf8>
+   1157c: f9000128     	str	x8, [x9]
+   11580: f94013e9     	ldr	x9, [sp, #0x20]
+   11584: d503201f     	nop
+   11588: 10000d28     	adr	x8, 0x1172c <TelestoOperation_init+0x1fc>
+   1158c: f9000528     	str	x8, [x9, #0x8]
+   11590: f94013e9     	ldr	x9, [sp, #0x20]
+   11594: d503201f     	nop
+   11598: 10000fc8     	adr	x8, 0x11790 <TelestoOperation_init+0x260>
+   1159c: f9000928     	str	x8, [x9, #0x10]
+   115a0: f94013e8     	ldr	x8, [sp, #0x20]
+   115a4: f94013e9     	ldr	x9, [sp, #0x20]
+   115a8: f9000d28     	str	x8, [x9, #0x18]
+   115ac: f9400808     	ldr	x8, [x0, #0x10]
+   115b0: b4000348     	cbz	x8, 0x11618 <TelestoOperation_init+0xe8>
+   115b4: 14000001     	b	0x115b8 <TelestoOperation_init+0x88>
+   115b8: f94007e8     	ldr	x8, [sp, #0x8]
+   115bc: b8409108     	ldur	w8, [x8, #0x9]
+   115c0: f9000fe8     	str	x8, [sp, #0x18]
+   115c4: f9400fe0     	ldr	x0, [sp, #0x18]
+   115c8: 94001eda     	bl	0x19130 <malloc@plt>
+   115cc: f94007e8     	ldr	x8, [sp, #0x8]
+   115d0: f9000be0     	str	x0, [sp, #0x10]
+   115d4: f9400bea     	ldr	x10, [sp, #0x10]
+   115d8: f9400909     	ldr	x9, [x8, #0x10]
+   115dc: f9400fe8     	ldr	x8, [sp, #0x18]
+   115e0: f81f83aa     	stur	x10, [x29, #-0x8]
+   115e4: 9280000a     	mov	x10, #-0x1              // =-1
+   115e8: f81f03aa     	stur	x10, [x29, #-0x10]
+   115ec: f81e83a9     	stur	x9, [x29, #-0x18]
+   115f0: f81e03a8     	stur	x8, [x29, #-0x20]
+   115f4: f85f83a0     	ldur	x0, [x29, #-0x8]
+   115f8: f85e83a1     	ldur	x1, [x29, #-0x18]
+   115fc: f85e03a2     	ldur	x2, [x29, #-0x20]
+   11600: f85f03a3     	ldur	x3, [x29, #-0x10]
+   11604: 94001ecf     	bl	0x19140 <__memcpy_chk@plt>
+   11608: f9400be8     	ldr	x8, [sp, #0x10]
+   1160c: f94013e9     	ldr	x9, [sp, #0x20]
+   11610: f9001d28     	str	x8, [x9, #0x38]
+   11614: 14000001     	b	0x11618 <TelestoOperation_init+0xe8>
+   11618: f94013e0     	ldr	x0, [sp, #0x20]
+   1161c: a9457bfd     	ldp	x29, x30, [sp, #0x50]
+   11620: 910183ff     	add	sp, sp, #0x60
+   11624: d65f03c0     	ret
+   11628: d102c3ff     	sub	sp, sp, #0xb0
+   1162c: a90a7bfd     	stp	x29, x30, [sp, #0xa0]
+   11630: 910283fd     	add	x29, sp, #0xa0
+   11634: f90007e1     	str	x1, [sp, #0x8]
+   11638: d53bd048     	mrs	x8, TPIDR_EL0
+   1163c: f9401508     	ldr	x8, [x8, #0x28]
+   11640: f81f83a8     	stur	x8, [x29, #-0x8]
+   11644: f90017e0     	str	x0, [sp, #0x28]
+   11648: f90013e1     	str	x1, [sp, #0x20]
+   1164c: f94017e8     	ldr	x8, [sp, #0x28]
+   11650: f9000fe8     	str	x8, [sp, #0x18]
+   11654: f9400fe8     	ldr	x8, [sp, #0x18]
+   11658: f9401108     	ldr	x8, [x8, #0x20]
+   1165c: f9000be8     	str	x8, [sp, #0x10]
+   11660: f9400be8     	ldr	x8, [sp, #0x10]
+   11664: b4000068     	cbz	x8, 0x11670 <TelestoOperation_init+0x140>
+   11668: 14000001     	b	0x1166c <TelestoOperation_init+0x13c>
+   1166c: 1400000f     	b	0x116a8 <TelestoOperation_init+0x178>
+   11670: d53bd048     	mrs	x8, TPIDR_EL0
+   11674: f9401508     	ldr	x8, [x8, #0x28]
+   11678: f85f83a9     	ldur	x9, [x29, #-0x8]
+   1167c: eb090108     	subs	x8, x8, x9
+   11680: 54000541     	b.ne	0x11728 <TelestoOperation_init+0x1f8>
+   11684: 14000001     	b	0x11688 <TelestoOperation_init+0x158>
+   11688: d503201f     	nop
+   1168c: 50fb5060     	adr	x0, 0x809a
+   11690: 90ffffa2     	adrp	x2, 0x5000
+   11694: 91232842     	add	x2, x2, #0x8ca
+   11698: f0ffffa3     	adrp	x3, 0x8000
+   1169c: 9107d863     	add	x3, x3, #0x1f6
+   116a0: 528079e1     	mov	w1, #0x3cf              // =975
+   116a4: 94001ebf     	bl	0x191a0 <__assert2@plt>
+   116a8: f94007e8     	ldr	x8, [sp, #0x8]
+   116ac: f9400fe9     	ldr	x9, [sp, #0x18]
+   116b0: 3cc28120     	ldur	q0, [x9, #0x28]
+   116b4: f9401d29     	ldr	x9, [x9, #0x38]
+   116b8: f81d03a9     	stur	x9, [x29, #-0x30]
+   116bc: 3c9c03a0     	stur	q0, [x29, #-0x40]
+   116c0: 3dc00100     	ldr	q0, [x8]
+   116c4: f9400908     	ldr	x8, [x8, #0x10]
+   116c8: f81e83a8     	stur	x8, [x29, #-0x18]
+   116cc: 3c9d83a0     	stur	q0, [x29, #-0x28]
+   116d0: f9400be8     	ldr	x8, [sp, #0x10]
+   116d4: f9400100     	ldr	x0, [x8]
+   116d8: 3cdc03a0     	ldur	q0, [x29, #-0x40]
+   116dc: 3cdd03a1     	ldur	q1, [x29, #-0x30]
+   116e0: 3cde03a2     	ldur	q2, [x29, #-0x20]
+   116e4: 3d8017e2     	str	q2, [sp, #0x50]
+   116e8: 3d8013e1     	str	q1, [sp, #0x40]
+   116ec: 3d800fe0     	str	q0, [sp, #0x30]
+   116f0: 9100c3e1     	add	x1, sp, #0x30
+   116f4: 94001f1b     	bl	0x19360 <TelestoController_addOperation@plt>
+   116f8: f9400fe8     	ldr	x8, [sp, #0x18]
+   116fc: f9002100     	str	x0, [x8, #0x40]
+   11700: d53bd048     	mrs	x8, TPIDR_EL0
+   11704: f9401508     	ldr	x8, [x8, #0x28]
+   11708: f85f83a9     	ldur	x9, [x29, #-0x8]
+   1170c: eb090108     	subs	x8, x8, x9
+   11710: 540000c1     	b.ne	0x11728 <TelestoOperation_init+0x1f8>
+   11714: 14000001     	b	0x11718 <TelestoOperation_init+0x1e8>
+   11718: 52800020     	mov	w0, #0x1                // =1
+   1171c: a94a7bfd     	ldp	x29, x30, [sp, #0xa0]
+   11720: 9102c3ff     	add	sp, sp, #0xb0
+   11724: d65f03c0     	ret
+   11728: 94001e7a     	bl	0x19110 <__stack_chk_fail@plt>
+   1172c: d100c3ff     	sub	sp, sp, #0x30
+   11730: a9027bfd     	stp	x29, x30, [sp, #0x20]
+   11734: 910083fd     	add	x29, sp, #0x20
+   11738: f81f83a0     	stur	x0, [x29, #-0x8]
+   1173c: f85f83a8     	ldur	x8, [x29, #-0x8]
+   11740: f9000be8     	str	x8, [sp, #0x10]
+   11744: f9400be8     	ldr	x8, [sp, #0x10]
+   11748: f9402108     	ldr	x8, [x8, #0x40]
+   1174c: b5000068     	cbnz	x8, 0x11758 <TelestoOperation_init+0x228>
+   11750: 14000001     	b	0x11754 <TelestoOperation_init+0x224>
+   11754: 1400000c     	b	0x11784 <TelestoOperation_init+0x254>
+   11758: f9400be8     	ldr	x8, [sp, #0x10]
+   1175c: f9401108     	ldr	x8, [x8, #0x20]
+   11760: f9400108     	ldr	x8, [x8]
+   11764: f90007e8     	str	x8, [sp, #0x8]
+   11768: f94007e0     	ldr	x0, [sp, #0x8]
+   1176c: f9400be8     	ldr	x8, [sp, #0x10]
+   11770: f9402101     	ldr	x1, [x8, #0x40]
+   11774: 94001f07     	bl	0x19390 <TelestoController_cancelOperation@plt>
+   11778: f9400be8     	ldr	x8, [sp, #0x10]
+   1177c: f900211f     	str	xzr, [x8, #0x40]
+   11780: 14000001     	b	0x11784 <TelestoOperation_init+0x254>
+   11784: a9427bfd     	ldp	x29, x30, [sp, #0x20]
+   11788: 9100c3ff     	add	sp, sp, #0x30
+   1178c: d65f03c0     	ret
+   11790: d10083ff     	sub	sp, sp, #0x20
+   11794: a9017bfd     	stp	x29, x30, [sp, #0x10]
+   11798: 910043fd     	add	x29, sp, #0x10
+   1179c: f90007e0     	str	x0, [sp, #0x8]
+   117a0: f94007e8     	ldr	x8, [sp, #0x8]
+   117a4: f90003e8     	str	x8, [sp]
+   117a8: f94003e8     	ldr	x8, [sp]
+   117ac: f9401d08     	ldr	x8, [x8, #0x38]
+   117b0: b40000c8     	cbz	x8, 0x117c8 <TelestoOperation_init+0x298>
+   117b4: 14000001     	b	0x117b8 <TelestoOperation_init+0x288>
+   117b8: f94003e8     	ldr	x8, [sp]
+   117bc: f9401d00     	ldr	x0, [x8, #0x38]
+   117c0: 94001e6c     	bl	0x19170 <free@plt>
+   117c4: 14000001     	b	0x117c8 <TelestoOperation_init+0x298>
+   117c8: f94003e0     	ldr	x0, [sp]
+   117cc: 94001e69     	bl	0x19170 <free@plt>
+   117d0: a9417bfd     	ldp	x29, x30, [sp, #0x10]
+   117d4: 910083ff     	add	sp, sp, #0x20
+   117d8: d65f03c0     	ret

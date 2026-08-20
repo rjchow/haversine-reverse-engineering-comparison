@@ -1,6 +1,6 @@
 # Haversine reverse-engineering comparison
 
-Four independent agent runs investigated the phone-side Haversine libraries used with the Pebble Index 01 ring. This repository preserves each run's authored deliverables side by side; it is not a merged technical conclusion.
+Five independent agent runs investigated the phone-side Haversine libraries used with the Pebble Index 01 ring. This repository preserves each run's authored deliverables side by side; it is not a merged technical conclusion.
 
 | Directory | Model/run |
 |---|---|
@@ -8,8 +8,9 @@ Four independent agent runs investigated the phone-side Haversine libraries used
 | `qwen3.8-2.4t-openrouter/` | Qwen 3.8 2.4T via OpenRouter |
 | `gpt-5.6-luna-xhigh/` | GPT-5.6 Luna, xhigh reasoning |
 | `gpt-5.6-sol-ultra/` | GPT-5.6 Sol, ultra reasoning |
+| `glm-5.3-openrouter-max/` | GLM 5.3 via OpenRouter, maximum reasoning requested |
 
-`PROMPT.md` is the byte-identical investigation brief supplied to all four runs. `RUN_METADATA.md` contains a sanitized comparison of the available Pi and Codex session records.
+`PROMPT.md` is the byte-identical investigation brief supplied to all five runs. `RUN_METADATA.md` contains a sanitized comparison of the available Pi and Codex session records.
 
 ## Contents and curation
 

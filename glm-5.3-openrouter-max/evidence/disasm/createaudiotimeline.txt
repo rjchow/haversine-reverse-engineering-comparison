@@ -1,0 +1,303 @@
+
+extract/android-debug/jni/arm64-v8a/libppcommon.so:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+000000000002f964 <PPCollection_createAudioTimeline>:
+   2f964: d10603ff     	sub	sp, sp, #0x180
+   2f968: a9167bfd     	stp	x29, x30, [sp, #0x160]
+   2f96c: f900bbfc     	str	x28, [sp, #0x170]
+   2f970: 910583fd     	add	x29, sp, #0x160
+   2f974: f9000be8     	str	x8, [sp, #0x10]
+   2f978: d53bd048     	mrs	x8, TPIDR_EL0
+   2f97c: f9401508     	ldr	x8, [x8, #0x28]
+   2f980: f81f83a8     	stur	x8, [x29, #-0x8]
+   2f984: f90047e0     	str	x0, [sp, #0x88]
+   2f988: f94047e8     	ldr	x8, [sp, #0x88]
+   2f98c: b50000c8     	cbnz	x8, 0x2f9a4 <PPCollection_createAudioTimeline+0x40>
+   2f990: 14000001     	b	0x2f994 <PPCollection_createAudioTimeline+0x30>
+   2f994: f9400be8     	ldr	x8, [sp, #0x10]
+   2f998: 52800040     	mov	w0, #0x2                // =2
+   2f99c: 97fffe98     	bl	0x2f3fc <PPCollection_hardwareSerialNumber+0x118>
+   2f9a0: 140000fb     	b	0x2fd8c <PPCollection_createAudioTimeline+0x428>
+   2f9a4: f94047e8     	ldr	x8, [sp, #0x88]
+   2f9a8: 39400108     	ldrb	w8, [x8]
+   2f9ac: 370000c8     	tbnz	w8, #0x0, 0x2f9c4 <PPCollection_createAudioTimeline+0x60>
+   2f9b0: 14000001     	b	0x2f9b4 <PPCollection_createAudioTimeline+0x50>
+   2f9b4: f9400be8     	ldr	x8, [sp, #0x10]
+   2f9b8: 52800060     	mov	w0, #0x3                // =3
+   2f9bc: 97fffe90     	bl	0x2f3fc <PPCollection_hardwareSerialNumber+0x118>
+   2f9c0: 140000f3     	b	0x2fd8c <PPCollection_createAudioTimeline+0x428>
+   2f9c4: f9400be0     	ldr	x0, [sp, #0x10]
+   2f9c8: 5280ad08     	mov	w8, #0x568              // =1384
+   2f9cc: 2a0803e2     	mov	w2, w8
+   2f9d0: 2a1f03e1     	mov	w1, wzr
+   2f9d4: b9000fe1     	str	w1, [sp, #0xc]
+   2f9d8: 94000a9a     	bl	0x32440 <memset@plt>
+   2f9dc: b9400fe8     	ldr	w8, [sp, #0xc]
+   2f9e0: b90087e8     	str	w8, [sp, #0x84]
+   2f9e4: 39020fe8     	strb	w8, [sp, #0x83]
+   2f9e8: 39020be8     	strb	w8, [sp, #0x82]
+   2f9ec: f94047e8     	ldr	x8, [sp, #0x88]
+   2f9f0: 91046508     	add	x8, x8, #0x119
+   2f9f4: f9400108     	ldr	x8, [x8]
+   2f9f8: b40002c8     	cbz	x8, 0x2fa50 <PPCollection_createAudioTimeline+0xec>
+   2f9fc: 14000001     	b	0x2fa00 <PPCollection_createAudioTimeline+0x9c>
+   2fa00: f94047e8     	ldr	x8, [sp, #0x88]
+   2fa04: 91046508     	add	x8, x8, #0x119
+   2fa08: f9400108     	ldr	x8, [x8]
+   2fa0c: b8402108     	ldur	w8, [x8, #0x2]
+   2fa10: b90087e8     	str	w8, [sp, #0x84]
+   2fa14: f94047e8     	ldr	x8, [sp, #0x88]
+   2fa18: 91046508     	add	x8, x8, #0x119
+   2fa1c: f9400108     	ldr	x8, [x8]
+   2fa20: 39401908     	ldrb	w8, [x8, #0x6]
+   2fa24: 71000108     	subs	w8, w8, #0x0
+   2fa28: 1a9f07e8     	cset	w8, ne
+   2fa2c: 39020fe8     	strb	w8, [sp, #0x83]
+   2fa30: f94047e8     	ldr	x8, [sp, #0x88]
+   2fa34: 91046508     	add	x8, x8, #0x119
+   2fa38: f9400108     	ldr	x8, [x8]
+   2fa3c: 39401d08     	ldrb	w8, [x8, #0x7]
+   2fa40: 71000108     	subs	w8, w8, #0x0
+   2fa44: 1a9f07e8     	cset	w8, ne
+   2fa48: 39020be8     	strb	w8, [sp, #0x82]
+   2fa4c: 14000001     	b	0x2fa50 <PPCollection_createAudioTimeline+0xec>
+   2fa50: f94047e8     	ldr	x8, [sp, #0x88]
+   2fa54: 91042508     	add	x8, x8, #0x109
+   2fa58: f9400108     	ldr	x8, [x8]
+   2fa5c: b40006e8     	cbz	x8, 0x2fb38 <PPCollection_createAudioTimeline+0x1d4>
+   2fa60: 14000001     	b	0x2fa64 <PPCollection_createAudioTimeline+0x100>
+   2fa64: f94047e8     	ldr	x8, [sp, #0x88]
+   2fa68: 91042508     	add	x8, x8, #0x109
+   2fa6c: f9400108     	ldr	x8, [x8]
+   2fa70: f9003fe8     	str	x8, [sp, #0x78]
+   2fa74: f9403fe8     	ldr	x8, [sp, #0x78]
+   2fa78: b9400108     	ldr	w8, [x8]
+   2fa7c: f1001108     	subs	x8, x8, #0x4
+   2fa80: f9003be8     	str	x8, [sp, #0x70]
+   2fa84: f9403be8     	ldr	x8, [sp, #0x70]
+   2fa88: d341fd08     	lsr	x8, x8, #1
+   2fa8c: f90037e8     	str	x8, [sp, #0x68]
+   2fa90: f94037e8     	ldr	x8, [sp, #0x68]
+   2fa94: d37ff900     	lsl	x0, x8, #1
+   2fa98: 94000b46     	bl	0x327b0 <malloc@plt>
+   2fa9c: f90033e0     	str	x0, [sp, #0x60]
+   2faa0: f94033e8     	ldr	x8, [sp, #0x60]
+   2faa4: b50000c8     	cbnz	x8, 0x2fabc <PPCollection_createAudioTimeline+0x158>
+   2faa8: 14000001     	b	0x2faac <PPCollection_createAudioTimeline+0x148>
+   2faac: f9400be9     	ldr	x9, [sp, #0x10]
+   2fab0: 52800268     	mov	w8, #0x13               // =19
+   2fab4: b9000128     	str	w8, [x9]
+   2fab8: 140000b5     	b	0x2fd8c <PPCollection_createAudioTimeline+0x428>
+   2fabc: f94033ea     	ldr	x10, [sp, #0x60]
+   2fac0: f9403fe8     	ldr	x8, [sp, #0x78]
+   2fac4: 91002109     	add	x9, x8, #0x8
+   2fac8: f9403be8     	ldr	x8, [sp, #0x70]
+   2facc: f90057ea     	str	x10, [sp, #0xa8]
+   2fad0: 9280000a     	mov	x10, #-0x1              // =-1
+   2fad4: f90053ea     	str	x10, [sp, #0xa0]
+   2fad8: f9004fe9     	str	x9, [sp, #0x98]
+   2fadc: f9004be8     	str	x8, [sp, #0x90]
+   2fae0: f94057e0     	ldr	x0, [sp, #0xa8]
+   2fae4: f9404fe1     	ldr	x1, [sp, #0x98]
+   2fae8: f9404be2     	ldr	x2, [sp, #0x90]
+   2faec: f94053e3     	ldr	x3, [sp, #0xa0]
+   2faf0: 94000b28     	bl	0x32790 <__memcpy_chk@plt>
+   2faf4: f9400be9     	ldr	x9, [sp, #0x10]
+   2faf8: f9403fe8     	ldr	x8, [sp, #0x78]
+   2fafc: b9400508     	ldr	w8, [x8, #0x4]
+   2fb00: b9000d28     	str	w8, [x9, #0xc]
+   2fb04: f94037e8     	ldr	x8, [sp, #0x68]
+   2fb08: f9000928     	str	x8, [x9, #0x10]
+   2fb0c: f94033e8     	ldr	x8, [sp, #0x60]
+   2fb10: f9000d28     	str	x8, [x9, #0x18]
+   2fb14: b94087e8     	ldr	w8, [sp, #0x84]
+   2fb18: b9000928     	str	w8, [x9, #0x8]
+   2fb1c: 39420fe8     	ldrb	w8, [sp, #0x83]
+   2fb20: 12000108     	and	w8, w8, #0x1
+   2fb24: 39008128     	strb	w8, [x9, #0x20]
+   2fb28: 39420be8     	ldrb	w8, [sp, #0x82]
+   2fb2c: 12000108     	and	w8, w8, #0x1
+   2fb30: 39008528     	strb	w8, [x9, #0x21]
+   2fb34: 14000096     	b	0x2fd8c <PPCollection_createAudioTimeline+0x428>
+   2fb38: f94047e8     	ldr	x8, [sp, #0x88]
+   2fb3c: 91044508     	add	x8, x8, #0x111
+   2fb40: f9400108     	ldr	x8, [x8]
+   2fb44: b40011a8     	cbz	x8, 0x2fd78 <PPCollection_createAudioTimeline+0x414>
+   2fb48: 14000001     	b	0x2fb4c <PPCollection_createAudioTimeline+0x1e8>
+   2fb4c: f94047e8     	ldr	x8, [sp, #0x88]
+   2fb50: 91044508     	add	x8, x8, #0x111
+   2fb54: f9400108     	ldr	x8, [x8]
+   2fb58: f9002fe8     	str	x8, [sp, #0x58]
+   2fb5c: f9402fe8     	ldr	x8, [sp, #0x58]
+   2fb60: 91003508     	add	x8, x8, #0xd
+   2fb64: f9002be8     	str	x8, [sp, #0x50]
+   2fb68: f9402fe8     	ldr	x8, [sp, #0x58]
+   2fb6c: b9400108     	ldr	w8, [x8]
+   2fb70: f1002508     	subs	x8, x8, #0x9
+   2fb74: f90027e8     	str	x8, [sp, #0x48]
+   2fb78: f9402fe8     	ldr	x8, [sp, #0x58]
+   2fb7c: b8405108     	ldur	w8, [x8, #0x5]
+   2fb80: f90023e8     	str	x8, [sp, #0x40]
+   2fb84: f94023e8     	ldr	x8, [sp, #0x40]
+   2fb88: f94027e9     	ldr	x9, [sp, #0x48]
+   2fb8c: eb090d08     	subs	x8, x8, x9, lsl #3
+   2fb90: 54000068     	b.hi	0x2fb9c <PPCollection_createAudioTimeline+0x238>
+   2fb94: 14000001     	b	0x2fb98 <PPCollection_createAudioTimeline+0x234>
+   2fb98: 1400000f     	b	0x2fbd4 <PPCollection_createAudioTimeline+0x270>
+   2fb9c: d53bd048     	mrs	x8, TPIDR_EL0
+   2fba0: f9401508     	ldr	x8, [x8, #0x28]
+   2fba4: f85f83a9     	ldur	x9, [x29, #-0x8]
+   2fba8: eb090108     	subs	x8, x8, x9
+   2fbac: 54001041     	b.ne	0x2fdb4 <PPCollection_createAudioTimeline+0x450>
+   2fbb0: 14000001     	b	0x2fbb4 <PPCollection_createAudioTimeline+0x250>
+   2fbb4: b0ffff20     	adrp	x0, 0x14000
+   2fbb8: 91346c00     	add	x0, x0, #0xd1b
+   2fbbc: b0ffff22     	adrp	x2, 0x14000
+   2fbc0: 91068c42     	add	x2, x2, #0x1a3
+   2fbc4: b0ffff23     	adrp	x3, 0x14000
+   2fbc8: 910bb463     	add	x3, x3, #0x2ed
+   2fbcc: 52801be1     	mov	w1, #0xdf               // =223
+   2fbd0: 940009dc     	bl	0x32340 <__assert2@plt>
+   2fbd4: f9402be1     	ldr	x1, [sp, #0x50]
+   2fbd8: f94023e2     	ldr	x2, [sp, #0x40]
+   2fbdc: d10263a0     	sub	x0, x29, #0x98
+   2fbe0: aa1f03e3     	mov	x3, xzr
+   2fbe4: f90003e3     	str	x3, [sp]
+   2fbe8: 94000b02     	bl	0x327f0 <DDRiceDecompressionDecoder_init@plt>
+   2fbec: 2a1f03e2     	mov	w2, wzr
+   2fbf0: b81643a2     	stur	w2, [x29, #-0x9c]
+   2fbf4: f9402fe8     	ldr	x8, [sp, #0x58]
+   2fbf8: 91001101     	add	x1, x8, #0x4
+   2fbfc: b85643a8     	ldur	w8, [x29, #-0x9c]
+   2fc00: b81583a8     	stur	w8, [x29, #-0xa8]
+   2fc04: f85583a3     	ldur	x3, [x29, #-0xa8]
+   2fc08: d10203a0     	sub	x0, x29, #0x80
+   2fc0c: 94000afd     	bl	0x32800 <DDRiceDecompressionChannel_init@plt>
+   2fc10: f94003e8     	ldr	x8, [sp]
+   2fc14: 5290d409     	mov	w9, #0x86a0             // =34464
+   2fc18: 72a00029     	movk	w9, #0x1, lsl #16
+   2fc1c: f9001fe9     	str	x9, [sp, #0x38]
+   2fc20: f9001be8     	str	x8, [sp, #0x30]
+   2fc24: f9401fe8     	ldr	x8, [sp, #0x38]
+   2fc28: d37ff900     	lsl	x0, x8, #1
+   2fc2c: 94000ae1     	bl	0x327b0 <malloc@plt>
+   2fc30: f90017e0     	str	x0, [sp, #0x28]
+   2fc34: f94017e8     	ldr	x8, [sp, #0x28]
+   2fc38: b50000c8     	cbnz	x8, 0x2fc50 <PPCollection_createAudioTimeline+0x2ec>
+   2fc3c: 14000001     	b	0x2fc40 <PPCollection_createAudioTimeline+0x2dc>
+   2fc40: f9400be9     	ldr	x9, [sp, #0x10]
+   2fc44: 52800268     	mov	w8, #0x13               // =19
+   2fc48: b9000128     	str	w8, [x9]
+   2fc4c: 14000050     	b	0x2fd8c <PPCollection_createAudioTimeline+0x428>
+   2fc50: 14000001     	b	0x2fc54 <PPCollection_createAudioTimeline+0x2f0>
+   2fc54: d10203a0     	sub	x0, x29, #0x80
+   2fc58: d10263a1     	sub	x1, x29, #0x98
+   2fc5c: d102aba2     	sub	x2, x29, #0xaa
+   2fc60: 94000aec     	bl	0x32810 <DDRiceDecompressionChannel_decodeDiff@plt>
+   2fc64: b90027e0     	str	w0, [sp, #0x24]
+   2fc68: b94027e8     	ldr	w8, [sp, #0x24]
+   2fc6c: 350004c8     	cbnz	w8, 0x2fd04 <PPCollection_createAudioTimeline+0x3a0>
+   2fc70: 14000001     	b	0x2fc74 <PPCollection_createAudioTimeline+0x310>
+   2fc74: 785563a1     	ldurh	w1, [x29, #-0xaa]
+   2fc78: d10203a0     	sub	x0, x29, #0x80
+   2fc7c: 94000ae9     	bl	0x32820 <DDRiceDecompressionChannel_nextWord@plt>
+   2fc80: 790047e0     	strh	w0, [sp, #0x22]
+   2fc84: f9401be8     	ldr	x8, [sp, #0x30]
+   2fc88: f9401fe9     	ldr	x9, [sp, #0x38]
+   2fc8c: eb090108     	subs	x8, x8, x9
+   2fc90: 540002c3     	b.lo	0x2fce8 <PPCollection_createAudioTimeline+0x384>
+   2fc94: 14000001     	b	0x2fc98 <PPCollection_createAudioTimeline+0x334>
+   2fc98: f9401fe8     	ldr	x8, [sp, #0x38]
+   2fc9c: d37ff908     	lsl	x8, x8, #1
+   2fca0: f9001fe8     	str	x8, [sp, #0x38]
+   2fca4: f94017e0     	ldr	x0, [sp, #0x28]
+   2fca8: f9401fe8     	ldr	x8, [sp, #0x38]
+   2fcac: d37ff901     	lsl	x1, x8, #1
+   2fcb0: 94000ae0     	bl	0x32830 <realloc@plt>
+   2fcb4: f9000fe0     	str	x0, [sp, #0x18]
+   2fcb8: f9400fe8     	ldr	x8, [sp, #0x18]
+   2fcbc: b5000108     	cbnz	x8, 0x2fcdc <PPCollection_createAudioTimeline+0x378>
+   2fcc0: 14000001     	b	0x2fcc4 <PPCollection_createAudioTimeline+0x360>
+   2fcc4: f94017e0     	ldr	x0, [sp, #0x28]
+   2fcc8: 94000ac2     	bl	0x327d0 <free@plt>
+   2fccc: f9400be9     	ldr	x9, [sp, #0x10]
+   2fcd0: 52800268     	mov	w8, #0x13               // =19
+   2fcd4: b9000128     	str	w8, [x9]
+   2fcd8: 1400002d     	b	0x2fd8c <PPCollection_createAudioTimeline+0x428>
+   2fcdc: f9400fe8     	ldr	x8, [sp, #0x18]
+   2fce0: f90017e8     	str	x8, [sp, #0x28]
+   2fce4: 14000001     	b	0x2fce8 <PPCollection_createAudioTimeline+0x384>
+   2fce8: 794047e8     	ldrh	w8, [sp, #0x22]
+   2fcec: f94017e9     	ldr	x9, [sp, #0x28]
+   2fcf0: f9401bea     	ldr	x10, [sp, #0x30]
+   2fcf4: 9100054b     	add	x11, x10, #0x1
+   2fcf8: f9001beb     	str	x11, [sp, #0x30]
+   2fcfc: 782a7928     	strh	w8, [x9, x10, lsl #1]
+   2fd00: 1400000c     	b	0x2fd30 <PPCollection_createAudioTimeline+0x3cc>
+   2fd04: b94027e8     	ldr	w8, [sp, #0x24]
+   2fd08: 71000d08     	subs	w8, w8, #0x3
+   2fd0c: 54000061     	b.ne	0x2fd18 <PPCollection_createAudioTimeline+0x3b4>
+   2fd10: 14000001     	b	0x2fd14 <PPCollection_createAudioTimeline+0x3b0>
+   2fd14: 14000008     	b	0x2fd34 <PPCollection_createAudioTimeline+0x3d0>
+   2fd18: f94017e0     	ldr	x0, [sp, #0x28]
+   2fd1c: 94000aad     	bl	0x327d0 <free@plt>
+   2fd20: f9400be9     	ldr	x9, [sp, #0x10]
+   2fd24: 528000c8     	mov	w8, #0x6                // =6
+   2fd28: b9000128     	str	w8, [x9]
+   2fd2c: 14000018     	b	0x2fd8c <PPCollection_createAudioTimeline+0x428>
+   2fd30: 17ffffc9     	b	0x2fc54 <PPCollection_createAudioTimeline+0x2f0>
+   2fd34: f9400be9     	ldr	x9, [sp, #0x10]
+   2fd38: f9402fe8     	ldr	x8, [sp, #0x58]
+   2fd3c: b8409108     	ldur	w8, [x8, #0x9]
+   2fd40: b9000d28     	str	w8, [x9, #0xc]
+   2fd44: f9401be8     	ldr	x8, [sp, #0x30]
+   2fd48: f9000928     	str	x8, [x9, #0x10]
+   2fd4c: f94017e8     	ldr	x8, [sp, #0x28]
+   2fd50: f9000d28     	str	x8, [x9, #0x18]
+   2fd54: b94087e8     	ldr	w8, [sp, #0x84]
+   2fd58: b9000928     	str	w8, [x9, #0x8]
+   2fd5c: 39420fe8     	ldrb	w8, [sp, #0x83]
+   2fd60: 12000108     	and	w8, w8, #0x1
+   2fd64: 39008128     	strb	w8, [x9, #0x20]
+   2fd68: 39420be8     	ldrb	w8, [sp, #0x82]
+   2fd6c: 12000108     	and	w8, w8, #0x1
+   2fd70: 39008528     	strb	w8, [x9, #0x21]
+   2fd74: 14000006     	b	0x2fd8c <PPCollection_createAudioTimeline+0x428>
+   2fd78: 14000001     	b	0x2fd7c <PPCollection_createAudioTimeline+0x418>
+   2fd7c: f9400be9     	ldr	x9, [sp, #0x10]
+   2fd80: 528000e8     	mov	w8, #0x7                // =7
+   2fd84: b9000128     	str	w8, [x9]
+   2fd88: 14000001     	b	0x2fd8c <PPCollection_createAudioTimeline+0x428>
+   2fd8c: d53bd048     	mrs	x8, TPIDR_EL0
+   2fd90: f9401508     	ldr	x8, [x8, #0x28]
+   2fd94: f85f83a9     	ldur	x9, [x29, #-0x8]
+   2fd98: eb090108     	subs	x8, x8, x9
+   2fd9c: 540000c1     	b.ne	0x2fdb4 <PPCollection_createAudioTimeline+0x450>
+   2fda0: 14000001     	b	0x2fda4 <PPCollection_createAudioTimeline+0x440>
+   2fda4: f940bbfc     	ldr	x28, [sp, #0x170]
+   2fda8: a9567bfd     	ldp	x29, x30, [sp, #0x160]
+   2fdac: 910603ff     	add	sp, sp, #0x180
+   2fdb0: d65f03c0     	ret
+   2fdb4: 9400095f     	bl	0x32330 <__stack_chk_fail@plt>
+
+000000000002fdb8 <PPCollection_freeAudioTimeline>:
+   2fdb8: d10083ff     	sub	sp, sp, #0x20
+   2fdbc: a9017bfd     	stp	x29, x30, [sp, #0x10]
+   2fdc0: 910043fd     	add	x29, sp, #0x10
+   2fdc4: f90003e0     	str	x0, [sp]
+   2fdc8: aa0003e8     	mov	x8, x0
+   2fdcc: f90007e8     	str	x8, [sp, #0x8]
+   2fdd0: f9400808     	ldr	x8, [x0, #0x10]
+   2fdd4: b4000108     	cbz	x8, 0x2fdf4 <PPCollection_freeAudioTimeline+0x3c>
+   2fdd8: 14000001     	b	0x2fddc <PPCollection_freeAudioTimeline+0x24>
+   2fddc: f94003e8     	ldr	x8, [sp]
+   2fde0: f9400900     	ldr	x0, [x8, #0x10]
+   2fde4: 94000a7b     	bl	0x327d0 <free@plt>
+   2fde8: f94003e8     	ldr	x8, [sp]
+   2fdec: f900091f     	str	xzr, [x8, #0x10]
+   2fdf0: 14000001     	b	0x2fdf4 <PPCollection_freeAudioTimeline+0x3c>
+   2fdf4: a9417bfd     	ldp	x29, x30, [sp, #0x10]
+   2fdf8: 910083ff     	add	sp, sp, #0x20
+   2fdfc: d65f03c0     	ret
