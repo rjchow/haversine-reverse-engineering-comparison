@@ -62,14 +62,24 @@ validation is required.
 Verified novelty is reported separately, up to `+5`, so a late-discovered
 criterion does not reduce another submission's base score.
 
+The objective scoring materials are:
+
+- [`GRADING_RUBRIC.md`](GRADING_RUBRIC.md): the complete 100-checkpoint
+  hierarchy, expected result, and deduction trigger for every checkpoint;
+- [`GRADING_LEDGER.md`](GRADING_LEDGER.md): all 100 checkpoint scores for all
+  four submissions, subsection floors, penalties, novelty awards, and
+  non-full-credit rationales.
+
+The totals below are calculated from that ledger.
+
 ## 3. Results
 
 | Rank | Submission | Technical /70 | Rigor /18 | Reporting /12 | Penalty | Base /100 | Novelty /5 | Adjusted /105 |
 |---:|---|---:|---:|---:|---:|---:|---:|---:|
-| 1 | GPT-5.6 Luna xhigh | 60.5 | 16.0 | 11.5 | 0 | **88.0** | **+5** | **93.0** |
-| 2 | Qwen 3.8 2.4T OpenRouter | 50.0 | 13.5 | 10.5 | 0 | **74.0** | **+1** | **75.0** |
-| 3 | GLM 5.3 OpenRouter max | 50.0 | 10.0 | 9.5 | 0 | **69.5** | 0 | **69.5** |
-| 4 | Qwen 3.8 27B local 4-bit | 20.5 | 7.5 | 6.0 | -6 | **28.0** | 0 | **28.0** |
+| 1 | GPT-5.6 Luna xhigh | 59.5 | 16.5 | 11.5 | 0 | **87.5** | **+5** | **92.5** |
+| 2 | Qwen 3.8 2.4T OpenRouter | 53.0 | 13.5 | 8.5 | 0 | **75.0** | **+1** | **76.0** |
+| 3 | GLM 5.3 OpenRouter max | 50.0 | 11.0 | 10.0 | 0 | **71.0** | 0 | **71.0** |
+| 4 | Qwen 3.8 27B local 4-bit | 7.0 | 5.5 | 3.5 | -6 | **10.0** | 0 | **10.0** |
 
 The ranking is unchanged by novelty credit.
 
@@ -77,12 +87,12 @@ The ranking is unchanged by novelty credit.
 
 | Technical area | Weight | Luna | Qwen 2.4T | GLM 5.3 | Qwen 27B |
 |---|---:|---:|---:|---:|---:|
-| End-to-end representation | 14 | 14.0 | 12.0 | 10.0 | 6.5 |
-| Codec reconstruction | 18 | 17.0 | 12.5 | 17.0 | 3.0 |
-| Protocol and framing | 15 | 10.5 | 11.5 | 10.5 | 3.0 |
-| Transfer, multipart, integrity | 9 | 8.0 | 7.0 | 6.0 | 3.5 |
-| Crypto, registration, persistence | 14 | 11.0 | 7.0 | 6.5 | 4.5 |
-| **Total** | **70** | **60.5** | **50.0** | **50.0** | **20.5** |
+| End-to-end representation | 14 | 14.0 | 12.0 | 9.5 | 6.0 |
+| Codec reconstruction | 18 | 17.0 | 14.5 | 16.5 | 0 |
+| Protocol and framing | 15 | 10.5 | 11.0 | 10.5 | 0 |
+| Transfer, multipart, integrity | 9 | 7.5 | 7.5 | 6.5 | 0 |
+| Crypto, registration, persistence | 14 | 10.5 | 8.0 | 7.0 | 1.0 |
+| **Total** | **70** | **59.5** | **53.0** | **50.0** | **7.0** |
 
 ### 4.1 GPT-5.6 Luna xhigh
 
@@ -332,12 +342,12 @@ Three materially mismatched evidence uses received `-2` each:
 
 | Rigor area | Weight | Luna | Qwen 2.4T | GLM 5.3 | Qwen 27B |
 |---|---:|---:|---:|---:|---:|
-| Artifact acquisition/inventory | 3 | 3.0 | 3.0 | 1.5 | 2.0 |
-| `TransferComplete` call chain | 5 | 4.0 | 4.0 | 3.5 | 2.5 |
-| Cross-artifact verification | 3 | 3.0 | 2.5 | 1.0 | 1.5 |
-| Reproducibility/executable validation | 4 | 3.0 | 1.5 | 2.5 | 1.0 |
-| Falsification/confidence calibration | 3 | 3.0 | 2.5 | 1.5 | 0.5 |
-| **Total** | **18** | **16.0** | **13.5** | **10.0** | **7.5** |
+| Artifact acquisition/inventory | 3 | 3.0 | 3.0 | 2.0 | 2.0 |
+| `TransferComplete` call chain | 5 | 4.5 | 4.5 | 4.5 | 3.5 |
+| Cross-artifact verification | 3 | 3.0 | 2.5 | 0 | 0 |
+| Reproducibility/executable validation | 4 | 3.0 | 1.0 | 3.0 | 0 |
+| Falsification/confidence calibration | 3 | 3.0 | 2.5 | 1.5 | 0 |
+| **Total** | **18** | **16.5** | **13.5** | **11.0** | **5.5** |
 
 No non-Sol submission delivered a runnable independent decoder validated
 against the exact native object. GLM retained the strongest raw disassembly
@@ -351,11 +361,11 @@ support its interpretation.
 | Reporting area | Weight | Luna | Qwen 2.4T | GLM 5.3 | Qwen 27B |
 |---|---:|---:|---:|---:|---:|
 | Required-output coverage | 2 | 2.0 | 2.0 | 2.0 | 2.0 |
-| Technical presentation | 3 | 3.0 | 3.0 | 3.0 | 1.5 |
-| Claim/evidence traceability | 3 | 3.0 | 3.0 | 2.5 | 2.0 |
-| Independent-client utility/safety | 3 | 3.0 | 2.0 | 1.5 | 0.5 |
-| Internal consistency | 1 | 0.5 | 0.5 | 0.5 | 0 |
-| **Total** | **12** | **11.5** | **10.5** | **9.5** | **6.0** |
+| Technical presentation | 3 | 3.0 | 1.0 | 2.5 | 0 |
+| Claim/evidence traceability | 3 | 3.0 | 3.0 | 3.0 | 1.5 |
+| Independent-client utility/safety | 3 | 3.0 | 2.5 | 2.0 | 0 |
+| Internal consistency | 1 | 0.5 | 0 | 0.5 | 0 |
+| **Total** | **12** | **11.5** | **8.5** | **10.0** | **3.5** |
 
 All four reports followed the requested ten-section structure. The ranking is
 therefore driven by correctness, evidence, and implementability rather than
@@ -474,17 +484,17 @@ harness. For context only:
 
 | Submission | Active elapsed | Cost / plan metadata | Base points per active hour |
 |---|---:|---|---:|
-| GLM 5.3 OpenRouter max | 23m 08s | US$3.88 | 180.3 |
-| GPT-5.6 Luna xhigh | 33m 42s | 1% of GPT Pro Lite 5×, user-reported | 156.7 |
-| Qwen 3.8 2.4T OpenRouter | 1h 20m 31s | US$5.98 | 55.1 |
-| Qwen 3.8 27B local 4-bit | 9h 43m 54s | local inference; unmeasured | 2.9 |
+| GLM 5.3 OpenRouter max | 23m 08s | US$3.88 | 184.2 |
+| GPT-5.6 Luna xhigh | 33m 42s | 1% of GPT Pro Lite 5×, user-reported | 155.8 |
+| Qwen 3.8 2.4T OpenRouter | 1h 20m 31s | US$5.98 | 55.9 |
+| Qwen 3.8 27B local 4-bit | 9h 43m 54s | local inference; unmeasured | 1.0 |
 
 This derived rate is not a controlled model-speed measurement. The runs used
 different models, harnesses, caching, hardware, and accounting regimes.
 Among the two directly priced OpenRouter runs:
 
-- GLM: about 17.9 base points per recorded dollar;
-- Qwen 2.4T: about 12.4 base points per recorded dollar.
+- GLM: about 18.3 base points per recorded dollar;
+- Qwen 2.4T: about 12.5 base points per recorded dollar.
 
 ## 10. Overall assessment
 
@@ -510,4 +520,3 @@ structures, including the sample rate, audio tags, decoder format, Telesto
 request/framing, collection addresses, and registration record. Its report
 would require substantial re-reverse-engineering before it could guide a
 client.
-
