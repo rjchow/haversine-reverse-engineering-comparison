@@ -1,22 +1,43 @@
 # Haversine reverse-engineering comparison
 
-Five independent agent runs investigated the phone-side Haversine libraries used with the Pebble Index 01 ring. This repository preserves each run's authored deliverables side by side; it is not a merged technical conclusion.
+Six independent agent runs investigated the phone-side Haversine libraries used
+with the Pebble Index 01 ring. The repository preserves each run's authored
+deliverables and compares the five candidates against GPT-5.6 Sol Ultra as the
+assumed ground truth.
 
-| Directory | Model/run |
-|---|---|
-| `qwen3.8-27b-local-4bit/` | Qwen 3.8 27B, local 4-bit quantization |
-| `qwen3.8-2.4t-openrouter/` | Qwen 3.8 2.4T via OpenRouter |
-| `gpt-5.6-luna-xhigh/` | GPT-5.6 Luna, xhigh reasoning |
-| `gpt-5.6-sol-ultra/` | GPT-5.6 Sol, ultra reasoning |
-| `glm-5.3-openrouter-max/` | GLM 5.3 via OpenRouter, maximum reasoning requested |
+## Runs
 
-`PROMPT.md` is the byte-identical investigation brief supplied to all five runs.
-[`SANDBOX_METHODOLOGY.md`](SANDBOX_METHODOLOGY.md) documents the isolation used
-for subsequent Pi benchmark runs.
+| Directory | Model/run | Comparison role | Primary report |
+|---|---|---|---|
+| `gpt-5.6-sol-ultra/` | GPT-5.6 Sol, ultra reasoning | Assumed ground truth; not ranked | [Report](gpt-5.6-sol-ultra/docs/reverse_engineering_report.md) |
+| `gpt-5.6-luna-xhigh/` | GPT-5.6 Luna, xhigh reasoning | Graded candidate | [Report](gpt-5.6-luna-xhigh/docs/reverse_engineering_report.md) |
+| `qwen3.8-2.4t-openrouter/` | Qwen 3.8 2.4T via OpenRouter | Graded candidate | [Report](qwen3.8-2.4t-openrouter/docs/reverse_engineering_report.md) |
+| `glm-5.3-openrouter-max/` | GLM 5.3 via OpenRouter, maximum reasoning requested | Graded candidate | [Report](glm-5.3-openrouter-max/docs/reverse_engineering_report.md) |
+| `stealth-ox-alpha-openrouter-max/` | Stealth Ox Alpha via OpenRouter, maximum reasoning requested | Graded candidate | [Report](stealth-ox-alpha-openrouter-max/docs/reverse_engineering_report.md) |
+| `qwen3.8-27b-local-4bit/` | Qwen 3.8 27B, local 4-bit quantization | Graded candidate | [Report](qwen3.8-27b-local-4bit/docs/reverse_engineering_report.md) |
+
+## Grading results
+
+The frozen rubric scores technical reconstruction (70), reverse-engineering
+rigor (18), and reporting utility (12), with separate penalties and up to five
+verified-novelty points.
+
+| Rank | Candidate | Technical /70 | Rigor /18 | Reporting /12 | Penalty | Base /100 | Novelty /5 | Adjusted /105 |
+|---:|---|---:|---:|---:|---:|---:|---:|---:|
+| 1 | GPT-5.6 Luna xhigh | 59.5 | 16.5 | 11.5 | 0 | **87.5** | +5 | **92.5** |
+| 2 | Qwen 3.8 2.4T OpenRouter | 53.0 | 13.5 | 8.5 | 0 | **75.0** | +1 | **76.0** |
+| 3 | GLM 5.3 OpenRouter max | 50.0 | 11.0 | 10.0 | 0 | **71.0** | 0 | **71.0** |
+| 4 | Stealth Ox Alpha OpenRouter max | 25.0 | 10.0 | 4.0 | -6 | **33.0** | +1 | **34.0** |
+| 5 | Qwen 3.8 27B local 4-bit | 7.0 | 5.5 | 3.5 | -6 | **10.0** | 0 | **10.0** |
+
+See the [grading report](GRADING_REPORT.md) for the comparative assessment and
+the [ledger](GRADING_LEDGER.md) for all 100 atomic scores and rationales.
 
 ## Run metadata
 
-Times below are UTC and cover only the original reverse-engineering effort begun from the common brief; later related follow-ups are excluded. OpenRouter costs are sums of the recorded per-response costs for those windows, rounded to cents. Subscription-plan figures are user-reported usage percentages, not dollar prices. Token parentheses are **new input / output / cache read**; reasoning output is included in output.
+Times are UTC and cover the original reverse-engineering windows. Token
+parentheses are **new input / output / cache read**. Accounting conventions are
+defined in the [run protocol](BENCHMARK_RUN_PROTOCOL.md#6-session-accounting).
 
 | Deliverable directory | Session system | Model and reasoning | Original RE activity window(s) | Active elapsed | Recorded activity | Cost / plan usage | Token total (new input / output / cache read) |
 |---|---|---|---|---|---|---|---|
@@ -25,21 +46,18 @@ Times below are UTC and cover only the original reverse-engineering effort begun
 | `qwen3.8-2.4t-openrouter/` | Pi | `qwen/qwen3.8-2.4t-a95b` via OpenRouter, xhigh | 2026-08-19 14:53:10–16:05:01; 23:03:49–23:12:29 | 1h 20m 31s | 131 assistant message records; 135 tool calls | US$5.98 (recorded) | 14.93M (886.8K / 120.4K / 13.93M) |
 | `gpt-5.6-sol-ultra/` | Codex | `gpt-5.6-sol`, ultra | 2026-08-19 23:32:46–2026-08-20 00:25:15 | 52m 28s | Main agent plus 7 workers; 635 standard function-call records and 219 custom-tool-call records | 13% of GPT Pro Lite 5× subscription (user-reported) | 130.90M (3.71M / 366.5K / 126.82M) |
 | `glm-5.3-openrouter-max/` | Pi | `z-ai/glm-5.3` via OpenRouter; max requested, high reported by Pi | 2026-08-20 07:35:52–07:38:25; 07:39:08–07:59:43 | 23m 08s | 116 assistant message records; 133 tool calls | US$3.88 (recorded) | 12.51M (301.7K / 68.7K / 12.13M) |
+| `stealth-ox-alpha-openrouter-max/` | Pi | `stealth/ox-alpha` via OpenRouter; max requested, high reported by Pi | 2026-08-21 01:27:27–01:45:54 | 18m 27s | 103 assistant message records; 107 tool calls | US$3.16 (recorded) | 10.37M (1.54M / 73.6K / 8.76M) |
 
-## Comparability note
+## Reference documents
 
-The Sol Ultra result is not a model-only comparison. Alongside the common investigation brief, it had the Codex harness: Codex system and developer instructions, built-in tool and task orchestration, and one main agent with seven worker agents. That execution environment gave it materially more parallel research capacity than the single-agent Pi runs.
+- [Common prompt](PROMPT.md)
+- [Grading rubric](GRADING_RUBRIC.md)
+- [Detailed grading report](GRADING_REPORT.md)
+- [Point-by-point grading ledger](GRADING_LEDGER.md)
+- [Benchmark run protocol](BENCHMARK_RUN_PROTOCOL.md)
+- [Sandbox methodology](SANDBOX_METHODOLOGY.md)
 
-The Pi runs likewise used Pi's own harness and instruction context. These results are therefore useful as end-to-end agent-system comparisons, but not as a controlled comparison of model weights alone.
-
-## Contents and curation
-
-The repository includes authored reports, protocol/specification notes, progress logs, and reusable decoding/decompilation scripts. File names have been normalized for easy comparison.
-
-It intentionally excludes downloaded binaries and firmware, extracted proprietary libraries, third-party source checkouts, toolchain distributions, and raw agent transcripts. Those materials are either reproducible from the public references in the reports or inappropriate to mirror here.
-
-Before publication, the retained documents were checked for personal identifiers, credential-like values, and local absolute paths. Two machine-relative references were rewritten to repository-relative paths; no raw session log is included.
-
-## Caution
-
-These are independent reverse-engineering results. Confidence labels and conclusions differ between reports; consult the evidence and the stated limitations in the individual documents before relying on a claim or interacting with a device.
+Runs used different harnesses and worker topologies—most notably, Sol Ultra used
+one main agent plus seven workers—so the results compare complete agent systems,
+not model weights alone. Candidate technical conclusions can also conflict; use
+the individual reports and detailed grading report before relying on a claim.

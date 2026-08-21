@@ -7,6 +7,7 @@ Submissions graded:
 - `gpt-5.6-luna-xhigh/`
 - `qwen3.8-2.4t-openrouter/`
 - `glm-5.3-openrouter-max/`
+- `stealth-ox-alpha-openrouter-max/`
 - `qwen3.8-27b-local-4bit/`
 
 ## 1. Scope and ground-truth precedence
@@ -67,7 +68,7 @@ The objective scoring materials are:
 - [`GRADING_RUBRIC.md`](GRADING_RUBRIC.md): the complete 100-checkpoint
   hierarchy, expected result, and deduction trigger for every checkpoint;
 - [`GRADING_LEDGER.md`](GRADING_LEDGER.md): all 100 checkpoint scores for all
-  four submissions, subsection floors, penalties, novelty awards, and
+  five submissions, subsection floors, penalties, novelty awards, and
   non-full-credit rationales.
 
 The totals below are calculated from that ledger.
@@ -79,20 +80,21 @@ The totals below are calculated from that ledger.
 | 1 | GPT-5.6 Luna xhigh | 59.5 | 16.5 | 11.5 | 0 | **87.5** | **+5** | **92.5** |
 | 2 | Qwen 3.8 2.4T OpenRouter | 53.0 | 13.5 | 8.5 | 0 | **75.0** | **+1** | **76.0** |
 | 3 | GLM 5.3 OpenRouter max | 50.0 | 11.0 | 10.0 | 0 | **71.0** | 0 | **71.0** |
-| 4 | Qwen 3.8 27B local 4-bit | 7.0 | 5.5 | 3.5 | -6 | **10.0** | 0 | **10.0** |
+| 4 | Stealth Ox Alpha OpenRouter max | 25.0 | 10.0 | 4.0 | -6 | **33.0** | **+1** | **34.0** |
+| 5 | Qwen 3.8 27B local 4-bit | 7.0 | 5.5 | 3.5 | -6 | **10.0** | 0 | **10.0** |
 
 The ranking is unchanged by novelty credit.
 
 ## 4. Technical reconstruction breakdown
 
-| Technical area | Weight | Luna | Qwen 2.4T | GLM 5.3 | Qwen 27B |
-|---|---:|---:|---:|---:|---:|
-| End-to-end representation | 14 | 14.0 | 12.0 | 9.5 | 6.0 |
-| Codec reconstruction | 18 | 17.0 | 14.5 | 16.5 | 0 |
-| Protocol and framing | 15 | 10.5 | 11.0 | 10.5 | 0 |
-| Transfer, multipart, integrity | 9 | 7.5 | 7.5 | 6.5 | 0 |
-| Crypto, registration, persistence | 14 | 10.5 | 8.0 | 7.0 | 1.0 |
-| **Total** | **70** | **59.5** | **53.0** | **50.0** | **7.0** |
+| Technical area | Weight | Luna | Qwen 2.4T | GLM 5.3 | Ox Alpha | Qwen 27B |
+|---|---:|---:|---:|---:|---:|---:|
+| End-to-end representation | 14 | 14.0 | 12.0 | 9.5 | 8.0 | 6.0 |
+| Codec reconstruction | 18 | 17.0 | 14.5 | 16.5 | 7.0 | 0 |
+| Protocol and framing | 15 | 10.5 | 11.0 | 10.5 | 4.0 | 0 |
+| Transfer, multipart, integrity | 9 | 7.5 | 7.5 | 6.5 | 0.5 | 0 |
+| Crypto, registration, persistence | 14 | 10.5 | 8.0 | 7.0 | 5.5 | 1.0 |
+| **Total** | **70** | **59.5** | **53.0** | **50.0** | **25.0** | **7.0** |
 
 ### 4.1 GPT-5.6 Luna xhigh
 
@@ -269,7 +271,95 @@ Retained disassembly:
 
 7. **No executable decoder or exact-native test suite was delivered.**
 
-### 4.4 Qwen 3.8 27B local 4-bit
+### 4.4 Stealth Ox Alpha OpenRouter max
+
+Main report:
+`stealth-ox-alpha-openrouter-max/docs/reverse_engineering_report.md`
+
+Progress log:
+`stealth-ox-alpha-openrouter-max/docs/progress.md`
+
+#### What it got right
+
+- It acquired the exact device and simulator KLIBs plus both published
+  companion cinterop archives and correctly recognized the top-level KLIBs as
+  thin Kotlin/Native glue over the retained native implementations.
+- It recovered most of the DD-Rice mathematics correctly: MSB-first bit order,
+  the leading-one zero code, bounded unary and raw escape, sign mapping, two
+  wrapping integrations, output shift, and nonzero-shift quantization.
+- It correctly preserved the dynamic sample-rate boundary, complete-collection
+  transfer model, mono 16-bit app output, multipart concatenation concept, and
+  post-`TransferComplete` DC removal/resampling.
+- It recovered all three accepted outer collection envelopes and supplied a
+  strong symbol/offset evidence index and end-to-end call chain.
+- It correctly found no Haversine recording cipher or registration-derived
+  decoder secret, retained physical at-rest encryption as unknown in its crypto
+  table, and grounded the negative conclusion in both a positive decode path
+  and targeted primitive/import scans.
+
+#### Principal deductions
+
+1. **The five audio-adjacent TLV IDs are shifted into an incompatible legacy
+   map.**
+   The report assigns compressed audio to `0x53`, uncompressed audio to `0x54`,
+   and multipart metadata to `0x51`. The target library uses `0x50`
+   uncompressed audio, `0x51` compressed audio, `0x52` multipart metadata,
+   `0x53` button sequence, and `0x54` lifetime collection count.
+
+2. **The compressed and uncompressed wire layouts are consequently wrong.**
+   The actual compressed payload begins immediately with config, followed by
+   `u32le compressedBitCount`, `u32le sampleRateHz`, and the bitstream at
+   payload offset 9. The report inserts a fictitious two-byte reserved field
+   and begins the stream at 11. Both audio TLVs use a 32-bit payload length;
+   `0x54` is not a long-form PCM record.
+
+3. **Telesto control and data framing are materially conflated.**
+   A request is a packed 13-byte control write and the response is a packed
+   12-byte control notification. Data bytes are accumulated directly according
+   to `response.length`. The report instead describes a 12-byte request, a
+   24-byte request struct, a 12-byte Data-channel header, and per-chunk
+   application acknowledgements.
+
+4. **Enumeration cannot be implemented from the supplied protocol section.**
+   The report leaves the stored-range and advertising addresses numerically
+   unresolved, omits half-open modulo-range semantics, and does not recover the
+   exact response fields or operation table.
+
+5. **Registration serialization is misread.**
+   The logical fields are `u32 fingerprint`, `u32 timestamp`, and `uid[129]`;
+   serialized version 1 is 141 bytes and becomes a 145-byte length-prefixed
+   operation-5 object. The report instead gives `{u32 version, u64 timestamp,
+   uid[129]}`, omits the fingerprint from that claimed layout, and does not
+   recover the program address/frame. It also presents the isolated `00` write
+   as a proven bond trigger although its exact wire purpose remains unknown.
+
+6. **Integrity and confidence claims are too strong.**
+   It treats pacing state as per-chunk acknowledgement, states that record
+   lengths exactly protect the container despite native bounds gaps, declares
+   BLE encryption active for the reviewed session, and describes the logical
+   collection as byte-identical flash storage.
+
+7. **No runnable decoder, exact wire vector, or native regression harness was
+   delivered.**
+   The core entropy algorithm is useful, but the surrounding record parser is
+   wire-incompatible and was not independently tested.
+
+#### Additional penalty: `-6`
+
+Three materially mismatched evidence uses received `-2` each:
+
+1. `PPParsing`/`PPCollection` evidence was presented as proof of the shifted
+   `0x51`/`0x53`/`0x54` record map and fictitious audio headers;
+2. `TelestoController`/`TelestoOperation` evidence was presented as proof of a
+   Data-channel header and per-chunk acknowledgements rather than the packed
+   control request/response;
+3. `PPRingApplicationData` and app pairing evidence was presented as proof of
+   an incompatible registration layout and a definite bond-trigger meaning.
+
+No destructive-instruction penalty was applied because the report explicitly
+requires firmware-side observation before any erase operation.
+
+### 4.5 Qwen 3.8 27B local 4-bit
 
 Main report:
 `qwen3.8-27b-local-4bit/docs/reverse_engineering_report.md`
@@ -340,34 +430,35 @@ Three materially mismatched evidence uses received `-2` each:
 
 ## 5. Reverse-engineering rigor breakdown
 
-| Rigor area | Weight | Luna | Qwen 2.4T | GLM 5.3 | Qwen 27B |
-|---|---:|---:|---:|---:|---:|
-| Artifact acquisition/inventory | 3 | 3.0 | 3.0 | 2.0 | 2.0 |
-| `TransferComplete` call chain | 5 | 4.5 | 4.5 | 4.5 | 3.5 |
-| Cross-artifact verification | 3 | 3.0 | 2.5 | 0 | 0 |
-| Reproducibility/executable validation | 4 | 3.0 | 1.0 | 3.0 | 0 |
-| Falsification/confidence calibration | 3 | 3.0 | 2.5 | 1.5 | 0 |
-| **Total** | **18** | **16.5** | **13.5** | **11.0** | **5.5** |
+| Rigor area | Weight | Luna | Qwen 2.4T | GLM 5.3 | Ox Alpha | Qwen 27B |
+|---|---:|---:|---:|---:|---:|---:|
+| Artifact acquisition/inventory | 3 | 3.0 | 3.0 | 2.0 | 3.0 | 2.0 |
+| `TransferComplete` call chain | 5 | 4.5 | 4.5 | 4.5 | 4.5 | 3.5 |
+| Cross-artifact verification | 3 | 3.0 | 2.5 | 0 | 2.5 | 0 |
+| Reproducibility/executable validation | 4 | 3.0 | 1.0 | 3.0 | 0 | 0 |
+| Falsification/confidence calibration | 3 | 3.0 | 2.5 | 1.5 | 0 | 0 |
+| **Total** | **18** | **16.5** | **13.5** | **11.0** | **10.0** | **5.5** |
 
 No non-Sol submission delivered a runnable independent decoder validated
 against the exact native object. GLM retained the strongest raw disassembly
 set; Luna supplied the strongest correct textual reconstruction and
 cross-artifact audit; Qwen 2.4T supplied excellent evidence coordinates but an
-incorrect executable algorithm; Qwen 27B's cited evidence frequently did not
-support its interpretation.
+incorrect executable algorithm; Ox Alpha acquired the right native artifacts
+and cited them densely but repeatedly misinterpreted their wire structures;
+Qwen 27B's cited evidence frequently did not support its interpretation.
 
 ## 6. Reporting and implementation-utility breakdown
 
-| Reporting area | Weight | Luna | Qwen 2.4T | GLM 5.3 | Qwen 27B |
-|---|---:|---:|---:|---:|---:|
-| Required-output coverage | 2 | 2.0 | 2.0 | 2.0 | 2.0 |
-| Technical presentation | 3 | 3.0 | 1.0 | 2.5 | 0 |
-| Claim/evidence traceability | 3 | 3.0 | 3.0 | 3.0 | 1.5 |
-| Independent-client utility/safety | 3 | 3.0 | 2.5 | 2.0 | 0 |
-| Internal consistency | 1 | 0.5 | 0 | 0.5 | 0 |
-| **Total** | **12** | **11.5** | **8.5** | **10.0** | **3.5** |
+| Reporting area | Weight | Luna | Qwen 2.4T | GLM 5.3 | Ox Alpha | Qwen 27B |
+|---|---:|---:|---:|---:|---:|---:|
+| Required-output coverage | 2 | 2.0 | 2.0 | 2.0 | 2.0 | 2.0 |
+| Technical presentation | 3 | 3.0 | 1.0 | 2.5 | 0 | 0 |
+| Claim/evidence traceability | 3 | 3.0 | 3.0 | 3.0 | 2.0 | 1.5 |
+| Independent-client utility/safety | 3 | 3.0 | 2.5 | 2.0 | 0 | 0 |
+| Internal consistency | 1 | 0.5 | 0 | 0.5 | 0 | 0 |
+| **Total** | **12** | **11.5** | **8.5** | **10.0** | **4.0** | **3.5** |
 
-All four reports followed the requested ten-section structure. The ranking is
+All five reports followed the requested ten-section structure. The ranking is
 therefore driven by correctness, evidence, and implementability rather than
 mere report completeness.
 
@@ -445,11 +536,18 @@ Verification:
 This is ancillary to recording download but useful to a complete independent
 phone-side protocol implementation.
 
-### 7.2 Qwen 2.4T: `+1`
+### 7.2 Qwen 2.4T and Ox Alpha: `+1` each
 
 Qwen 2.4T independently reports the alternate
 `HaversineReadLastAudioSamplesOperation` result/path and its sample/rate/index
 fields. It receives the same `+1` as Luna for finding C above.
+
+Ox Alpha also places `readLastAudioSamples()` on the alternate collection-read
+and PPCommon timeline path. Independent verification in its original
+`HaversineReadLastAudioSamplesOperation.o` disassembly confirms direct
+relocations to `PPCollection_createFromBinaryData` and
+`PPCollection_createAudioTimeline` at `0x4d8/0x4f4` and `0x828/0x844`. It
+therefore receives the same `+1`.
 
 ### 7.3 GLM 5.3 and Qwen 27B: `+0`
 
@@ -461,21 +559,32 @@ No reported claim both:
 Minor details such as internal DD-Rice statistics buckets were not awarded:
 they do not affect decoding, protocol compatibility, pairing, or client safety.
 
+### 7.4 Ox Alpha satellite-event claim: no additional credit
+
+Ox Alpha's satellite-event parser was also checked as a possible additional
+novelty because it is absent from Sol Ultra. The original-run
+`PPSatelliteEvents.o` disassembly confirms a three-byte prefix followed by a
+code-dependent argument, but contradicts the report's claim that the leading
+`u16le` is a size: the parser never uses it for framing, and
+`PPSatelliteEvent_description` converts it to time using `0.625 ms` ticks. The
+parser advances by `3 + argumentSizeForCode(code)`. Because the reported field
+semantics were wrong, no additional novelty point was awarded.
+
 ## 8. Decisive comparison matrix
 
-| Ground-truth requirement | Luna | Qwen 2.4T | GLM 5.3 | Qwen 27B |
-|---|---|---|---|---|
-| Production sample rate remains unknown | Correct | Correct | Correct | **Wrong: 16 kHz asserted** |
-| Physical flash encryption remains unknown | Correct | **Overclaimed no** | **Overclaimed no** | **Overclaimed / contradictory** |
-| Both `0x50` PCM and `0x51` DD-Rice | Correct | Correct, plus unsupported legacy type | Correct | **Mislabels `0x52` as audio** |
-| Implementable DD-Rice code | Correct | **Leading bit inverted** | Correct | **Not reconstructed** |
-| All three outer envelopes | **Only two** | Mostly correct | Correct | **Wrong model** |
-| Exact 13-byte request / 12-byte response | Correct | Mostly correct | Partial | **Wrong request; response unresolved** |
-| GATT chunks are not framed audio/Telesto packets | Correct | Mostly correct | **Length-prefix conflation** | **Length-prefix conflation** |
-| Registration record is non-secret | Correct | Correct but incomplete | Correct but incomplete | Conclusion correct, **layout wrong** |
-| Native parser validation gaps disclosed | No | No | No | No |
-| Safe delete/ack remains unknown | Correct | Correct | Correct | **Generic erase overclaimed** |
-| Executable native-validated decoder | No | No | No | No |
+| Ground-truth requirement | Luna | Qwen 2.4T | GLM 5.3 | Ox Alpha | Qwen 27B |
+|---|---|---|---|---|---|
+| Production sample rate remains unknown | Correct | Correct | Correct | Correct | **Wrong: 16 kHz asserted** |
+| Physical flash encryption remains unknown | Correct | **Overclaimed no** | **Overclaimed no** | Mixed: table correct, storage wording overclaimed | **Overclaimed / contradictory** |
+| Both `0x50` PCM and `0x51` DD-Rice | Correct | Correct, plus unsupported legacy type | Correct | **Wrong: `0x53`/`0x54`** | **Mislabels `0x52` as audio** |
+| Implementable DD-Rice code | Correct | **Leading bit inverted** | Correct | **Core math correct; wire header wrong** | **Not reconstructed** |
+| All three outer envelopes | **Only two** | Mostly correct | Correct | Correct | **Wrong model** |
+| Exact 13-byte request / 12-byte response | Correct | Mostly correct | Partial | **Wrong request/data framing** | **Wrong request; response unresolved** |
+| GATT chunks are not framed audio/Telesto packets | Correct | Mostly correct | **Length-prefix conflation** | **Data-header/ACK conflation** | **Length-prefix conflation** |
+| Registration record is non-secret | Correct | Correct but incomplete | Correct but incomplete | Conclusion correct, **layout wrong** | Conclusion correct, **layout wrong** |
+| Native parser validation gaps disclosed | No | No | No | No | No |
+| Safe delete/ack remains unknown | Correct | Correct | Correct | Correct | **Generic erase overclaimed** |
+| Executable native-validated decoder | No | No | No | No | No |
 
 ## 9. Efficiency context
 
@@ -486,15 +595,17 @@ harness. For context only:
 |---|---:|---|---:|
 | GLM 5.3 OpenRouter max | 23m 08s | US$3.88 | 184.2 |
 | GPT-5.6 Luna xhigh | 33m 42s | 1% of GPT Pro Lite 5×, user-reported | 155.8 |
+| Stealth Ox Alpha OpenRouter max | 18m 27s | US$3.16 | 107.3 |
 | Qwen 3.8 2.4T OpenRouter | 1h 20m 31s | US$5.98 | 55.9 |
 | Qwen 3.8 27B local 4-bit | 9h 43m 54s | local inference; unmeasured | 1.0 |
 
 This derived rate is not a controlled model-speed measurement. The runs used
 different models, harnesses, caching, hardware, and accounting regimes.
-Among the two directly priced OpenRouter runs:
+Among the three directly priced OpenRouter runs:
 
 - GLM: about 18.3 base points per recorded dollar;
-- Qwen 2.4T: about 12.5 base points per recorded dollar.
+- Qwen 2.4T: about 12.5 base points per recorded dollar;
+- Ox Alpha: about 10.4 base points per recorded dollar.
 
 ## 10. Overall assessment
 
@@ -513,6 +624,13 @@ pseudocode would fail on real compressed collections.
 iOS-specific protocol and registration path unresolved.** Its dependence on
 Android native artifacts and its incoming-framing/at-rest mistakes keep it
 below Qwen 2.4T overall despite the better decoder.
+
+**Ox Alpha found the correct native artifacts and most of the codec mathematics
+very quickly, but mapped those findings onto the wrong wire structures.** Its
+shifted audio/multipart record IDs, fictitious compressed header, Telesto
+Data-channel header/ack model, and registration layout make its independent
+client instructions unusable without substantial correction. Its acquisition,
+call-chain, and evidence work nevertheless place it clearly above Qwen 27B.
 
 **Qwen 27B reaches the broad headline but is technically unreliable for
 implementation.** It repeatedly converts surface clues into false concrete
