@@ -11,6 +11,8 @@ Five independent agent runs investigated the phone-side Haversine libraries used
 | `glm-5.3-openrouter-max/` | GLM 5.3 via OpenRouter, maximum reasoning requested |
 
 `PROMPT.md` is the byte-identical investigation brief supplied to all five runs.
+[`SANDBOX_METHODOLOGY.md`](SANDBOX_METHODOLOGY.md) documents the isolation used
+for subsequent Pi benchmark runs.
 
 ## Run metadata
 
