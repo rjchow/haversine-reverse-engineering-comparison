@@ -1,6 +1,6 @@
 # Haversine benchmark: atomic scoring ledger
 
-Date: 2026-08-21
+Date: 2026-08-22
 
 Rubric: `GRADING_RUBRIC.md`
 
@@ -22,6 +22,8 @@ Abbreviations:
 - **GLM**: `glm-5.3-openrouter-max`
 - **Ox**: `stealth-ox-alpha-openrouter-max`
 - **Q27B**: `qwen3.8-27b-local-4bit`
+- **Q27B-V2**: `qwen3.8-27b-local-4bit-verification-2`, **the second
+  run of local qwen 3.8 27b 4 bit for verification**
 
 ## 1. Results
 
@@ -31,109 +33,110 @@ Abbreviations:
 | 2 | Q2.4T | 53.0 | 13.5 | 8.5 | 0 | **75.0** | +1 | **76.0** |
 | 3 | GLM | 50.0 | 11.0 | 10.0 | 0 | **71.0** | 0 | **71.0** |
 | 4 | Ox | 25.0 | 10.0 | 4.0 | -6 | **33.0** | +1 | **34.0** |
-| 5 | Q27B | 7.0 | 5.5 | 3.5 | -6 | **10.0** | 0 | **10.0** |
+| 5 | Q27B-V2 | 9.0 | 7.5 | 1.5 | -8 | **10.0** | +1 | **11.0** |
+| 6 | Q27B | 7.0 | 5.5 | 3.5 | -6 | **10.0** | 0 | **10.0** |
 
 ## 2. T — Technical reconstruction
 
 ### T1. End-to-end recording representation
 
-| ID | Luna | Q2.4T | GLM | Ox | Q27B |
-|---|---:|---:|---:|---:|---:|
-| T1.01 | 1 | -1 | -1 | -1 | -1 |
-| T1.02 | 1 | 1 | 1 | 1 | 1 |
-| T1.03 | 1 | 1 | 1 | 1 | 1 |
-| T1.04 | 1 | 1 | -1 | .5 | -1 |
-| T1.05 | 1 | 1 | 1 | 0 | 1 |
-| T1.06 | 1 | 1 | 1 | -1 | .5 |
-| T1.07 | 1 | 1 | 1 | .5 | 1 |
-| T1.08 | 1 | 1 | 1 | 1 | 1 |
-| T1.09 | 1 | 1 | 1 | 1 | -1 |
-| T1.10 | 1 | 1 | 1 | 1 | 1 |
-| T1.11 | 1 | 1 | 1 | 1 | 1 |
-| T1.12 | 1 | 1 | 1 | 1 | 1 |
-| T1.13 | 1 | 1 | .5 | 1 | 0 |
-| T1.14 | 1 | 1 | 1 | 1 | .5 |
-| **Raw / final** | **14 / 14** | **12 / 12** | **9.5 / 9.5** | **8 / 8** | **6 / 6** |
+| ID | Luna | Q2.4T | GLM | Ox | Q27B | Q27B-V2 |
+|---|---:|---:|---:|---:|---:|---:|
+| T1.01 | 1 | -1 | -1 | -1 | -1 | -1 |
+| T1.02 | 1 | 1 | 1 | 1 | 1 | 1 |
+| T1.03 | 1 | 1 | 1 | 1 | 1 | 1 |
+| T1.04 | 1 | 1 | -1 | .5 | -1 | -1 |
+| T1.05 | 1 | 1 | 1 | 0 | 1 | 0 |
+| T1.06 | 1 | 1 | 1 | -1 | .5 | .5 |
+| T1.07 | 1 | 1 | 1 | .5 | 1 | .5 |
+| T1.08 | 1 | 1 | 1 | 1 | 1 | .5 |
+| T1.09 | 1 | 1 | 1 | 1 | -1 | -1 |
+| T1.10 | 1 | 1 | 1 | 1 | 1 | 1 |
+| T1.11 | 1 | 1 | 1 | 1 | 1 | 1 |
+| T1.12 | 1 | 1 | 1 | 1 | 1 | .5 |
+| T1.13 | 1 | 1 | .5 | 1 | 0 | 1 |
+| T1.14 | 1 | 1 | 1 | 1 | .5 | .5 |
+| **Raw / final** | **14 / 14** | **12 / 12** | **9.5 / 9.5** | **8 / 8** | **6 / 6** | **4.5 / 4.5** |
 
 ### T2. Codec reconstruction
 
-| ID | Luna | Q2.4T | GLM | Ox | Q27B |
-|---|---:|---:|---:|---:|---:|
-| T2.01 | 1 | 1 | 1 | -1 | .5 |
-| T2.02 | 1 | 1 | 1 | 1 | .5 |
-| T2.03 | 1 | 1 | 1 | -1 | -1 |
-| T2.04 | 1 | 1 | 1 | -1 | -1 |
-| T2.05 | 1 | 1 | 1 | -1 | 0 |
-| T2.06 | 1 | 1 | 1 | 1 | 0 |
-| T2.07 | 1 | -1 | 1 | 1 | 0 |
-| T2.08 | 1 | 1 | 1 | 1 | 0 |
-| T2.09 | 1 | 1 | 1 | 1 | 0 |
-| T2.10 | 1 | 1 | 1 | 1 | 0 |
-| T2.11 | 1 | 1 | 1 | 1 | 0 |
-| T2.12 | 1 | 1 | 1 | 1 | .5 |
-| T2.13 | 1 | 1 | 1 | 1 | -1 |
-| T2.14 | 1 | 1 | 1 | .5 | 0 |
-| T2.15 | 1 | .5 | 1 | 0 | -1 |
-| T2.16 | 1 | .5 | .5 | .5 | 0 |
-| T2.17 | 0 | .5 | 0 | 0 | 0 |
-| T2.18 | 1 | 1 | 1 | 1 | .5 |
-| **Raw / final** | **17 / 17** | **14.5 / 14.5** | **16.5 / 16.5** | **7 / 7** | **-2 / 0** |
+| ID | Luna | Q2.4T | GLM | Ox | Q27B | Q27B-V2 |
+|---|---:|---:|---:|---:|---:|---:|
+| T2.01 | 1 | 1 | 1 | -1 | .5 | -1 |
+| T2.02 | 1 | 1 | 1 | 1 | .5 | .5 |
+| T2.03 | 1 | 1 | 1 | -1 | -1 | -1 |
+| T2.04 | 1 | 1 | 1 | -1 | -1 | -1 |
+| T2.05 | 1 | 1 | 1 | -1 | 0 | -1 |
+| T2.06 | 1 | 1 | 1 | 1 | 0 | -1 |
+| T2.07 | 1 | -1 | 1 | 1 | 0 | 1 |
+| T2.08 | 1 | 1 | 1 | 1 | 0 | .5 |
+| T2.09 | 1 | 1 | 1 | 1 | 0 | 0 |
+| T2.10 | 1 | 1 | 1 | 1 | 0 | 0 |
+| T2.11 | 1 | 1 | 1 | 1 | 0 | 0 |
+| T2.12 | 1 | 1 | 1 | 1 | .5 | 1 |
+| T2.13 | 1 | 1 | 1 | 1 | -1 | 1 |
+| T2.14 | 1 | 1 | 1 | .5 | 0 | -1 |
+| T2.15 | 1 | .5 | 1 | 0 | -1 | -1 |
+| T2.16 | 1 | .5 | .5 | .5 | 0 | -1 |
+| T2.17 | 0 | .5 | 0 | 0 | 0 | 0 |
+| T2.18 | 1 | 1 | 1 | 1 | .5 | 1 |
+| **Raw / final** | **17 / 17** | **14.5 / 14.5** | **16.5 / 16.5** | **7 / 7** | **-2 / 0** | **-3 / 0** |
 
 ### T3. Protocol and framing
 
-| ID | Luna | Q2.4T | GLM | Ox | Q27B |
-|---|---:|---:|---:|---:|---:|
-| T3.01 | 1 | 1 | 1 | .5 | 1 |
-| T3.02 | 1 | .5 | .5 | 0 | .5 |
-| T3.03 | 1 | 1 | 1 | -1 | -1 |
-| T3.04 | 1 | 1 | .5 | .5 | 0 |
-| T3.05 | 1 | .5 | 0 | 0 | 0 |
-| T3.06 | 1 | .5 | .5 | .5 | 0 |
-| T3.07 | 1 | 1 | 1 | 0 | -1 |
-| T3.08 | 1 | 1 | 1 | 1 | .5 |
-| T3.09 | 1 | .5 | .5 | 0 | 0 |
-| T3.10 | -1 | .5 | 0 | 0 | 0 |
-| T3.11 | 0 | .5 | 1 | 1 | 0 |
-| T3.12 | 1 | 1 | 1 | 1 | .5 |
-| T3.13 | 1 | 1 | 1 | 1 | -1 |
-| T3.14 | .5 | .5 | 1 | .5 | 0 |
-| T3.15 | 0 | .5 | .5 | -1 | -1 |
-| **Raw / final** | **10.5 / 10.5** | **11 / 11** | **10.5 / 10.5** | **4 / 4** | **-1.5 / 0** |
+| ID | Luna | Q2.4T | GLM | Ox | Q27B | Q27B-V2 |
+|---|---:|---:|---:|---:|---:|---:|
+| T3.01 | 1 | 1 | 1 | .5 | 1 | 0 |
+| T3.02 | 1 | .5 | .5 | 0 | .5 | 0 |
+| T3.03 | 1 | 1 | 1 | -1 | -1 | -1 |
+| T3.04 | 1 | 1 | .5 | .5 | 0 | .5 |
+| T3.05 | 1 | .5 | 0 | 0 | 0 | 1 |
+| T3.06 | 1 | .5 | .5 | .5 | 0 | 0 |
+| T3.07 | 1 | 1 | 1 | 0 | -1 | -1 |
+| T3.08 | 1 | 1 | 1 | 1 | .5 | .5 |
+| T3.09 | 1 | .5 | .5 | 0 | 0 | 0 |
+| T3.10 | -1 | .5 | 0 | 0 | 0 | 0 |
+| T3.11 | 0 | .5 | 1 | 1 | 0 | -1 |
+| T3.12 | 1 | 1 | 1 | 1 | .5 | -1 |
+| T3.13 | 1 | 1 | 1 | 1 | -1 | 1 |
+| T3.14 | .5 | .5 | 1 | .5 | 0 | 0 |
+| T3.15 | 0 | .5 | .5 | -1 | -1 | -1 |
+| **Raw / final** | **10.5 / 10.5** | **11 / 11** | **10.5 / 10.5** | **4 / 4** | **-1.5 / 0** | **-2 / 0** |
 
 ### T4. Transfer, multipart, and integrity
 
-| ID | Luna | Q2.4T | GLM | Ox | Q27B |
-|---|---:|---:|---:|---:|---:|
-| T4.01 | 1 | 1 | 1 | .5 | .5 |
-| T4.02 | 1 | 1 | .5 | 1 | -1 |
-| T4.03 | 1 | 1 | 1 | -1 | -1 |
-| T4.04 | .5 | .5 | .5 | .5 | 0 |
-| T4.05 | 1 | 1 | .5 | 1 | .5 |
-| T4.06 | 0 | .5 | .5 | -1 | .5 |
-| T4.07 | 1 | 1 | 1 | -1 | 1 |
-| T4.08 | 1 | .5 | .5 | 0 | .5 |
-| T4.09 | 1 | 1 | 1 | .5 | -1 |
-| **Raw / final** | **7.5 / 7.5** | **7.5 / 7.5** | **6.5 / 6.5** | **.5 / .5** | **0 / 0** |
+| ID | Luna | Q2.4T | GLM | Ox | Q27B | Q27B-V2 |
+|---|---:|---:|---:|---:|---:|---:|
+| T4.01 | 1 | 1 | 1 | .5 | .5 | .5 |
+| T4.02 | 1 | 1 | .5 | 1 | -1 | 1 |
+| T4.03 | 1 | 1 | 1 | -1 | -1 | -1 |
+| T4.04 | .5 | .5 | .5 | .5 | 0 | .5 |
+| T4.05 | 1 | 1 | .5 | 1 | .5 | 0 |
+| T4.06 | 0 | .5 | .5 | -1 | .5 | .5 |
+| T4.07 | 1 | 1 | 1 | -1 | 1 | .5 |
+| T4.08 | 1 | .5 | .5 | 0 | .5 | 0 |
+| T4.09 | 1 | 1 | 1 | .5 | -1 | 0 |
+| **Raw / final** | **7.5 / 7.5** | **7.5 / 7.5** | **6.5 / 6.5** | **.5 / .5** | **0 / 0** | **2 / 2** |
 
 ### T5. Cryptography, registration, and persistence
 
-| ID | Luna | Q2.4T | GLM | Ox | Q27B |
-|---|---:|---:|---:|---:|---:|
-| T5.01 | -1 | 1 | -1 | -1 | -1 |
-| T5.02 | 1 | 1 | 1 | 1 | 1 |
-| T5.03 | 1 | 1 | 1 | 1 | 1 |
-| T5.04 | 1 | -1 | -1 | 1 | -1 |
-| T5.05 | 1 | 1 | 1 | 1 | 1 |
-| T5.06 | 1 | 1 | 1 | 1 | 1 |
-| T5.07 | 1 | .5 | .5 | -1 | -1 |
-| T5.08 | .5 | 0 | 0 | -1 | -1 |
-| T5.09 | .5 | .5 | .5 | 0 | 0 |
-| T5.10 | 1 | 1 | 1 | 1 | 1 |
-| T5.11 | .5 | 0 | .5 | .5 | -1 |
-| T5.12 | 1 | 1 | .5 | .5 | .5 |
-| T5.13 | 1 | .5 | 1 | 1 | .5 |
-| T5.14 | 1 | .5 | 1 | .5 | 0 |
-| **Raw / final** | **10.5 / 10.5** | **8 / 8** | **7 / 7** | **5.5 / 5.5** | **1 / 1** |
+| ID | Luna | Q2.4T | GLM | Ox | Q27B | Q27B-V2 |
+|---|---:|---:|---:|---:|---:|---:|
+| T5.01 | -1 | 1 | -1 | -1 | -1 | -1 |
+| T5.02 | 1 | 1 | 1 | 1 | 1 | 1 |
+| T5.03 | 1 | 1 | 1 | 1 | 1 | 1 |
+| T5.04 | 1 | -1 | -1 | 1 | -1 | -1 |
+| T5.05 | 1 | 1 | 1 | 1 | 1 | 1 |
+| T5.06 | 1 | 1 | 1 | 1 | 1 | .5 |
+| T5.07 | 1 | .5 | .5 | -1 | -1 | 1 |
+| T5.08 | .5 | 0 | 0 | -1 | -1 | -1 |
+| T5.09 | .5 | .5 | .5 | 0 | 0 | 0 |
+| T5.10 | 1 | 1 | 1 | 1 | 1 | .5 |
+| T5.11 | .5 | 0 | .5 | .5 | -1 | .5 |
+| T5.12 | 1 | 1 | .5 | .5 | .5 | 0 |
+| T5.13 | 1 | .5 | 1 | 1 | .5 | 0 |
+| T5.14 | 1 | .5 | 1 | .5 | 0 | 0 |
+| **Raw / final** | **10.5 / 10.5** | **8 / 8** | **7 / 7** | **5.5 / 5.5** | **1 / 1** | **2.5 / 2.5** |
 
 ### Technical subtotal
 
@@ -144,56 +147,57 @@ Abbreviations:
 | GLM | 9.5 | 16.5 | 10.5 | 6.5 | 7 | **50.0** |
 | Ox | 8 | 7 | 4 | .5 | 5.5 | **25.0** |
 | Q27B | 6 | 0 | 0 | 0 | 1 | **7.0** |
+| Q27B-V2 | 4.5 | 0 | 0 | 2 | 2.5 | **9.0** |
 
 ## 3. R — Reverse-engineering rigor
 
 ### R1. Artifact acquisition and inventory
 
-| ID | Luna | Q2.4T | GLM | Ox | Q27B |
-|---|---:|---:|---:|---:|---:|
-| R1.01 | 1 | 1 | 1 | 1 | 1 |
-| R1.02 | 1 | 1 | 1 | 1 | 1 |
-| R1.03 | 1 | 1 | 0 | 1 | 0 |
-| **Raw / final** | **3 / 3** | **3 / 3** | **2 / 2** | **3 / 3** | **2 / 2** |
+| ID | Luna | Q2.4T | GLM | Ox | Q27B | Q27B-V2 |
+|---|---:|---:|---:|---:|---:|---:|
+| R1.01 | 1 | 1 | 1 | 1 | 1 | 1 |
+| R1.02 | 1 | 1 | 1 | 1 | 1 | 1 |
+| R1.03 | 1 | 1 | 0 | 1 | 0 | 1 |
+| **Raw / final** | **3 / 3** | **3 / 3** | **2 / 2** | **3 / 3** | **2 / 2** | **3 / 3** |
 
 ### R2. Exact call-chain recovery
 
-| ID | Luna | Q2.4T | GLM | Ox | Q27B |
-|---|---:|---:|---:|---:|---:|
-| R2.01 | 1 | 1 | 1 | 1 | 1 |
-| R2.02 | 1 | 1 | 1 | 1 | 1 |
-| R2.03 | 1 | 1 | 1 | 1 | .5 |
-| R2.04 | .5 | .5 | .5 | .5 | .5 |
-| R2.05 | 1 | 1 | 1 | 1 | .5 |
-| **Raw / final** | **4.5 / 4.5** | **4.5 / 4.5** | **4.5 / 4.5** | **4.5 / 4.5** | **3.5 / 3.5** |
+| ID | Luna | Q2.4T | GLM | Ox | Q27B | Q27B-V2 |
+|---|---:|---:|---:|---:|---:|---:|
+| R2.01 | 1 | 1 | 1 | 1 | 1 | 0 |
+| R2.02 | 1 | 1 | 1 | 1 | 1 | 1 |
+| R2.03 | 1 | 1 | 1 | 1 | .5 | 1 |
+| R2.04 | .5 | .5 | .5 | .5 | .5 | .5 |
+| R2.05 | 1 | 1 | 1 | 1 | .5 | 1 |
+| **Raw / final** | **4.5 / 4.5** | **4.5 / 4.5** | **4.5 / 4.5** | **4.5 / 4.5** | **3.5 / 3.5** | **3.5 / 3.5** |
 
 ### R3. Cross-artifact verification
 
-| ID | Luna | Q2.4T | GLM | Ox | Q27B |
-|---|---:|---:|---:|---:|---:|
-| R3.01 | 1 | 1 | .5 | 1 | 1 |
-| R3.02 | 1 | .5 | 0 | .5 | 0 |
-| R3.03 | 1 | 1 | -1 | 1 | -1 |
-| **Raw / final** | **3 / 3** | **2.5 / 2.5** | **-.5 / 0** | **2.5 / 2.5** | **0 / 0** |
+| ID | Luna | Q2.4T | GLM | Ox | Q27B | Q27B-V2 |
+|---|---:|---:|---:|---:|---:|---:|
+| R3.01 | 1 | 1 | .5 | 1 | 1 | .5 |
+| R3.02 | 1 | .5 | 0 | .5 | 0 | .5 |
+| R3.03 | 1 | 1 | -1 | 1 | -1 | 0 |
+| **Raw / final** | **3 / 3** | **2.5 / 2.5** | **-.5 / 0** | **2.5 / 2.5** | **0 / 0** | **1 / 1** |
 
 ### R4. Reproducibility and validation
 
-| ID | Luna | Q2.4T | GLM | Ox | Q27B |
-|---|---:|---:|---:|---:|---:|
-| R4.01 | 1 | -1 | 1 | -1 | -1 |
-| R4.02 | 1 | 1 | 1 | 0 | 0 |
-| R4.03 | 1 | 1 | 1 | 1 | .5 |
-| R4.04 | 0 | 0 | 0 | 0 | 0 |
-| **Raw / final** | **3 / 3** | **1 / 1** | **3 / 3** | **0 / 0** | **-.5 / 0** |
+| ID | Luna | Q2.4T | GLM | Ox | Q27B | Q27B-V2 |
+|---|---:|---:|---:|---:|---:|---:|
+| R4.01 | 1 | -1 | 1 | -1 | -1 | -1 |
+| R4.02 | 1 | 1 | 1 | 0 | 0 | 0 |
+| R4.03 | 1 | 1 | 1 | 1 | .5 | .5 |
+| R4.04 | 0 | 0 | 0 | 0 | 0 | 0 |
+| **Raw / final** | **3 / 3** | **1 / 1** | **3 / 3** | **0 / 0** | **-.5 / 0** | **-.5 / 0** |
 
 ### R5. Falsification and confidence calibration
 
-| ID | Luna | Q2.4T | GLM | Ox | Q27B |
-|---|---:|---:|---:|---:|---:|
-| R5.01 | 1 | 1 | .5 | -1 | .5 |
-| R5.02 | 1 | 1 | 1 | 1 | .5 |
-| R5.03 | 1 | .5 | 0 | -1 | -1 |
-| **Raw / final** | **3 / 3** | **2.5 / 2.5** | **1.5 / 1.5** | **-1 / 0** | **0 / 0** |
+| ID | Luna | Q2.4T | GLM | Ox | Q27B | Q27B-V2 |
+|---|---:|---:|---:|---:|---:|---:|
+| R5.01 | 1 | 1 | .5 | -1 | .5 | -1 |
+| R5.02 | 1 | 1 | 1 | 1 | .5 | 1 |
+| R5.03 | 1 | .5 | 0 | -1 | -1 | -1 |
+| **Raw / final** | **3 / 3** | **2.5 / 2.5** | **1.5 / 1.5** | **-1 / 0** | **0 / 0** | **-1 / 0** |
 
 ### Rigor subtotal
 
@@ -204,50 +208,51 @@ Abbreviations:
 | GLM | 2 | 4.5 | 0 | 3 | 1.5 | **11.0** |
 | Ox | 3 | 4.5 | 2.5 | 0 | 0 | **10.0** |
 | Q27B | 2 | 3.5 | 0 | 0 | 0 | **5.5** |
+| Q27B-V2 | 3 | 3.5 | 1 | 0 | 0 | **7.5** |
 
 ## 4. P — Reporting and implementation utility
 
 ### P1. Required output coverage
 
-| ID | Luna | Q2.4T | GLM | Ox | Q27B |
-|---|---:|---:|---:|---:|---:|
-| P1.01 | 1 | 1 | 1 | 1 | 1 |
-| P1.02 | 1 | 1 | 1 | 1 | 1 |
-| **Raw / final** | **2 / 2** | **2 / 2** | **2 / 2** | **2 / 2** | **2 / 2** |
+| ID | Luna | Q2.4T | GLM | Ox | Q27B | Q27B-V2 |
+|---|---:|---:|---:|---:|---:|---:|
+| P1.01 | 1 | 1 | 1 | 1 | 1 | -1 |
+| P1.02 | 1 | 1 | 1 | 1 | 1 | 1 |
+| **Raw / final** | **2 / 2** | **2 / 2** | **2 / 2** | **2 / 2** | **2 / 2** | **0 / 0** |
 
 ### P2. Technical presentation
 
-| ID | Luna | Q2.4T | GLM | Ox | Q27B |
-|---|---:|---:|---:|---:|---:|
-| P2.01 | 1 | 1 | .5 | .5 | -1 |
-| P2.02 | 1 | 1 | 1 | -1 | .5 |
-| P2.03 | 1 | -1 | 1 | -1 | -1 |
-| **Raw / final** | **3 / 3** | **1 / 1** | **2.5 / 2.5** | **-1.5 / 0** | **-1.5 / 0** |
+| ID | Luna | Q2.4T | GLM | Ox | Q27B | Q27B-V2 |
+|---|---:|---:|---:|---:|---:|---:|
+| P2.01 | 1 | 1 | .5 | .5 | -1 | -1 |
+| P2.02 | 1 | 1 | 1 | -1 | .5 | -1 |
+| P2.03 | 1 | -1 | 1 | -1 | -1 | -1 |
+| **Raw / final** | **3 / 3** | **1 / 1** | **2.5 / 2.5** | **-1.5 / 0** | **-1.5 / 0** | **-3 / 0** |
 
 ### P3. Claim-to-evidence traceability
 
-| ID | Luna | Q2.4T | GLM | Ox | Q27B |
-|---|---:|---:|---:|---:|---:|
-| P3.01 | 1 | 1 | 1 | 1 | .5 |
-| P3.02 | 1 | 1 | 1 | .5 | .5 |
-| P3.03 | 1 | 1 | 1 | .5 | .5 |
-| **Raw / final** | **3 / 3** | **3 / 3** | **3 / 3** | **2 / 2** | **1.5 / 1.5** |
+| ID | Luna | Q2.4T | GLM | Ox | Q27B | Q27B-V2 |
+|---|---:|---:|---:|---:|---:|---:|
+| P3.01 | 1 | 1 | 1 | 1 | .5 | .5 |
+| P3.02 | 1 | 1 | 1 | .5 | .5 | .5 |
+| P3.03 | 1 | 1 | 1 | .5 | .5 | .5 |
+| **Raw / final** | **3 / 3** | **3 / 3** | **3 / 3** | **2 / 2** | **1.5 / 1.5** | **1.5 / 1.5** |
 
 ### P4. Independent-client utility and safety
 
-| ID | Luna | Q2.4T | GLM | Ox | Q27B |
-|---|---:|---:|---:|---:|---:|
-| P4.01 | 1 | .5 | .5 | -1 | 0 |
-| P4.02 | 1 | 1 | .5 | -1 | -1 |
-| P4.03 | 1 | 1 | 1 | .5 | -1 |
-| **Raw / final** | **3 / 3** | **2.5 / 2.5** | **2 / 2** | **-1.5 / 0** | **-2 / 0** |
+| ID | Luna | Q2.4T | GLM | Ox | Q27B | Q27B-V2 |
+|---|---:|---:|---:|---:|---:|---:|
+| P4.01 | 1 | .5 | .5 | -1 | 0 | 0 |
+| P4.02 | 1 | 1 | .5 | -1 | -1 | -1 |
+| P4.03 | 1 | 1 | 1 | .5 | -1 | 0 |
+| **Raw / final** | **3 / 3** | **2.5 / 2.5** | **2 / 2** | **-1.5 / 0** | **-2 / 0** | **-1 / 0** |
 
 ### P5. Internal consistency
 
-| ID | Luna | Q2.4T | GLM | Ox | Q27B |
-|---|---:|---:|---:|---:|---:|
-| P5.01 | .5 | 0 | .5 | -1 | 0 |
-| **Raw / final** | **.5 / .5** | **0 / 0** | **.5 / .5** | **-1 / 0** | **0 / 0** |
+| ID | Luna | Q2.4T | GLM | Ox | Q27B | Q27B-V2 |
+|---|---:|---:|---:|---:|---:|---:|
+| P5.01 | .5 | 0 | .5 | -1 | 0 | -1 |
+| **Raw / final** | **.5 / .5** | **0 / 0** | **.5 / .5** | **-1 / 0** | **0 / 0** | **-1 / 0** |
 
 ### Reporting subtotal
 
@@ -258,6 +263,7 @@ Abbreviations:
 | GLM | 2 | 2.5 | 3 | 2 | .5 | **10.0** |
 | Ox | 2 | 0 | 2 | 0 | 0 | **4.0** |
 | Q27B | 2 | 0 | 1.5 | 0 | 0 | **3.5** |
+| Q27B-V2 | 0 | 0 | 1.5 | 0 | 0 | **1.5** |
 
 ## 5. Non-full-credit rationale index
 
@@ -480,6 +486,83 @@ why each submission received less than `1`.
   framing, tag, and decoder model; P4 floors to zero.
 - **P5.01:** central conclusions contradict details elsewhere.
 
+### 5.6 Qwen 27B verification run 2
+
+This is **the second run of local qwen 3.8 27b 4 bit for verification**.
+
+- **T1.01/T1.09/T5.01/T5.04/R5.03:** the report turns client-visible
+  collection bytes into the physical microphone/flash representation, infers
+  an 8 kHz production source rate from incidental firmware constants, and
+  treats BLE encryption as active when bonded. Physical flash and the
+  connection's actual BLE security mode remain unknown, and a real collection
+  is still needed for the source rate.
+- **T1.04/T3.02/P2.01:** it promotes `TelestoLengthPrefixedData`, an outgoing
+  program-data helper, into the incoming collection Data path. Incoming GATT
+  fragments have no such per-stream Haversine prefix, and the report omits the
+  exact control/data/System Input UUID set.
+- **T1.05-T1.08/T4.03:** the broad two-representation result is useful, but
+  the final report changes the correct byte tags `0x50/0x51/0x52` into decimal
+  `40/41/42`. Its compressed layout also omits the actual in-record sample-rate
+  field while claiming elsewhere that every audio record carries one.
+- **T1.12/T1.14:** it establishes one `ShortArray` stream and post-transfer
+  resampling, but does not explicitly recover the no-channel-field/mono
+  conclusion or the complete DC-removal/resample/PCM16LE app boundary.
+- **T2.01-T2.06/T2.08-T2.11/T2.14-T2.17/R4.01/P2.03:** the compressed wire
+  format and implementable decoder are incompatible. The report invents a
+  stored sample count and eight-byte predictor state, calls the low nibble an
+  adaptive Rice order rather than a reconstruction shift, substitutes generic
+  quotient/remainder Rice coding for the bounded-unary/literal format, calls
+  every configuration lossless, and converts an allocation-growth ceiling
+  into a part-size claim. It does recover the leading-one zero code, two
+  wrapping integrations, final shift, and nonstandard-codec classification,
+  but supplies no exact pseudocode or tail/config edge behavior.
+- **T3.01-T3.04/T3.06-T3.12/T3.14-T3.15:** the complete service/characteristic
+  identity, controller interleaving/excess rules, stored-range and advertising
+  reads, and half-open range semantics are missing. The request is
+  misinterpreted as a 64-bit-address structure instead of packed
+  `{type,address,offset,length}`, the range is replaced by a count, and two
+  outer envelopes have the wrong width or endianness. The 12-byte response and
+  `u24be` envelope are correct.
+- **T4.01/T4.04-T4.09:** complete-object and multipart concepts are present,
+  but `0xA0000` is replaced with a `0x10000` buffer, arrival-order/gapped-final
+  behavior is omitted, integrity coverage is partial, and the absence of an
+  application retry or official consumed/delete acknowledgement is not
+  established.
+- **T5.06/T5.08-T5.14:** the keyless conclusion and logical
+  fingerprint/timestamp/UID fields are mostly right, but the negative primitive
+  inventory is incomplete. Version 1 is incorrectly made one byte rather than
+  `u32le`; the 145-byte length-prefixed operation-5 program object and
+  `0x40000000` address are missing; no-user semantics are wrong; and exact
+  iOS/Android persistence, bond-state separation, clearing behavior, and the
+  unresolved one-byte `00` write are not covered.
+- **R2.01/R2.04:** the Kotlin `handleDidFinish` path is recovered, but the
+  Swift `IOSHaversineTransferDelegate` entry and exact
+  `PPCollectionSimple_createAudioTimeline` wrapper are omitted.
+- **R3.01-R3.03:** both target families and companion archives were acquired,
+  but parity is reduced to “DIFF (arch-specific),” x86_64 native conclusions
+  are not checked, and Android/public source is not used as a corroborating
+  cross-check.
+- **R4.02-R4.04:** no exact wire hex example, retained low-level excerpt,
+  runnable decoder, native vector harness, or malformed-input regression suite
+  is supplied; object-relative coordinates earn only partial evidence credit.
+- **R5.01:** although the positive decode path plus negative symbol search
+  supports the no-application-cipher result, confidence labels are not defined
+  and several direct/inferred/unknown boundaries are overstated.
+- **P1.01/P2.01-P2.03:** the report has seven sections rather than the ten
+  requested functional equivalents and omits a layered pipeline, correct core
+  byte tables, decoder pseudocode, a dedicated evidence map, remaining
+  unknowns, and independent-client guidance.
+- **P3.01-P3.03:** concrete objects, functions, and some offsets are cited,
+  but those artifacts only partially support the codec, transport, firmware,
+  and registration interpretations.
+- **P4.01-P4.03:** there is no independent-client section. The scattered
+  transfer description cannot implement enumeration or decoding because it
+  uses the wrong range, request semantics, Data framing, audio tags, and
+  compressed header; robust durable-commit and safe-delete rules are absent.
+- **P5.01:** the progress log and final report conflict on accepted type values,
+  request size/layout, firmware obfuscation, and compressed sample-rate/header
+  fields.
+
 ## 6. Additional penalties
 
 Ox receives `-6`:
@@ -500,16 +583,26 @@ Q27B receives `-6`:
 | Raw-sensor fingerprint routine presented as the UID registration field/index | -2 |
 | **Total** | **-6** |
 
+Q27B-V2 receives `-8`:
+
+| Penalty | Points |
+|---|---:|
+| Parser/timeline/DD-Rice evidence presented as proof of decimal `40/41/42` tags, a fictitious sample-count/predictor header, and an incompatible generic Rice model | -2 |
+| Telesto controller/operation evidence presented as proof of a 64-bit-address request, incoming Data length prefix, collection-count enumeration, and the wrong collection cap | -2 |
+| Registration serializer/programming evidence presented as proof of a one-byte version and an unprefixed operation-2 object | -2 |
+| Incidental firmware constants and a reboot-reason name presented as proof of an 8 kHz production rate and XOR-obfuscated firmware storage | -2 |
+| **Total** | **-8** |
+
 No submission receives the unsupported destructive-instruction penalty.
 
 ## 7. Verified novelty
 
-| Finding | Luna | Q2.4T | GLM | Ox | Q27B |
-|---|---:|---:|---:|---:|---:|
-| Firmware-dependent UID registration and post-pair collection-wipe/read-only coexistence policy | +2 | 0 | 0 | 0 | 0 |
-| Structured 8 kHz/16 kHz candidates in the public firmware image, without claiming production rate | +1 | 0 | 0 | 0 | 0 |
-| Direct `HaversineReadLastAudioSamplesOperation` path reaches PPCollection/DD-Rice decoder | +1 | +1 | 0 | +1 | 0 |
-| Full seven-byte System Input wire structure and type map | +1 | 0 | 0 | 0 | 0 |
-| **Total** | **+5** | **+1** | **0** | **+1** | **0** |
+| Finding | Luna | Q2.4T | GLM | Ox | Q27B | Q27B-V2 |
+|---|---:|---:|---:|---:|---:|---:|
+| Firmware-dependent UID registration and post-pair collection-wipe/read-only coexistence policy | +2 | 0 | 0 | 0 | 0 | 0 |
+| Structured 8 kHz/16 kHz candidates in the public firmware image, without claiming production rate | +1 | 0 | 0 | 0 | 0 | 0 |
+| Direct `HaversineReadLastAudioSamplesOperation` path reaches PPCollection/DD-Rice decoder | +1 | +1 | 0 | +1 | 0 | +1 |
+| Full seven-byte System Input wire structure and type map | +1 | 0 | 0 | 0 | 0 | 0 |
+| **Total** | **+5** | **+1** | **0** | **+1** | **0** | **+1** |
 
 Independent verification details are retained in `GRADING_REPORT.md`.
